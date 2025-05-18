@@ -135,7 +135,7 @@ const Hero=()=>{
        
         <div className="text-center">
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-100 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -143,7 +143,7 @@ const Hero=()=>{
             Unlock the Power of <span className="text-blue-600">AI</span>
           </motion.h1>
           <motion.p 
-            className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto"
+            className="mt-6 text-xl text-gray-400 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
