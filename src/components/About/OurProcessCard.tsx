@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 function OurProcessCard({ text, index }) {
   return (
     <motion.div
-      className={`w-[35vw] h-[35vh] flex items-center justify-center border rounded-lg px-2 pb-2 mt-5 mb-5 shadow-md ${
+      className={`w-full md:w-[35vw] h-[25vh] md:h-[35vh] flex items-center justify-center border rounded-lg px-2 pb-2 mt-5 mb-5 shadow-md ${
         index % 2 === 0 ? "self-end bg-white" : "self-start bg-white"
       }`}
       initial={{
@@ -21,7 +21,7 @@ function OurProcessCard({ text, index }) {
       }}
       viewport={{ once: true }}
     >
-      <p className="text-black text-2xl">{text}</p>
+      <p className="text-black text-lg md:text-2xl">{text}</p>
     </motion.div>
   );
 }
