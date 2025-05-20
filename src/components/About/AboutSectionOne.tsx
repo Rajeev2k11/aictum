@@ -1,5 +1,4 @@
 import Image from "next/image";
-import SectionTitle from "../Common/SectionTitle";
 import FadedToBold from "../Common/FadeToBold";
 
 const checkIcon = (
@@ -10,8 +9,8 @@ const checkIcon = (
 
 const AboutSectionOne = () => {
   const List = ({ text }) => (
-    <p className="mb-4 flex items-start text-base font-medium text-body-color sm:mb-5 sm:text-lg">
-      <span className="bg-primary/10 text-primary mr-3 mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-md sm:mr-4 sm:h-[30px] sm:w-[30px]">
+    <p className="mb-3 flex items-start text-base font-medium text-gray-800 dark:text-gray-300 sm:mb-4 lg:text-lg">
+      <span className="bg-purple-600/10 text-purple-600 dark:text-purple-400 mr-3 mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-md sm:mr-4 sm:h-[30px] sm:w-[30px]">
         {checkIcon}
       </span>
       {text}
@@ -19,53 +18,57 @@ const AboutSectionOne = () => {
   );
 
   return (
-    <section id="about" className="container mx-auto max-w-6xl rounded-md border-2 border-white p-4 shadow-2xl sm:p-8 md:p-12 lg:p-16">
-      <div className="container">
-        <div className="border-b border-body-color/[.15] pb-8 dark:border-white/[.15] sm:pb-12 md:pb-16 lg:pb-20">
+    <section
+      id="about"
+      className="container max-w-6xl rounded-xl border-2 border-white/20 bg-[#1B1329] p-5 shadow-2xl sm:p-7 md:p-10 lg:p-14 xl:p-20"
+    >
+      <div className="border-b border-white/10 pb-10 sm:pb-12 md:pb-16">
+        <div className="mb-8 sm:mb-10 md:mb-12">
           <FadedToBold text="We Have Your Back" />
-          
-          <div className="flex flex-wrap items-center">
-            <div className="w-full px-2 lg:w-1/2 lg:px-4">
-              <h1 className="mb-6 text-xl leading-tight sm:text-2xl">
-                At every step of your digital journey, we're right beside you.
-                From the first idea to the final launch — and beyond — our team ensures 
-                your vision is built, scaled, and supported with precision and care.
-              </h1>
+        </div>
 
-              <div className="mb-8 max-w-[570px] py-4 lg:mb-0 lg:py-8">
-                <div className="mx-[-8px] flex flex-wrap sm:mx-[-12px]">
-                  <div className="w-full px-2 sm:w-1/2 sm:px-3 lg:w-full xl:w-1/2">
-                    <List text="Dedicated project managers" />
-                    <List text="Fast communication and real-time collaboration" />
-                    <List text="Scalable, Future-Proof Solutions" />
-                    <List text="Post-launch support and continuous improvements" />
-                  </div>
+        <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-12">
+          {/* Text + List Section */}
+          <div className="w-full px-1 lg:w-1/2 lg:px-3">
+            <h2 className="mb-6 text-lg leading-relaxed text-white sm:mb-8 sm:text-xl md:text-2xl md:leading-relaxed">
+              At every step of your digital journey, we're right beside you. From idea to launch — and beyond — we ensure your vision is built, scaled, and supported with care.
+            </h2>
 
-                  <div className="w-full px-2 sm:w-1/2 sm:px-3 lg:w-full xl:w-1/2">
-                    <List text="Tailored Strategies for Every Project" />
-                    <List text="Deep Expertise in Web3, AI, and Emerging Technologies" />
-                    <List text="Transparent Processes and Reporting" />
-                    <List text="Commitment to Quality and Security" />
-                  </div>
+            <div className="mb-6 max-w-[570px] lg:mb-0">
+              <div className="flex flex-wrap gap-y-4 sm:gap-y-5">
+                <div className="w-full space-y-3 sm:w-1/2 sm:space-y-4">
+                  <List text="Dedicated project managers" />
+                  <List text="Fast, real-time collaboration" />
+                  <List text="Scalable, future-proof builds" />
+                  <List text="Post-launch support & evolution" />
+                </div>
+                <div className="w-full space-y-3 sm:w-1/2 sm:space-y-4">
+                  <List text="Tailored strategies for each need" />
+                  <List text="Expertise in Web3, AI, tech stack" />
+                  <List text="Transparent processes & reports" />
+                  <List text="Quality & security-first mindset" />
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="w-full px-2 lg:w-1/2 lg:px-4">
-              <div className="relative mx-auto aspect-[25/24] max-w-[400px] sm:max-w-[500px] lg:mr-0">
-                <Image
-                  src="/images/about/about-image.svg"
-                  alt="about-image"
-                  fill
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
-                />
-                <Image
-                  src="/images/about/about-image-dark.svg"
-                  alt="about-image"
-                  fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
-                />
-              </div>
+          {/* Image Section */}
+          <div className="w-full px-1 lg:w-1/2 lg:px-3">
+            <div className="relative mx-auto aspect-[25/24] w-full max-w-[280px] sm:max-w-[350px] md:max-w-[420px] lg:max-w-[500px]">
+              <Image
+                src="/images/about/about-image.svg"
+                alt="about-light"
+                fill
+                className="mx-auto hidden dark:hidden sm:block drop-shadow-lg"
+                sizes="(max-width: 640px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 420px, 500px"
+              />
+              <Image
+                src="/images/about/about-image-dark.svg"
+                alt="about-dark"
+                fill
+                className="mx-auto hidden dark:block sm:block drop-shadow-lg"
+                sizes="(max-width: 640px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 420px, 500px"
+              />
             </div>
           </div>
         </div>

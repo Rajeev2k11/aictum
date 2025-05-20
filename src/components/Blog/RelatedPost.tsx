@@ -13,7 +13,7 @@ const RelatedPost = ({
   date: string;
 }) => {
   return (
-    <div className="flex items-center lg:block xl:flex">
+    <div className="flex items-center lg:block xl:flex bg-[#1A1325] rounded-lg p-4 shadow-md">
       <div className="mr-5 lg:mb-3 xl:mb-0">
         <div className="relative h-[60px] w-[70px] overflow-hidden rounded-md sm:h-[75px] sm:w-[85px]">
           <Image src={image} alt={title} fill />
@@ -23,12 +23,12 @@ const RelatedPost = ({
         <h5>
           <Link
             href={slug}
-            className="mb-[6px] block text-base font-medium leading-snug text-black hover:text-primary dark:text-white dark:hover:text-primary"
+            className="mb-[6px] block text-base font-medium leading-snug text-white hover:text-[#C69CFF]"
           >
             {title}
           </Link>
         </h5>
-        <p className="text-xs font-medium text-body-color">{date}</p>
+        <p className="text-xs font-medium text-[#CCCCCC]">{date}</p>
       </div>
     </div>
   );

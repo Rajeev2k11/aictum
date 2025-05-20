@@ -10,7 +10,7 @@ export default function Video() {
 
   return (
     <>
-      <section className="relative z-10 py-16 md:py-20 lg:py-28 ">
+      <section className="relative z-10 py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#1A1325] via-[#473062] to-[#0C0C11] text-white">
         <div className="container">
           <SectionTitle
             title="Building a Web3 or AI product? Need a trusted tech partner to bring your vision to life?"
@@ -19,29 +19,28 @@ export default function Video() {
 At W3X, we don’t just deliver code.
 We co-create future-ready products with you — with a sharp focus on innovation, security, and real-world impact.
 
-Whether you're a founder launching a groundbreaking idea, or an agency looking to outsource projects without the overhead — we are your reliable technology partner.
-
-"
+Whether you're a founder launching a groundbreaking idea, or an agency looking to outsource projects without the overhead — we are your reliable technology partner."
             center
             mb="80px"
           />
         </div>
+
         <div className="relative overflow-hidden">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-[770px] overflow-hidden rounded-md">
-                <div className="relative aspect-77/40 items-center justify-center">
+              <div className="mx-auto max-w-[770px] overflow-hidden rounded-xl shadow-lg border border-[#5C3D91]">
+                <div className="relative aspect-video items-center justify-center bg-[#1A1325]">
                   <Image
                     src="/images/video/image.png"
                     alt="video image"
-                    className="object-cover"
+                    className="object-cover opacity-80"
                     fill
                   />
                   <div className="absolute top-0 right-0 flex h-full w-full items-center justify-center">
                     <button
                       aria-label="video play button"
                       onClick={() => setOpen(true)}
-                      className="text-primary flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white/75 transition hover:bg-white"
+                      className="text-white flex h-[70px] w-[70px] items-center justify-center rounded-full bg-[#9345E0] hover:bg-[#a95fff] transition duration-300 shadow-lg"
                     >
                       <svg
                         width="16"
@@ -58,10 +57,8 @@ Whether you're a founder launching a groundbreaking idea, or an agency looking t
             </div>
           </div>
 
-          <div className="absolute right-0 bottom-0 left-0 z-[-1] h-full w-full bg-[url(/images/video/shape.svg)] bg-cover bg-center bg-no-repeat">
-            {/* <div className="absolute bottom-0 left-0 right-0 z-[-1] "> */}
-            {/* <img src="/images/video/shape.svg" alt="shape" className="w-full" /> */}
-          </div>
+          {/* Background Shape (Optional Light Overlay) */}
+          <div className="absolute inset-0 z-[-1] bg-gradient-to-t from-[#0C0C11] to-transparent opacity-10" />
         </div>
       </section>
 
@@ -73,4 +70,4 @@ Whether you're a founder launching a groundbreaking idea, or an agency looking t
       />
     </>
   );
-};
+}
