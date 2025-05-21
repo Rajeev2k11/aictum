@@ -35,11 +35,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -62,33 +58,51 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
-          {navLinks.map((link) => (
+          {navLinks.map((link) =>
             link.submenu ? (
               <DropdownMenu key={link.label}>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="flex items-center gap-1 text-white hover:bg-[#9345E0]/20">
+                  <Button
+                    variant="ghost"
+                    className="flex items-center gap-1 text-white hover:text-[#9345E0] transition-colors duration-300 hover:bg-transparent group"
+                  >
                     {link.label}
-                    <ChevronDown className="h-4 w-4" />
+                    <ChevronDown className="h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="bg-[#473062] border-[#9345E0]">
+                <DropdownMenuContent
+                  align="end"
+                  sideOffset={8}
+                  className="bg-[#2B1D40]/90 backdrop-blur-sm border border-[#9345E0]/40 shadow-xl rounded-xl p-2 min-w-[180px] animate-fade-in"
+                >
                   {link.submenu.map((item) => (
-                    <DropdownMenuItem key={item.label} asChild className="hover:bg-[#9345E0]">
-                      <Link href={item.href} className="cursor-pointer text-white">
-                        {item.label}
-                      </Link>
+                    <DropdownMenuItem
+                      key={item.label}
+                      asChild
+                      className="rounded-md px-3 py-2 hover:bg-[#9345E0]/40 text-white transition-colors duration-200"
+                    >
+                      <Link href={item.href}>{item.label}</Link>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button key={link.label} variant="ghost" className="text-white hover:bg-[#9345E0]/20" asChild>
+              <Button
+                key={link.label}
+                variant="ghost"
+                className="text-white hover:text-[#9345E0] transition-colors duration-300"
+                asChild
+              >
                 <Link href={link.href}>{link.label}</Link>
               </Button>
             )
-          ))}
+          )}
           <div className="ml-4">
-            <Button variant="default" className="bg-[#9345E0] hover:bg-[#9345E0]/90 text-white" asChild>
+            <Button
+              variant="default"
+              className="bg-[#9345E0] hover:bg-[#9345E0]/90 text-white"
+              asChild
+            >
               <Link href="/demo">Call us</Link>
             </Button>
           </div>
@@ -98,15 +112,27 @@ export default function Navbar() {
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-[#9345E0]/20">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white hover:bg-[#9345E0]/20"
+              >
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[80%] sm:w-[350px] bg-[#1A1325] border-l-[#9345E0]">
+            <SheetContent
+              side="right"
+              className="w-[80%] sm:w-[350px] bg-[#1A1325] border-l-[#9345E0]"
+            >
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center mb-8">
                   <span className="text-2xl font-bold text-white">W3X</span>
-                  <Button variant="ghost" size="icon" className="text-white hover:bg-[#9345E0]/20" onClick={() => setMobileMenuOpen(false)}>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-white hover:bg-[#9345E0]/20"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
                     <X className="h-6 w-6" />
                   </Button>
                 </div>
@@ -146,7 +172,10 @@ export default function Navbar() {
                 </nav>
 
                 <div className="mt-auto mb-8">
-                  <Button className="w-full bg-[#9345E0] hover:bg-[#9345E0]/90 text-white" asChild>
+                  <Button
+                    className="w-full bg-[#9345E0] hover:bg-[#9345E0]/90 text-white"
+                    asChild
+                  >
                     <Link href="/demo">Call us</Link>
                   </Button>
                 </div>

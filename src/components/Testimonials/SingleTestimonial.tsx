@@ -28,7 +28,7 @@ const SingleTestimonial: FC<SingleTestimonialProps> = ({
       <div
         className="relative z-10 bg-gradient-to-b from-gray-900 via-gray-800 to-purple-900 
                    border border-purple-900/50 p-6 sm:p-8 rounded-xl h-full 
-                   transition-all duration-300 group-hover:shadow-2xs group-hover:border-purple-400 group-hover:border-2"
+                   transition-all duration-300 group-hover:border-purple-400 group-hover:border-2"
       >
         <p className="text-[#9345E0] text-xs sm:text-sm font-medium tracking-wide mb-2">
           {title}
