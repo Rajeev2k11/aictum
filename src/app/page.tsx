@@ -9,6 +9,7 @@ import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
 import TechStack from "@/components/TechStack";
 import Testimonials from "@/components/Testimonials";
+import HiringModels from "@/components/HiringModels/HiringModels";
 import Video from "@/components/Video";
 import { Metadata } from "next";
 
@@ -33,6 +34,7 @@ export default function Home() {
       <AboutSectionTwo />
       <TechStack />
       <Testimonials />
+      <HiringModels />
    
       <Blog />
       <Contact />
