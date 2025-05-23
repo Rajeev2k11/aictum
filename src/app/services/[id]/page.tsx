@@ -1,88 +1,76 @@
-import { services } from '@/components/Service/data';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
+"use client";
 
-export async function generateStaticParams() {
-  return services.map(service => ({
-    id: service.id
-  }));
-}
+import { useSearchParams } from "next/navigation";
+import { servicesData } from "@/components/Service/data";
+import Image from "next/image";
+import { FaCheckCircle } from "react-icons/fa";
 
-export default async function ServicePage({ params }: { params: { id: string } }) {
-  const service = services.find(s => s.id === params.id);
+export default function ServiceDetailPage() {
+  const searchParams = useSearchParams();
+  const serviceName = searchParams.get("service");
 
-  if (!service) {
-    notFound();
+  if (!serviceName || !servicesData[serviceName]) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#2d1857] via-[#3a206e] to-[#1a102e] text-white px-4">
+        <h1 className="text-2xl md:text-3xl font-semibold">Service not found</h1>
+      </div>
+    );
   }
 
+  const service = servicesData[serviceName];
+
   return (
-    <section className="pt-[150px] pb-[120px] bg-gradient-to-b from-purple-900/20 to-violet-900/10">
-      <div className="container mx-auto px-4">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">{service.title}</h2>
-          <p className="text-lg text-violet-100 max-w-3xl mx-auto">{service.description}</p>
+    <main className="min-h-screen bg-gradient-to-br from-[#2d1857] via-[#3a206e] to-[#1a102e] text-white px-4 py-8 md:py-14 lg:py-20 flex flex-col items-center">
+      {/* Card Container */}
+      <section className="w-full max-w-4xl bg-white/5 backdrop-blur-md rounded-2xl shadow-2xl border border-[#5f3dc4]/30 p-6 md:p-10 mb-10">
+        {/* Title */}
+        <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#a084ee] via-[#9345e0] to-[#6c2eb7] mb-4 text-center drop-shadow-lg">
+          {service.title}
+        </h1>
+
+        {/* Description */}
+        <p className="max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-[#e0d7fa] text-center mb-8">
+          {service.description}
+        </p>
+
+        {/* Images */}
+        <div
+          className={`grid gap-6 mb-8 ${
+            service.images.length === 1
+              ? "grid-cols-1"
+              : "grid-cols-1 sm:grid-cols-2"
+          }`}
+        >
+          {service.images.map((src, index) => (
+            <div
+              key={index}
+              className="relative w-full h-52 md:h-64 rounded-xl overflow-hidden border-2 border-[#a084ee]/30 shadow-lg hover:scale-[1.03] transition-transform duration-300 bg-[#2d1857]/60"
+            >
+              <Image
+                src={src}
+                alt={`${service.title} image ${index + 1}`}
+                fill
+                style={{ objectFit: "cover" }}
+                priority={index === 0}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          ))}
         </div>
 
-        <div className="mb-16">
-          <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              className="object-cover object-center"
-            />
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-3xl font-semibold text-white mb-10 text-center">
-            Our {service.title} Services
-          </h3>
-
-          <div className="grid gap-10 md:grid-cols-2">
-            {service.services.map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col md:flex-row items-start bg-violet-900/30 rounded-lg border border-violet-700/30 p-6 hover:shadow-xl hover:scale-[1.01] transition-transform"
-              >
-                <div className="w-full md:w-1/3 mb-4 md:mb-0 md:mr-6">
-                  <div className="relative w-full h-48 md:h-full rounded-md overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
-                </div>
-                <div className="md:w-2/3">
-                  <h4 className="text-white text-xl font-semibold mb-2">{item.title}</h4>
-                  <p className="text-violet-200 text-sm leading-relaxed">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-20 pt-10 border-t border-violet-700/30">
-          <h4 className="text-white text-2xl font-semibold mb-4">
-            Why Choose Our {service.title} Services?
-          </h4>
-          <p className="text-violet-200 mb-6 max-w-3xl">
-            Our team of experts combines cutting-edge technology with industry knowledge to deliver solutions that drive real business results. We take a collaborative approach, working closely with you to understand your unique challenges and goals.
-          </p>
-
-          <div className="bg-violet-900/30 rounded-lg p-6 border border-violet-700/20">
-            <h5 className="text-white text-lg font-medium mb-3">Ready to transform your business?</h5>
-            <p className="text-violet-200 mb-4">
-              Contact us today to discuss how our {service.title} services can help you achieve your goals.
-            </p>
-            <button className="bg-gradient-to-r from-purple-600 to-violet-600 text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">
-              Get in Touch
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+        {/* Content Points */}
+        <ul className="space-y-5">
+          {service.content.map((point, idx) => (
+            <li
+              key={idx}
+              className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow border border-[#a084ee]/20"
+            >
+              <FaCheckCircle className="flex-shrink-0 mt-1 text-[#a084ee]" size={22} />
+              <p className="text-[#e0d7fa] text-base md:text-lg">{point}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
   );
 }
