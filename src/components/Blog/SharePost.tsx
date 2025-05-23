@@ -4,7 +4,7 @@ const SharePost = () => {
       <a
         href="#0"
         aria-label="social-share"
-        className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xs bg-gray-light text-body-color duration-300 hover:bg-primary hover:text-white dark:bg-gray-dark dark:hover:bg-primary sm:ml-3"
+        className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xs bg-[#9345E0] text-white duration-300 hover:bg-[#B76CFF] sm:ml-3"
       >
         <svg
           width="16"
@@ -18,7 +18,7 @@ const SharePost = () => {
       <a
         href="#0"
         aria-label="social-share"
-        className="mb-3 ml-3 inline-flex h-9 w-9 items-center justify-center rounded-xs bg-gray-light text-body-color duration-300 hover:bg-primary hover:text-white dark:bg-gray-dark dark:hover:bg-primary"
+        className="mb-3 ml-3 inline-flex h-9 w-9 items-center justify-center rounded-xs bg-[#9345E0] text-white duration-300 hover:bg-[#B76CFF]"
       >
         <svg
           width="18"
@@ -26,19 +26,19 @@ const SharePost = () => {
           viewBox="0 0 22 22"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="fill-current"
         >
           <path
             fillRule="evenodd"
             clipRule="evenodd"
             d="M13.9831 19.25L9.82094 13.3176L4.61058 19.25H2.40625L8.843 11.9233L2.40625 2.75H8.06572L11.9884 8.34127L16.9034 2.75H19.1077L12.9697 9.73737L19.6425 19.25H13.9831ZM16.4378 17.5775H14.9538L5.56249 4.42252H7.04674L10.808 9.6899L11.4584 10.6039L16.4378 17.5775Z"
-            fill="currentColor"
           />
         </svg>
       </a>
       <a
         href="#0"
         aria-label="social-share"
-        className="mb-3 ml-3 inline-flex h-9 w-9 items-center justify-center rounded-xs bg-gray-light text-body-color duration-300 hover:bg-primary hover:text-white dark:bg-gray-dark dark:hover:bg-primary"
+        className="mb-3 ml-3 inline-flex h-9 w-9 items-center justify-center rounded-xs bg-[#9345E0] text-white duration-300 hover:bg-[#B76CFF]"
       >
         <svg
           width="18"
@@ -46,6 +46,7 @@ const SharePost = () => {
           viewBox="0 0 22 22"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="fill-current"
         >
           <path
             d="M12.1 10.4939V7.42705C12.1 6.23984 13.085 5.27741 14.3 5.27741H16.5V2.05296L13.5135 1.84452C10.9664 1.66676 8.8 3.63781 8.8 6.13287V10.4939H5.5V13.7183H8.8V20.1667H12.1V13.7183H15.4L16.5 10.4939H12.1Z"

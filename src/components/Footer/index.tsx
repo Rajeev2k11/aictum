@@ -5,45 +5,48 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <footer className="relative z-10 bg-white pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24">
-        <div className="container">
+      <footer className="relative z-10 bg-[#1a1026] pt-10 dark:bg-[#12081a] md:pt-16 lg:pt-24">
+        <div className="container px-4 sm:px-6">
           <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
-              <div className="mb-12 max-w-[360px] lg:mb-16">
-                <Link href="/" className="mb-8 inline-block">
+            {/* Logo Column - Mobile Optimized */}
+            <div className="w-full px-4 text-center md:text-left md:w-1/2 lg:w-4/12 xl:w-5/12">
+              <div className="mb-8 max-w-[360px] mx-auto md:mx-0 lg:mb-16">
+                <Link href="/" className="mb-6 inline-block md:mb-8">
                   <Image
                     src="/images/logo/logo-2.svg"
                     alt="logo"
-                    className="w-full dark:hidden"
+                    className="w-32 dark:hidden md:w-full"
                     width={140}
                     height={30}
                   />
                   <Image
                     src="/images/logo/logo.svg"
                     alt="logo"
-                    className="hidden w-full dark:block"
+                    className="hidden w-32 dark:block md:w-full"
                     width={140}
                     height={30}
                   />
                 </Link>
-                <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
+                <p className="mb-6 text-sm leading-relaxed text-[#c7a4f7] dark:text-[#e0c3fc] md:text-base md:mb-9">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Integer lobortis.
                 </p>
-                <div className="flex items-center">
+                <div className="flex justify-center space-x-6 md:justify-start md:space-x-4 md:space-y-0">
                   <a
                     href="/"
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec]"
                   >
+                    {/* Facebook Icon */}
                     <svg
                       width="18"
                       height="18"
                       viewBox="0 0 22 22"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
                     >
                       <path
                         d="M12.1 10.4939V7.42705C12.1 6.23984 13.085 5.27741 14.3 5.27741H16.5V2.05296L13.5135 1.84452C10.9664 1.66676 8.8 3.63781 8.8 6.13287V10.4939H5.5V13.7183H8.8V20.1667H12.1V13.7183H15.4L16.5 10.4939H12.1Z"
@@ -56,14 +59,16 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec]"
                   >
+                    {/* Twitter Icon */}
                     <svg
                       width="18"
                       height="18"
                       viewBox="0 0 22 22"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
                     >
                       <path
                         fillRule="evenodd"
@@ -78,13 +83,14 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec]"
                   >
+                    {/* YouTube Icon */}
                     <svg
                       width="18"
                       height="14"
                       viewBox="0 0 18 14"
-                      className="fill-current"
+                      className="h-5 w-5 fill-current"
                     >
                       <path d="M17.5058 2.07119C17.3068 1.2488 16.7099 0.609173 15.9423 0.395963C14.5778 7.26191e-08 9.0627 0 9.0627 0C9.0627 0 3.54766 7.26191e-08 2.18311 0.395963C1.41555 0.609173 0.818561 1.2488 0.619565 2.07119C0.25 3.56366 0.25 6.60953 0.25 6.60953C0.25 6.60953 0.25 9.68585 0.619565 11.1479C0.818561 11.9703 1.41555 12.6099 2.18311 12.8231C3.54766 13.2191 9.0627 13.2191 9.0627 13.2191C9.0627 13.2191 14.5778 13.2191 15.9423 12.8231C16.7099 12.6099 17.3068 11.9703 17.5058 11.1479C17.8754 9.68585 17.8754 6.60953 17.8754 6.60953C17.8754 6.60953 17.8754 3.56366 17.5058 2.07119ZM7.30016 9.44218V3.77687L11.8771 6.60953L7.30016 9.44218Z" />
                     </svg>
@@ -94,13 +100,14 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec]"
                   >
+                    {/* LinkedIn Icon */}
                     <svg
                       width="17"
                       height="16"
                       viewBox="0 0 17 16"
-                      className="fill-current"
+                      className="h-5 w-5 fill-current"
                     >
                       <path d="M15.2196 0H1.99991C1.37516 0 0.875366 0.497491 0.875366 1.11936V14.3029C0.875366 14.8999 1.37516 15.4222 1.99991 15.4222H15.1696C15.7943 15.4222 16.2941 14.9247 16.2941 14.3029V1.09448C16.3441 0.497491 15.8443 0 15.2196 0ZM5.44852 13.1089H3.17444V5.7709H5.44852V13.1089ZM4.29899 4.75104C3.54929 4.75104 2.97452 4.15405 2.97452 3.43269C2.97452 2.71133 3.57428 2.11434 4.29899 2.11434C5.02369 2.11434 5.62345 2.71133 5.62345 3.43269C5.62345 4.15405 5.07367 4.75104 4.29899 4.75104ZM14.07 13.1089H11.796V9.55183C11.796 8.7061 11.771 7.58674 10.5964 7.58674C9.39693 7.58674 9.222 8.53198 9.222 9.47721V13.1089H6.94792V5.7709H9.17202V6.79076H9.19701C9.52188 6.19377 10.2466 5.59678 11.3711 5.59678C13.6952 5.59678 14.12 7.08925 14.12 9.12897V13.1089H14.07Z" />
                     </svg>
@@ -109,16 +116,17 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* Useful Links Column */}
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
+              <div className="mb-8 md:mb-12 lg:mb-16">
+                <h2 className="mb-5 text-lg font-bold text-[#e0c3fc] dark:text-[#c7a4f7] md:text-xl md:mb-10">
                   Useful Links
                 </h2>
-                <ul>
+                <ul className="space-y-3 md:space-y-4">
                   <li>
                     <Link
                       href="/blog"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       Blog
                     </Link>
@@ -126,7 +134,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       Pricing
                     </Link>
@@ -134,7 +142,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/about"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       About
                     </Link>
@@ -143,16 +151,17 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* Terms Column */}
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
+              <div className="mb-8 md:mb-12 lg:mb-16">
+                <h2 className="mb-5 text-lg font-bold text-[#e0c3fc] dark:text-[#c7a4f7] md:text-xl md:mb-10">
                   Terms
                 </h2>
-                <ul>
+                <ul className="space-y-3 md:space-y-4">
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       TOS
                     </Link>
@@ -160,7 +169,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       Privacy Policy
                     </Link>
@@ -168,7 +177,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       Refund Policy
                     </Link>
@@ -177,16 +186,17 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* Support Column */}
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
-              <div className="mb-12 lg:mb-16">
-                <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
+              <div className="mb-8 md:mb-12 lg:mb-16">
+                <h2 className="mb-5 text-lg font-bold text-[#e0c3fc] dark:text-[#c7a4f7] md:text-xl md:mb-10">
                   Support & Help
                 </h2>
-                <ul>
+                <ul className="space-y-3 md:space-y-4">
                   <li>
                     <Link
                       href="/contact"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       Open Support Ticket
                     </Link>
@@ -194,7 +204,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       Terms of Use
                     </Link>
@@ -202,7 +212,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/about"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       About
                     </Link>
@@ -212,15 +222,18 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
-          <div className="py-8">
-            <p className="text-center text-base text-body-color dark:text-white">
+          {/* Divider */}
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-[#a259ec80] to-transparent dark:via-[#c7a4f780]"></div>
+          
+          {/* Copyright */}
+          <div className="py-6 md:py-8">
+            <p className="text-center text-xs text-[#c7a4f7] dark:text-[#e0c3fc] sm:text-sm md:text-base">
               Template by{" "}
               <a
                 href="http://uideck.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary"
+                className="hover:text-[#a259ec]"
               >
                 UIdeck
               </a>{" "}
@@ -229,14 +242,16 @@ const Footer = () => {
                 href="https://nextjstemplates.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary"
+                className="hover:text-[#a259ec]"
               >
                 Next.js Templates
               </a>
             </p>
           </div>
         </div>
-        <div className="absolute right-0 top-14 z-[-1]">
+
+        {/* Background Elements */}
+        <div className="absolute right-0 top-10 z-[-1] md:top-14">
           <svg
             width="55"
             height="99"
@@ -244,7 +259,7 @@ const Footer = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle opacity="0.8" cx="49.5" cy="49.5" r="49.5" fill="#959CB1" />
+            <circle opacity="0.8" cx="49.5" cy="49.5" r="49.5" fill="#a259ec" />
             <mask
               id="mask0_94:899"
               style={{ maskType: "alpha" }}
@@ -259,7 +274,7 @@ const Footer = () => {
                 cx="49.5"
                 cy="49.5"
                 r="49.5"
-                fill="#4A6CF7"
+                fill="#7c3aed"
               />
             </mask>
             <g mask="url(#mask0_94:899)">
@@ -271,7 +286,7 @@ const Footer = () => {
                 fill="url(#paint0_radial_94:899)"
               />
               <g opacity="0.8" filter="url(#filter0_f_94:899)">
-                <circle cx="53.8676" cy="26.2061" r="20.3824" fill="white" />
+                <circle cx="53.8676" cy="26.2061" r="20.3824" fill="#e0c3fc" />
               </g>
             </g>
             <defs>
@@ -304,13 +319,13 @@ const Footer = () => {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(49.5 49.5) rotate(90) scale(53.1397)"
               >
-                <stop stopOpacity="0.47" />
+                <stop stopOpacity="0.47" stopColor="#a259ec" />
                 <stop offset="1" stopOpacity="0" />
               </radialGradient>
             </defs>
           </svg>
         </div>
-        <div className="absolute bottom-24 left-0 z-[-1]">
+        <div className="absolute bottom-20 left-0 z-[-1] md:bottom-24">
           <svg
             width="79"
             height="94"
@@ -365,8 +380,8 @@ const Footer = () => {
                 y2="59.8878"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" stopOpacity="0.62" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+                <stop stopColor="#a259ec" stopOpacity="0.62" />
+                <stop offset="1" stopColor="#a259ec" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_94:889"
@@ -376,8 +391,8 @@ const Footer = () => {
                 y2="20.668"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.51" />
+                <stop stopColor="#a259ec" stopOpacity="0" />
+                <stop offset="1" stopColor="#a259ec" stopOpacity="0.51" />
               </linearGradient>
               <linearGradient
                 id="paint2_linear_94:889"
@@ -387,8 +402,8 @@ const Footer = () => {
                 y2="25.1062"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" stopOpacity="0.62" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+                <stop stopColor="#a259ec" stopOpacity="0.62" />
+                <stop offset="1" stopColor="#a259ec" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint3_linear_94:889"
@@ -398,8 +413,8 @@ const Footer = () => {
                 y2="80.6826"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.51" />
+                <stop stopColor="#a259ec" stopOpacity="0" />
+                <stop offset="1" stopColor="#a259ec" stopOpacity="0.51" />
               </linearGradient>
               <linearGradient
                 id="paint4_linear_94:889"
@@ -409,8 +424,8 @@ const Footer = () => {
                 y2="58.2156"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" stopOpacity="0.62" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+                <stop stopColor="#a259ec" stopOpacity="0.62" />
+                <stop offset="1" stopColor="#a259ec" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint5_linear_94:889"
@@ -420,8 +435,8 @@ const Footer = () => {
                 y2="41.6598"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.51" />
+                <stop stopColor="#a259ec" stopOpacity="0" />
+                <stop offset="1" stopColor="#a259ec" stopOpacity="0.51" />
               </linearGradient>
             </defs>
           </svg>
@@ -432,3 +447,4 @@ const Footer = () => {
 };
 
 export default Footer;
+// ...existing code...
