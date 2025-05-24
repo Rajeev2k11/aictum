@@ -20,9 +20,9 @@ const AboutSectionOne = () => {
   return (
     <section
       id="about"
-      className="container max-w-6xl rounded-xl border-2 border-white/20 bg-[#1B1329] p-5 shadow-2xl sm:p-7 md:p-10 lg:p-14 xl:p-20"
+      className=" bg-[#1B1329] p-5 shadow-2xl sm:p-7 md:p-10 lg:p-14 xl:p-20"
     >
-      <div className="border-b border-white/10 pb-10 sm:pb-12 md:pb-16">
+      <div className="border-b container border-white/10 pb-10 sm:pb-12 md:pb-16">
         <div className="mb-8 sm:mb-10 md:mb-12">
           <FadedToBold text="We Have Your Back" />
         </div>
