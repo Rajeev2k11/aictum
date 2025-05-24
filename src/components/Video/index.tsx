@@ -16,7 +16,7 @@ export default function Video() {
             title="Building a Web3 or AI product? Need a trusted tech partner to bring your vision to life?"
             paragraph="We’re here to make it happen — with cutting-edge skills, startup speed, and enterprise-level quality.
 
-At W3X, we don’t just deliver code.
+At Aictum, we don’t just deliver code.
 We co-create future-ready products with you — with a sharp focus on innovation, security, and real-world impact.
 
 Whether you're a founder launching a groundbreaking idea, or an agency looking to outsource projects without the overhead — we are your reliable technology partner."

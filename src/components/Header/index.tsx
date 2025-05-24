@@ -99,6 +99,7 @@ export default function Navbar() {
     >
       <div className="container flex items-center justify-between h-16 md:h-20 px-4 sm:px-6">
         <Link href="/" className="flex items-center">
+          <span className="text-2xl font-bold gradient-text">Aictum</span>
           <span className="text-2xl font-bold text-white">W3X</span>
         </Link>
 
