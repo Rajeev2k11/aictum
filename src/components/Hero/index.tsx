@@ -115,74 +115,76 @@ const Hero = () => {
   }, []);
 
   return (
-    <motion.section
-      style={{ opacity, scale }}
-      className="pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gradient-to-br from-[#1A1325] via-[#473062] to-[#0C0C11] text-white"
-    >
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 opacity-30 pointer-events-none" />
-
-      <div className="relative z-10 text-center">
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Unlock the Power of <span className="text-[#9345E0]">AI</span>
-        </motion.h1>
-        <motion.p
-          className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          Build intelligent conversational experiences with our AI platform.
-          Transform your business with cutting-edge conversational AI solutions.
-        </motion.p>
-        <motion.div
-          className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <a
-            href="#"
-            className="px-8 py-3 rounded-full bg-[#9345E0] text-white text-lg font-medium hover:bg-[#7d35c4] shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Get Started
-          </a>
-          <a
-            href="#"
-            className="px-8 py-3 rounded-full bg-white text-[#1A1325] border border-gray-300 text-lg font-medium hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Book a Demo
-          </a>
-        </motion.div>
-      </div>
-
-      {/* Animated Box Section */}
-      <motion.div
-        className="mt-16 relative h-64 sm:h-80 md:h-96 lg:h-[500px] max-w-5xl mx-auto"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.5 }}
+    <div className="w-full overflow-hidden bg-gradient-to-br from-[#1A1325] via-[#473062] to-[#0C0C11]">
+      <motion.section
+        style={{ opacity, scale }}
+        className="pt-28 pb-16 px-4 sm:px-6 lg:px-8 w-full mx-auto text-white relative"
       >
-        <div className="absolute inset-0 rounded-xl overflow-hidden bg-[#9345E0] shadow-2xl flex items-center justify-center">
-          <div className="text-xl font-semibold text-white z-10">AI Dashboard Visualization</div>
+        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 opacity-30 pointer-events-none" />
 
+        <div className="relative z-10 text-center w-full max-w-7xl mx-auto">
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Unlock the Power of <span className="text-[#9345E0]">AI</span>
+          </motion.h1>
+          <motion.p
+            className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Build intelligent conversational experiences with our AI platform.
+            Transform your business with cutting-edge conversational AI solutions.
+          </motion.p>
           <motion.div
-            className="absolute top-[20%] left-[20%] w-16 h-16 bg-white/10 rounded-full"
-            animate={{ y: [0, -10, 0], opacity: [0.7, 1, 0.7] }}
-            transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
-          />
-          <motion.div
-            className="absolute top-[70%] right-[25%] w-12 h-12 bg-white/10 rounded-full"
-            animate={{ y: [0, 10, 0], opacity: [0.5, 0.8, 0.5] }}
-            transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
-          />
+            className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <a
+              href="#"
+              className="px-8 py-3 rounded-full bg-[#9345E0] text-white text-lg font-medium hover:bg-[#7d35c4] shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Get Started
+            </a>
+            <a
+              href="#"
+              className="px-8 py-3 rounded-full bg-white text-[#1A1325] border border-gray-300 text-lg font-medium hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Book a Demo
+            </a>
+          </motion.div>
         </div>
-      </motion.div>
-    </motion.section>
+
+        {/* Animated Box Section */}
+        <motion.div
+          className="mt-16 relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+        >
+          <div className="absolute inset-0 rounded-xl overflow-hidden bg-[#9345E0] shadow-2xl flex items-center justify-center">
+            <div className="text-xl font-semibold text-white z-10">AI Dashboard Visualization</div>
+
+            <motion.div
+              className="absolute top-[20%] left-[20%] w-16 h-16 bg-white/10 rounded-full"
+              animate={{ y: [0, -10, 0], opacity: [0.7, 1, 0.7] }}
+              transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+            />
+            <motion.div
+              className="absolute top-[70%] right-[25%] w-12 h-12 bg-white/10 rounded-full"
+              animate={{ y: [0, 10, 0], opacity: [0.5, 0.8, 0.5] }}
+              transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
+            />
+          </div>
+        </motion.div>
+      </motion.section>
+    </div>
   );
 };
 

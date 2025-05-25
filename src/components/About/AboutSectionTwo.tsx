@@ -34,27 +34,33 @@ const AboutSectionTwo = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-20 lg:py-24 bg-[#120C1C] text-white">
-      <div className="mx-auto max-w-4xl text-center">
-        <SectionTitle
-          title="Our Process"
-          paragraph="We follow a proven process to bring your ideas to life with precision and quality."
-          center
-          mb="mb-14 md:mb-20"
-        />
-      </div>
+    <section className="px-5 py-16 sm:px-6 sm:py-20 lg:py-24 xl:py-28 text-white bg-[#120C1C]">
+      <div className="mx-auto max-w-7xl">
+        {/* Title Section */}
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <SectionTitle
+            title="Our Process"
+            paragraph="We follow a proven process to bring your ideas to life with precision and quality."
+            center
+            mb="mb-12 sm:mb-16 md:mb-20"
+          />
+        </div>
 
-      {/* Process Cards */}
-      <div className="mx-auto max-w-5xl">
-        <div className="flex flex-col gap-6 sm:gap-8 md:gap-10">
-          {processSteps.map((step, i) => (
-            <OurProcessCard
-              key={i}
-              title={step.title}
-              text={step.text}
-              index={i}
-            />
-          ))}
+        {/* Process Cards */}
+        <div className="mx-auto max-w-5xl 
+                      [background-image:radial-gradient(circle,rgba(255,255,255,0.1)_1.5px,transparent_1px)] 
+                      [background-size:20px_20px]
+                      py-8 sm:py-10 px-4 sm:px-6 md:px-8 rounded-xl">
+          <div className="flex flex-col gap-5 sm:gap-6 md:gap-7 lg:gap-8">
+            {processSteps.map((step, i) => (
+              <OurProcessCard
+                key={i}
+                title={step.title}
+                text={step.text}
+                index={i}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
