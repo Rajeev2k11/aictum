@@ -1,5 +1,6 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
+import AboutUs from "../components/About/ModifyAbout";
 import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
@@ -32,6 +33,7 @@ export default function Home() {
 
       <AboutSectionOne />
       <AboutSectionTwo />
+      <AboutUs />
       <TechStack />
       <Testimonials />
       <HiringModels />
