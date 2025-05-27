@@ -4,7 +4,7 @@ import * as motion from 'motion/react-client';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-[#1b152e] via-voilet-950 to-[#20183d] text-gray-100">
       {/* Main Content */}
       <main className="container mx-auto px-4 py-16">
         {/* Hero Section */}
@@ -37,17 +37,18 @@ const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: false }}
-            className="text-3xl md:text-4xl font-semibold mb-8 text-purple-300 border-b border-purple-800 pb-3"
+            className="text-3xl md:text-4xl font-semibold mb-8 text-purple-300 border-b border-purple-900 pb-3"
           >
             Our Purpose & Philosophy
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-10">
             <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ rotateY: 360, opacity: 0 }}
+              whileInView={{ rotateY: 0, opacity: 1 }}
+              transition={{ duration: 1.3, ease: "easeInOut" }}
               viewport={{ once: false }}
-              className="bg-gray-800/80 p-8 rounded-xl backdrop-blur-sm border border-purple-900/50 hover:border-purple-700 transition-all duration-300"
+              className="bg-[#2e2450] p-8 rounded-xl backdrop-blur-sm border border-purple-900 hover:border-purple-700 transition-all duration-300 shadow-lg shadow-purple-900/10"
+              style={{ backfaceVisibility: "hidden" }}
             >
               <h3 className="text-2xl font-medium mb-4 text-purple-200">Our Mission</h3>
               <p className="text-gray-300 leading-relaxed">
@@ -57,11 +58,12 @@ const AboutUs: React.FC = () => {
               </p>
             </motion.div>
             <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ rotateY: 360, opacity: 0 }}
+              whileInView={{ rotateY: 0, opacity: 1 }}
+              transition={{ duration: 1.4, ease: "easeInOut" }}
               viewport={{ once: false }}
-              className="bg-gray-800/80 p-8 rounded-xl backdrop-blur-sm border border-purple-900/50 hover:border-purple-700 transition-all duration-300"
+              className="bg-[#2e2450] p-8 rounded-xl backdrop-blur-sm border border-purple-900 hover:border-purple-700 transition-all duration-300 shadow-lg shadow-purple-900/10"
+              style={{ backfaceVisibility: "hidden" }}
             >
               <h3 className="text-2xl font-medium mb-4 text-purple-200">Our Vision</h3>
               <p className="text-gray-300 leading-relaxed">
@@ -80,7 +82,7 @@ const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: false }}
-            className="text-3xl md:text-4xl font-semibold mb-12 text-purple-300 border-b border-purple-800 pb-3"
+            className="text-3xl md:text-4xl font-semibold mb-12 text-purple-300 border-b border-purple-900 pb-3"
           >
             Who We Are
           </motion.h2>
@@ -98,26 +100,32 @@ const AboutUs: React.FC = () => {
             <StatCard number="2000+" label="Satisfied Clients" />
             <StatCard number="10M+" label="Users Worldwide" />
           </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: false }}
-            className="bg-gray-800/80 p-8 rounded-xl backdrop-blur-sm border border-purple-900/50"
-          >
-            <h3 className="text-2xl font-medium mb-4 text-purple-200">Our Story</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Founded in 2003 as a small startup with just three engineers, we've grown into a multinational 
-              technology leader through relentless innovation and customer-focused solutions. Our journey has 
-              been marked by milestones that reflect our commitment to pushing technological boundaries.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-              What sets us apart is our culture of continuous learning and our belief that technology should 
-              be both powerful and accessible. We invest heavily in research and development, with 30% of our 
-              revenue dedicated to creating the next generation of solutions.
-            </p>
-          </motion.div>
+
+          {/* Our Story Section - now split into text and image, no box */}
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            {/* Text Content */}
+            <div className="flex-1">
+              <h3 className="text-2xl font-medium mb-4 text-purple-200">Our Story</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Founded in 2003 as a small startup with just three engineers, we've grown into a multinational 
+                technology leader through relentless innovation and customer-focused solutions. Our journey has 
+                been marked by milestones that reflect our commitment to pushing technological boundaries.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                What sets us apart is our culture of continuous learning and our belief that technology should 
+                be both powerful and accessible. We invest heavily in research and development, with 30% of our 
+                revenue dedicated to creating the next generation of solutions.
+              </p>
+            </div>
+            {/* Image Section */}
+            <div className="flex-1 flex justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Our Story"
+                className="rounded-xl shadow-lg max-w-xs md:max-w-sm w-full object-cover"
+              />
+            </div>
+          </div>
         </section>
 
         {/* Core Values */}
@@ -127,7 +135,7 @@ const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: false }}
-            className="text-3xl md:text-4xl font-semibold mb-12 text-purple-300 border-b border-purple-800 pb-3"
+            className="text-3xl md:text-4xl font-semibold mb-12 text-purple-300 border-b border-purple-900 pb-3"
           >
             Our Core Values
           </motion.h2>
@@ -210,7 +218,7 @@ const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: false }}
-            className="text-3xl md:text-4xl font-semibold mb-12 text-purple-300 border-b border-purple-800 pb-3"
+            className="text-3xl md:text-4xl font-semibold mb-12 text-purple-300 border-b border-purple-900 pb-3"
           >
             With Us You Can
           </motion.h2>
@@ -247,7 +255,7 @@ const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: false }}
-            className="text-3xl md:text-4xl font-semibold mb-12 text-purple-300 border-b border-purple-800 pb-3"
+            className="text-3xl md:text-4xl font-semibold mb-12 text-purple-300 border-b border-purple-900 pb-3"
           >
             We Got Awarded
           </motion.h2>
@@ -323,7 +331,7 @@ const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: false }}
-            className="text-3xl md:text-4xl font-semibold mb-8 text-purple-300 border-b border-purple-800 pb-3"
+            className="text-3xl md:text-4xl font-semibold mb-8 text-purple-300 border-b border-purple-900 pb-3"
           >
             Global Presence
           </motion.h2>
@@ -332,7 +340,7 @@ const AboutUs: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: false }}
-            className="bg-gray-800/80 p-8 rounded-xl backdrop-blur-sm border border-purple-900/50"
+            className="bg-[#2e2450] p-8 rounded-xl backdrop-blur-sm border border-purple-900 shadow-lg shadow-purple-900/10"
           >
             <div className="grid md:grid-cols-2 gap-10 mb-8">
               <motion.div
@@ -343,7 +351,7 @@ const AboutUs: React.FC = () => {
               >
                 <h3 className="text-2xl font-medium mb-4 text-purple-200">Our Headquarters</h3>
                 <p className="text-gray-300 mb-4 leading-relaxed">
-                  Our global headquarters in San Francisco serves as our innovation hub, housing our 
+                  Our global headquarters in San Francisco serves as our 
                   executive leadership and primary research facilities. This 200,000 sq ft campus 
                   includes state-of-the-art labs and collaborative workspaces.
                 </p>
@@ -378,7 +386,7 @@ const AboutUs: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: false }}
-              className="h-96 bg-gray-900 rounded-xl flex items-center justify-center border border-purple-900/50"
+              className="h-96 bg-[#2e2450] rounded-xl flex items-center justify-center border border-purple-900"
             >
               <span className="text-purple-400 text-lg">Interactive World Map Component Would Go Here</span>
             </motion.div>
@@ -393,7 +401,7 @@ const AboutUs: React.FC = () => {
           viewport={{ once: false }}
           className="text-center py-16 px-4"
         >
-          <div className="max-w-4xl mx-auto bg-gray-800/80 p-8 md:p-12 rounded-xl backdrop-blur-sm border border-purple-900/50">
+          <div className="max-w-4xl mx-auto bg-[#2e2450] p-8 md:p-12 rounded-xl backdrop-blur-sm border border-purple-900 shadow-lg shadow-purple-900/10">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-purple-200">
               Interested in Working Together?
             </h2>
@@ -415,7 +423,6 @@ const AboutUs: React.FC = () => {
                   </svg>
                 }
                 title="Schedule"
-                description="Book a meeting"
               />
               <ContactOption 
                 icon={
@@ -424,7 +431,6 @@ const AboutUs: React.FC = () => {
                   </svg>
                 }
                 title="Chat"
-                description="Live chat support"
               />
               <ContactOption 
                 icon={
@@ -433,7 +439,6 @@ const AboutUs: React.FC = () => {
                   </svg>
                 }
                 title="Call"
-                description="+1 (555) 123-4567"
               />
               <ContactOption 
                 icon={
@@ -442,7 +447,6 @@ const AboutUs: React.FC = () => {
                   </svg>
                 }
                 title="Email"
-                description="contact@company.com"
               />
             </motion.div>
           </div>
@@ -460,7 +464,7 @@ const StatCard: React.FC<{ number: string; label: string }> = ({ number, label }
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: false }}
-      className="bg-gray-800/70 p-5 rounded-lg text-center border border-purple-900/50 hover:bg-gray-800 transition-colors duration-300 hover:border-purple-700"
+      className="bg-[#2e2450] p-5 rounded-lg text-center border border-purple-900 hover:bg-[#2e2450] transition-colors duration-300 hover:border-purple-700 shadow-md shadow-purple-900/10"
     >
       <p className="text-4xl md:text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-300">
         {number}
@@ -482,7 +486,7 @@ const ValueCard: React.FC<{ title: string; description: string; icon: React.Reac
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: false }}
-      className="bg-gray-800/70 p-6 rounded-xl backdrop-blur-sm border border-purple-900/50 hover:border-purple-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-900/20"
+      className="bg-[#2e2450] p-6 rounded-xl backdrop-blur-sm border border-purple-900 hover:border-purple-700 transition-all duration-300 shadow-lg shadow-purple-900/10 hover:shadow-xl hover:shadow-purple-900/20"
     >
       <div className="text-purple-400 mb-5 flex justify-center">
         {icon}
@@ -501,7 +505,7 @@ const FeatureCard: React.FC<{ title: string; description: string }> = ({ title, 
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: false }}
-      className="bg-gray-800/70 p-8 rounded-xl backdrop-blur-sm border border-purple-900/50 hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300 hover:border-purple-700"
+      className="bg-[#2e2450] p-8 rounded-xl backdrop-blur-sm border border-purple-900 hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300 hover:border-purple-700"
     >
       <h3 className="text-2xl font-medium mb-4 text-purple-200">{title}</h3>
       <p className="text-gray-300 leading-relaxed">{description}</p>
@@ -521,7 +525,7 @@ const AwardCard: React.FC<{ title: string; issuer: string; icon: React.ReactNode
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: false }}
-      className="bg-gray-800/70 p-6 rounded-xl border border-purple-900/50 hover:border-purple-600 transition-all duration-300 hover:shadow-lg hover:shadow-purple-900/20"
+      className="bg-[#2e2450] p-6 rounded-xl border border-purple-900 hover:border-purple-700 transition-all duration-300 shadow-lg shadow-purple-900/10 hover:shadow-xl hover:shadow-purple-900/20"
     >
       <div className="flex items-start mb-4">
         <div className="text-purple-400 mr-4 mt-1">
@@ -542,7 +546,7 @@ const AwardCard: React.FC<{ title: string; issuer: string; icon: React.ReactNode
 };
 
 // Component for contact options
-const ContactOption: React.FC<{ icon: React.ReactNode, title: string, description: string }> = ({ 
+const ContactOption: React.FC<{ icon: React.ReactNode, title: string, description?: string }> = ({ 
   icon, 
   title, 
   description 
@@ -551,15 +555,16 @@ const ContactOption: React.FC<{ icon: React.ReactNode, title: string, descriptio
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.08 }}
+      transition={{ duration: 0.1, type: "spring" }}
       viewport={{ once: false }}
-      className="bg-gray-800/50 p-4 rounded-lg border border-purple-900/30 hover:border-purple-700 transition-all duration-300 group"
+      className="bg-[#2e2450] p-4 rounded-lg border border-purple-900/50 hover:border-purple-700 transition-all duration-300 group shadow-md shadow-purple-900/10 flex flex-col items-center justify-center cursor-pointer"
     >
       <div className="text-purple-400 group-hover:text-purple-300 mb-3 transition-colors duration-300 flex justify-center">
         {icon}
       </div>
       <h3 className="text-lg font-medium text-purple-200 mb-1 text-center">{title}</h3>
-      <p className="text-sm text-purple-300 text-center">{description}</p>
+      {/* Description intentionally omitted */}
     </motion.div>
   );
 };

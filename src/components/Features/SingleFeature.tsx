@@ -6,10 +6,11 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
 
   return (
     <motion.div
-      initial={{ rotateY: 0 }}
-      whileInView={{ rotateY: 360 }}
+      // Removed rotateY animation
+      initial={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false }}
-      transition={{ duration: 0.2, ease: "easeInOut" }}
+      transition={{ duration: 0.1, ease: "easeInOut" }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.97 }}
       className="w-[90%] sm:w-full max-w-[350px] min-h-[350px] md:h-[400px] p-5 rounded-xl bg-[#2E2450] border border-[#5C3D91] shadow-xl transition-all duration-300 ease-in-out mx-auto"
