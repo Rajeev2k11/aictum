@@ -7,7 +7,7 @@ const checkIcon = (
   </svg>
 );
 
-const AboutSectionOne = () => {
+const CompanyValue = () => {
   const List = ({ text }) => (
     <p className="mb-3 flex items-start text-base font-medium text-gray-800 dark:text-gray-300 sm:mb-4 lg:text-lg">
       <span className="bg-purple-600/10 text-purple-600 dark:text-purple-400 mr-3 mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-md sm:mr-4 sm:h-[30px] sm:w-[30px]">
@@ -77,4 +77,4 @@ const AboutSectionOne = () => {
   );
 };
 
-export default AboutSectionOne;
+export default CompanyValue;

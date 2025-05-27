@@ -139,6 +139,7 @@ export default function Navbar() {
                       <Link 
                         href={`/services/${data.id}`}
                         className="text-[#9345E0] font-semibold text-lg mb-3 pb-2 border-b border-[#9345E0]/30 block hover:text-[#b36ef7]"
+                        onClick={() => setIsServicesHovered(false)}
                       >
                         {category}
                       </Link>
@@ -148,6 +149,7 @@ export default function Navbar() {
                             <Link 
                               href={getServiceLink(category, item)}
                               className="block rounded-lg px-3 py-2 hover:bg-[#9345E0]/30 text-white transition-colors duration-200 hover:translate-x-1 hover:shadow-[2px_0_0_0_#9345E0]"
+                              onClick={() => setIsServicesHovered(false)}
                             >
                               {item}
                             </Link>
