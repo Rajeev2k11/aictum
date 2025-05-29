@@ -24,7 +24,7 @@ const TechStack = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-[#140c1c] py-16 px-6 lg:px-24 text-white"
+      className="bg-gradient-to-br from-[#d5cee0e7] via-[#fdfbff] to-[#9d7db7] py-16 px-6 lg:px-24 text-white"
     >
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
@@ -33,8 +33,8 @@ const TechStack = () => {
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         className="text-center mb-12 max-w-3xl mx-auto"
       >
-        <h2 className="text-4xl font-extrabold mb-4 text-purple-400">Blockchain and AI We Build On</h2>
-        <p className="text-gray-300 text-lg">
+        <h2 className="text-4xl font-extrabold mb-4 text-purple-900">Blockchain and AI We Build On</h2>
+        <p className="text-[#7b6982] text-lg">
           We leverage leading technologies to deliver secure, scalable, and intelligent solutions.
         </p>
       </motion.div>
@@ -47,7 +47,7 @@ const TechStack = () => {
           viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
         >
-          <h3 className="text-2xl font-semibold mb-6 text-purple-500">Blockchain Networks</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-purple-800">Blockchain Networks</h3>
           <div className="space-y-6">
             {blockchainTech.map((tech, idx) => (
               <motion.div
@@ -56,7 +56,7 @@ const TechStack = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.1 * idx }}
-                className="p-5 border border-white/10 rounded-lg bg-[#1f1531] hover:shadow-lg hover:shadow-purple-500/20 transition"
+                className="p-5 border border-white/10 rounded-lg bg-[#5d428de6] hover:shadow-lg hover:shadow-purple-600 transition"
               >
                 <h4 className="text-xl font-bold text-white mb-2">{tech.name}</h4>
                 <p className="text-gray-300">{tech.description}</p>
@@ -72,7 +72,7 @@ const TechStack = () => {
           viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
         >
-          <h3 className="text-2xl font-semibold mb-6 text-purple-500">AI Technologies</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-purple-800">AI Technologies</h3>
           <div className="space-y-6">
             {aiTech.map((tech, idx) => (
               <motion.div
@@ -81,7 +81,7 @@ const TechStack = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.1 * idx }}
-                className="p-5 border border-white/10 rounded-lg bg-[#1f1531] hover:shadow-lg hover:shadow-purple-500/20 transition"
+                className="p-5 border border-white/10 rounded-lg bg-[#5d428de6] hover:shadow-lg hover:shadow-purple-600 transition"
               >
                 <h4 className="text-xl font-bold text-white mb-2">{tech.name}</h4>
                 <p className="text-gray-300">{tech.description}</p>

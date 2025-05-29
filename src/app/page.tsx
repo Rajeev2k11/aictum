@@ -34,6 +34,7 @@ export default function Home() {
 
       <CompanyValue />
       <Processes />
+    
       
       <TechStack />
       <EnterpriseIntegration />

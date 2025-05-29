@@ -34,7 +34,7 @@ const Processes = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-20 lg:py-24 text-white 
+    <section className="mx-auto max-w-full px-4 py-16 sm:px-6 md:py-20 lg:py-24 text-white 
                   bg-[#120C1C] 
                   [background-image:radial-gradient(circle,rgba(255,255,255,0.1)_1.5px,transparent_1px)] 
                   [background-size:20px_20px]">

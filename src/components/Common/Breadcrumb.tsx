@@ -10,7 +10,21 @@ const Breadcrumb = ({
   return (
     <>
       <section className="relative z-10 overflow-hidden pt-28 lg:pt-[150px] bg-gradient-to-br from-[#1b152e] via-[#2e2450] to-[#20183d]">
-        <div className="container">
+        {/* Soft, blurred background image */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{
+            backgroundImage:
+              "url('https://img.freepik.com/free-vector/realistic-polygonal-background_23-2148902174.jpg?uid=R159235966&ga=GA1.1.2022678480.1747276619&semt=ais_hybrid&w=740')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.28,
+            filter: "blur(8px)",
+            mixBlendMode: "luminosity",
+          }}
+        />
+        <div className="container relative z-10">
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 md:w-8/12 lg:w-7/12">
               <div className="mb-8 max-w-[570px] md:mb-0 lg:mb-12">

@@ -121,46 +121,53 @@ export default function Navbar() {
               )} />
             </Button>
 
-            {/* Custom Dropdown */}
             {isServicesHovered && (
-              <div 
-                className="absolute -left-12 top-full bg-[#2B1D40] backdrop-blur-sm border border-[#9345E0]/40 shadow-xl rounded-xl p-4 mt-2"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                style={{
-                  transform: 'translateX(-50%)',
-                  width: 'calc(100vw - 2rem)',
-                  maxWidth: '1200px'
-                }}
-              >
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                  {Object.entries(services).map(([category, data]) => (
-                    <div key={category} className="space-y-3">
-                      <Link 
-                        href={`/services/${data.id}`}
-                        className="text-[#9345E0] font-semibold text-lg mb-3 pb-2 border-b border-[#9345E0]/30 block hover:text-[#b36ef7]"
-                        onClick={() => setIsServicesHovered(false)}
-                      >
-                        {category}
-                      </Link>
-                      <ul className="space-y-3">
-                        {data.items.map((item) => (
-                          <li key={item}>
-                            <Link 
-                              href={getServiceLink(category, item)}
-                              className="block rounded-lg px-3 py-2 hover:bg-[#9345E0]/30 text-white transition-colors duration-200 hover:translate-x-1 hover:shadow-[2px_0_0_0_#9345E0]"
-                              onClick={() => setIsServicesHovered(false)}
-                            >
-                              {item}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+  <div 
+    className="
+      absolute left-1/2 top-full 
+      bg-[#2B1D40] backdrop-blur-sm border border-[#9345E0]/40 shadow-xl rounded-lg p-4 mt-1
+      w-[95vw] max-w-[800px] 
+      sm:w-[600px] sm:max-w-[90vw]
+      md:w-[700px] md:max-w-[90vw]
+      lg:w-[800px] lg:max-w-[90vw]
+      overflow-y-auto
+      z-50
+    "
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
+    style={{
+      transform: 'translateX(-50%)',
+      maxHeight: '70vh'
+    }}
+  >
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      {Object.entries(services).map(([category, data]) => (
+        <div key={category} className="space-y-2">
+          <Link 
+            href={`/services/${data.id}`}
+            className="text-[#9345E0] font-semibold text-base mb-2 pb-1 border-b border-[#9345E0]/30 block hover:text-[#b36ef7] transition-colors"
+            onClick={() => setIsServicesHovered(false)}
+          >
+            {category}
+          </Link>
+          <ul className="space-y-2">
+            {data.items.map((item) => (
+              <li key={item}>
+                <Link 
+                  href={getServiceLink(category, item)}
+                  className="block rounded-md px-2 py-1.5 hover:bg-[#9345E0]/20 text-white transition-all duration-200 text-sm"
+                  onClick={() => setIsServicesHovered(false)}
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
           </div>
 
           {['About', 'Contact', 'Blog', 'Team'].map((label) => (
@@ -180,7 +187,13 @@ export default function Navbar() {
               className="bg-[#9345E0] hover:bg-[#9345E0]/90 text-white shadow-lg shadow-[#9345E0]/30"
               asChild
             >
-              <Link href="/demo">Call us</Link>
+              <a
+                href="https://calendly.com/rajeev@aictum.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Call us
+              </a>
             </Button>
           </div>
         </nav>
