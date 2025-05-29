@@ -11,23 +11,23 @@ const techs = [
 ];
 const Brands = () => {
   return (
-    <div className="bg-[#E1B0EE] py-10 overflow-hidden">
-    <div className="relative w-full">
-      <div className="flex w-max animate-marquee">
-        {brandsData.map((logo, index) => (
-          <div key={index} className="flex items-center justify-center mx-12">
-            <Image
-              src={logo.image}
-              alt="Logo"
-              width={120}
-              height={60}
-              className="object-contain"
-            />
-          </div>
-        ))}
+    <div className="bg-gradient-to-br from-[#d5cee0e7] via-[#fdfbff] to-[#32124d] py-10 overflow-hidden">
+      <div className="relative w-full">
+        <div className="flex w-max animate-marquee">
+          {brandsData.map((logo, index) => (
+            <div key={index} className="flex items-center justify-center mx-12">
+              <Image
+                src={logo.image}
+                alt="Logo"
+                width={120}
+                height={60}
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 
