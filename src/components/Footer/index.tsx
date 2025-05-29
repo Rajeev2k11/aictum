@@ -168,7 +168,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/"
+                      href="/privacy-policy"
                       className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
                     >
                       Privacy Policy
@@ -228,24 +228,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="py-6 md:py-8">
             <p className="text-center text-xs text-[#c7a4f7] dark:text-[#e0c3fc] sm:text-sm md:text-base">
-              Template by{" "}
-              <a
-                href="http://uideck.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#a259ec]"
-              >
-                UIdeck
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://nextjstemplates.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#a259ec]"
-              >
-                Next.js Templates
-              </a>
+              &copy; 2025 Aictum Pvt. Ltd
             </p>
           </div>
         </div>
@@ -447,4 +430,3 @@ const Footer = () => {
 };
 
 export default Footer;
-// ...existing code...

@@ -10,7 +10,7 @@ export default function Video() {
 
   return (
     <>
-      <section className="relative z-10 py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#1A1325] via-[#473062] to-[#0C0C11] text-white">
+      <section className="relative z-10 py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#d5cee0e7] via-[#fdfbff] to-[#32124d] text-[#e6d6fa]">
         <div className="container">
           <SectionTitle
             title="Building a Web3 or AI product? Need a trusted tech partner to bring your vision to life?"
@@ -23,6 +23,8 @@ We co-create future-ready products with you — with a sharp focus on innovation
 Whether you're a founder launching a groundbreaking idea, or an agency looking to outsource projects without the overhead — we are your reliable technology partner."
             center
             mb="80px"
+            // If SectionTitle supports a color prop, you can add:
+            // color="#e6d6fa"
           />
         </div>
 
@@ -41,7 +43,7 @@ Whether you're a founder launching a groundbreaking idea, or an agency looking t
                     <button
                       aria-label="video play button"
                       onClick={() => setOpen(true)}
-                      className="text-white flex h-[70px] w-[70px] items-center justify-center rounded-full bg-[#9345E0] hover:bg-[#a95fff] transition duration-300 shadow-lg"
+                      className="text-[#e6d6fa] flex h-[70px] w-[70px] items-center justify-center rounded-full bg-[#9345E0] hover:bg-[#a95fff] transition duration-300 shadow-lg"
                     >
                       <svg
                         width="16"
