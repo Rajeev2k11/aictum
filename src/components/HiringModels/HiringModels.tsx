@@ -74,7 +74,7 @@ const HiringModelsTabs: React.FC = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="py-12 px-4 bg-gradient-to-b from-[#1A1325] to-[#473062]"
+      className="py-12 px-4 bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10]"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div 

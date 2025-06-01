@@ -9,8 +9,8 @@ const checkIcon = (
 
 const CompanyValue = () => {
   const List = ({ text }) => (
-    <p className="mb-3 flex items-start text-base font-medium text-gray-800 dark:text-gray-300 sm:mb-4 lg:text-lg">
-      <span className="bg-purple-600/10 text-purple-600 dark:text-purple-400 mr-3 mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-md sm:mr-4 sm:h-[30px] sm:w-[30px]">
+    <p className="mb-3 flex items-start text-base font-medium text-white dark:text-gray-100 sm:mb-4 lg:text-lg">
+      <span className="bg-purple-600/10 text-purple-400 dark:text-purple-400 mr-3 mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-md sm:mr-4 sm:h-[30px] sm:w-[30px]">
         {checkIcon}
       </span>
       {text}
@@ -20,9 +20,9 @@ const CompanyValue = () => {
   return (
     <section
       id="about"
-      className="bg-[#1B1329] p-5 shadow-2xl sm:p-7 md:p-10 lg:p-14 xl:p-20"
+      className="p-5 shadow-2xl sm:p-7 md:p-10 lg:p-14 xl:p-20 bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10]"
     >
-      <div className="border-b container border-white/10 pb-10 sm:pb-12 md:pb-16">
+      <div className="border-b container border-white/10 text-[#d8a7ef] pb-10 sm:pb-12 md:pb-16">
         <div className="mb-8 sm:mb-10 md:mb-12">
           <FadedToBold text="We Have Your Back" />
         </div>
@@ -31,10 +31,12 @@ const CompanyValue = () => {
           {/* Text + List Section */}
           <div className="w-full px-1 lg:w-1/2 lg:px-3">
             <h2 className="mb-6 text-lg leading-relaxed text-white sm:mb-8 sm:text-xl md:text-2xl md:leading-relaxed">
-              At every step of your digital journey, we're right beside you. From idea to launch — and beyond — we ensure your vision is built, scaled, and supported with care.
+              At every step of your digital journey, we're right beside you. From
+              idea to launch — and beyond — we ensure your vision is built,
+              scaled, and supported with care.
             </h2>
 
-            <div className="mb-6 max-w-[570px] lg:mb-0">
+            <div className="mb-6 text-white max-w-[570px] lg:mb-0">
               <div className="flex flex-wrap gap-y-4 sm:gap-y-5">
                 <div className="w-full space-y-3 sm:w-1/2 sm:space-y-4">
                   <List text="Dedicated project managers" />

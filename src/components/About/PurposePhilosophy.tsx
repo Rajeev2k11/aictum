@@ -7,7 +7,7 @@ export const PurposePhilosophy = () => (
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: false }}
-      className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 md:mb-8 text-purple-300 border-b border-purple-900 pb-2 md:pb-3"
+      className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 md:mb-8 text-[#AE69DF] border-b border-purple-900 pb-2 md:pb-3"
     >
       Our Purpose & Philosophy
     </motion.h2>
@@ -17,11 +17,11 @@ export const PurposePhilosophy = () => (
         whileInView={{ rotateY: 0, opacity: 1 }}
         transition={{ duration: 1.3, ease: "easeInOut" }}
         viewport={{ once: false }}
-        className="bg-[#2e2450] p-6 sm:p-7 md:p-8 rounded-xl backdrop-blur-sm border border-purple-900 hover:border-purple-700 transition-all duration-300 shadow-lg shadow-purple-900/10"
+        className="bg-[#141418] p-6 sm:p-7 md:p-8 rounded-xl backdrop-blur-sm border border-[#8f8e8f]  transition-all duration-300 shadow-lg shadow-purple-900/10"
         style={{ backfaceVisibility: "hidden" }}
       >
-        <h3 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 text-purple-200">Our Mission</h3>
-        <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+        <h3 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 text-[#d8a7ef]">Our Mission</h3>
+        <p className="text-white leading-relaxed text-sm sm:text-base">
           To empower organizations worldwide with cutting-edge technology solutions that drive growth, 
           efficiency, and innovation. We believe in creating tools that not only solve today's problems 
           but anticipate tomorrow's challenges.
@@ -32,11 +32,11 @@ export const PurposePhilosophy = () => (
         whileInView={{ rotateY: 0, opacity: 1 }}
         transition={{ duration: 1.4, ease: "easeInOut" }}
         viewport={{ once: false }}
-        className="bg-[#2e2450] p-6 sm:p-7 md:p-8 rounded-xl backdrop-blur-sm border border-purple-900 hover:border-purple-700 transition-all duration-300 shadow-lg shadow-purple-900/10"
+        className="bg-[#141418] p-6 sm:p-7 md:p-8 rounded-xl backdrop-blur-sm border border-[#8f8e8f]  transition-all duration-300 shadow-lg shadow-purple-900/10"
         style={{ backfaceVisibility: "hidden" }}
       >
-        <h3 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 text-purple-200">Our Vision</h3>
-        <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+        <h3 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 text-[#d8a7ef]">Our Vision</h3>
+        <p className="text-white leading-relaxed text-sm sm:text-base">
           To be the world's most trusted technology partner, recognized for our relentless pursuit of 
           excellence and our commitment to making a positive impact through technology. We envision 
           a future where our solutions become the backbone of digital transformation across industries.
@@ -45,3 +45,4 @@ export const PurposePhilosophy = () => (
     </div>
   </section>
 );
+

@@ -8,7 +8,7 @@ const useAnimatedNumber = (value: string) => {
   useEffect(() => {
     let start = 0;
     let end = parseInt(value.replace(/\D/g, "")) || 0;
-    let suffix = value.replace(/[\d+]/g, "");
+    let suffix = value.replace(/\d/g, ""); // <-- Only remove digits, keep '+'
     let frame: number;
     let startTime: number | null = null;
     let duration = 900;
@@ -79,11 +79,21 @@ export const WhoWeAre = () => {
         {/* First row with 3 stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
           {stats.slice(0, 3).map((stat) => {
-            const { display, ref } = useAnimatedNumber(stat.value);
+            const { display, ref } = useAnimatedNumber(stat.value );
+            // Improved regex to capture numbers, +, and suffix correctly
+            const match = display.match(/(\d[\d,]*)(\+?)(.*)$/);
             return (
               <div className="text-center p-3 sm:p-4" key={stat.label}>
-                <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-300">
-                  <span ref={ref}>{display}</span>
+                <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
+                  <span ref={ref}>
+                    {match ? (
+                      <>
+                        <span className="text-white">{match[1]}</span>
+                        {match[2] && <span className="text-white">{match[2]}</span>}
+                        {match[3] && <span>{match[3]}</span>}
+                      </>
+                    ) : display}
+                  </span>
                 </p>
                 <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
                   {stat.label}
@@ -97,10 +107,19 @@ export const WhoWeAre = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
           {stats.slice(3, 6).map((stat) => {
             const { display, ref } = useAnimatedNumber(stat.value);
+            const match = display.match(/(\d[\d,]*)(\+?)(.*)$/);
             return (
               <div className="text-center p-3 sm:p-4" key={stat.label}>
-                <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-300">
-                  <span ref={ref}>{display}</span>
+                <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
+                  <span ref={ref}>
+                    {match ? (
+                      <>
+                        <span className="text-white">{match[1]}</span>
+                        {match[2] && <span className="text-white">{match[2]}</span>}
+                        {match[3] && <span>{match[3]}</span>}
+                      </>
+                    ) : display}
+                  </span>
                 </p>
                 <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
                   {stat.label}

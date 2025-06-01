@@ -34,7 +34,7 @@ const TechStack = () => {
         className="text-center mb-12 max-w-3xl mx-auto"
       >
         <h2 className="text-4xl font-extrabold mb-4 text-purple-900">Blockchain and AI We Build On</h2>
-        <p className="text-[#7b6982] text-lg">
+        <p className="text-[#141015] text-lg">
           We leverage leading technologies to deliver secure, scalable, and intelligent solutions.
         </p>
       </motion.div>
@@ -59,7 +59,7 @@ const TechStack = () => {
                 className="p-5 border border-white/10 rounded-lg bg-[#5d428de6] hover:shadow-lg hover:shadow-purple-600 transition"
               >
                 <h4 className="text-xl font-bold text-white mb-2">{tech.name}</h4>
-                <p className="text-gray-300">{tech.description}</p>
+                <p className="text-white">{tech.description}</p>
               </motion.div>
             ))}
           </div>
@@ -84,7 +84,7 @@ const TechStack = () => {
                 className="p-5 border border-white/10 rounded-lg bg-[#5d428de6] hover:shadow-lg hover:shadow-purple-600 transition"
               >
                 <h4 className="text-xl font-bold text-white mb-2">{tech.name}</h4>
-                <p className="text-gray-300">{tech.description}</p>
+                <p className="text-white">{tech.description}</p>
               </motion.div>
             ))}
           </div>

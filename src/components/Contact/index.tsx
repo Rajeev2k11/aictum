@@ -25,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28 bg-[#1A1325]">
+    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10]">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           {/* Contact Form */}
