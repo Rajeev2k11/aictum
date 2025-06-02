@@ -12,32 +12,17 @@ const Footer = () => {
             <div className="w-full px-4 text-center md:text-left md:w-1/2 lg:w-4/12 xl:w-5/12">
               <div className="mb-8 max-w-[360px] mx-auto md:mx-0 lg:mb-16">
                 <Link href="/" className="mb-6 inline-block md:mb-8">
-                  <Image
-                    src="/images/logo/logo-2.svg"
-                    alt="logo"
-                    className="w-32 dark:hidden md:w-full"
-                    width={140}
-                    height={30}
-                  />
-                  <Image
-                    src="/images/logo/logo.svg"
-                    alt="logo"
-                    className="hidden w-32 dark:block md:w-full"
-                    width={140}
-                    height={30}
-                  />
+                  <Image src="/images/Aictum.png" width={100} height={100} alt="logo" />
+                  
                 </Link>
-                <p className="mb-6 text-sm leading-relaxed text-[#c7a4f7] dark:text-[#e0c3fc] md:text-base md:mb-9">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lobortis.
-                </p>
+               
                 <div className="flex justify-center space-x-6 md:justify-start md:space-x-4 md:space-y-0">
                   <a
                     href="/"
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec]"
+                    className="text-[#375bf8] duration-300 hover:text-[#8ba2ef] dark:text-[#375bf8] dark:hover:text-[#8ba2ef]"
                   >
                     {/* Facebook Icon */}
                     <svg
@@ -59,7 +44,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec]"
+                    className="text-[#ffffff] duration-300 hover:text-[#b8b6b9] dark:text-[#ffffff] dark:hover:text-[#b8b6b9]"
                   >
                     {/* Twitter Icon */}
                     <svg
@@ -83,7 +68,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec]"
+                    className="text-[#ef1313] duration-300 hover:text-[#e98b8c] dark:text-[#ef1313] dark:hover:text-[#e98b8c]"
                   >
                     {/* YouTube Icon */}
                     <svg
@@ -100,7 +85,7 @@ const Footer = () => {
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec]"
+                    className="text-[#122bcb] duration-300 hover:text-[#6d76d9] dark:text-[#122bcb] dark:hover:text-[#6d76d9]"
                   >
                     {/* LinkedIn Icon */}
                     <svg
@@ -126,23 +111,16 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/blog"
-                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
+                      className="text-sm text-[#ffffff] duration-300 hover:text-[#a259ec] dark:text-[#ffffff] dark:hover:text-[#a259ec] md:text-base"
                     >
                       Blog
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
-                    >
-                      Pricing
-                    </Link>
-                  </li>
+                 
                   <li>
                     <Link
                       href="/about"
-                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
+                      className="text-sm text-[#ffffff] duration-300 hover:text-[#a259ec] dark:text-[#ffffff] dark:hover:text-[#a259ec] md:text-base"
                     >
                       About
                     </Link>
@@ -158,30 +136,16 @@ const Footer = () => {
                   Terms
                 </h2>
                 <ul className="space-y-3 md:space-y-4">
-                  <li>
-                    <Link
-                      href="/"
-                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
-                    >
-                      TOS
-                    </Link>
-                  </li>
+                  
                   <li>
                     <Link
                       href="/privacy-policy"
-                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
+                      className="text-sm text-[#ffffff] duration-300 hover:text-[#a259ec] dark:text-[#ffffff] dark:hover:text-[#a259ec] md:text-base"
                     >
                       Privacy Policy
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
-                    >
-                      Refund Policy
-                    </Link>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
@@ -190,31 +154,31 @@ const Footer = () => {
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
               <div className="mb-8 md:mb-12 lg:mb-16">
                 <h2 className="mb-5 text-lg font-bold text-[#e0c3fc] dark:text-[#c7a4f7] md:text-xl md:mb-10">
-                  Support & Help
+                  Contacts
                 </h2>
                 <ul className="space-y-3 md:space-y-4">
                   <li>
+                    <a
+                      href="mailto:team@aictum.com"
+                      className="text-sm text-[#ffffff] duration-300 hover:text-[#a259ec] dark:text-[#ffffff] dark:hover:text-[#a259ec] md:text-base"
+                    >
+                      team@aictum.com
+                    </a>
+                  </li>
+                  <li>
                     <Link
                       href="/contact"
-                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
+                      className="text-sm text-[#ffffff] duration-300 hover:text-[#a259ec] dark:text-[#ffffff] dark:hover:text-[#a259ec] md:text-base"
                     >
-                      Open Support Ticket
+                      Contact Us
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/"
-                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
+                      href="/work-together"
+                      className="text-sm text-[#fbf8ff] duration-300 hover:text-[#a259ec] dark:text-[#ffffff] dark:hover:text-[#a259ec] md:text-base"
                     >
-                      Terms of Use
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/about"
-                      className="text-sm text-[#c7a4f7] duration-300 hover:text-[#a259ec] dark:text-[#e0c3fc] dark:hover:text-[#a259ec] md:text-base"
-                    >
-                      About
+                      Working Together
                     </Link>
                   </li>
                 </ul>
@@ -227,7 +191,7 @@ const Footer = () => {
           
           {/* Copyright */}
           <div className="py-6 md:py-8">
-            <p className="text-center text-xs text-[#c7a4f7] dark:text-[#e0c3fc] sm:text-sm md:text-base">
+            <p className="text-center text-xs text-[#f5f2f9] dark:text-[#e9e9e9] sm:text-sm md:text-base">
               &copy; 2025 Aictum Pvt. Ltd
             </p>
           </div>

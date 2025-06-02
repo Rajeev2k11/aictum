@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import * as motion from 'motion/react-client';
-import { AboutHero } from './AboutHero';
+// import { AboutHero } from './AboutHero';
 import { PurposePhilosophy } from './PurposePhilosophy';
 import { WhoWeAre } from './WhoWeAre';
 import { OurStory } from './OurStory';
@@ -15,7 +15,7 @@ const AboutUs: React.FC = () => {
   return (
     <div className="min-h-screen  bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-gray-100">
       <main className="mx-auto py-16">
-        <AboutHero />
+        {/* <AboutHero /> */}
         <PurposePhilosophy />
         <WhoWeAre />
         <OurStory />
