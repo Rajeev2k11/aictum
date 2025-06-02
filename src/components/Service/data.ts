@@ -5,10 +5,10 @@ export interface ServiceDetail {
   description: string;
   images: string[];
   content: string[];
-  features?: string[];          // Added new field
-  benefits?: string[];         // Added new field
-  caseStudies?: string[];      // Added new field
-  technologies?: string[];     // Added new field
+  features?: string[];          
+  benefits?: string[];         
+  caseStudies?: string[];      
+  technologies?: string[];     
 }
 
 export const servicesData: Record<string, ServiceDetail> = {

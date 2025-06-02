@@ -1,4 +1,4 @@
-import AboutUs from "@/components/About/AboutPage";
+import {WorkTogether} from "@/components/About/WorkTogether";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
 import { Metadata } from "next";
@@ -13,11 +13,10 @@ const AboutPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="About Us"
-        description="We are a global technology powerhouse dedicated to transforming businesses through innovative digital solutions. 
-      Since our founding, we've been pushing boundaries and redefining what's possible in the tech industry."
+        pageName="Working Together"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
       />
-      <AboutUs />
+        <WorkTogether />
     </>
   );
 };
