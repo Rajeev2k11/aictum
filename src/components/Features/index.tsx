@@ -45,7 +45,7 @@ const Features = () => {
             fontVariationSettings: "'wght' 300",
           }}
         >
-          W3X brings personalization to digitalization. Feasible, grounded in
+          Aictum brings personalization to digitalization. Feasible, grounded in
           reality, and tied to the client’s business goals, our digital strategy
           services generate commercial value with custom-tailored digital
           transformation strategies.

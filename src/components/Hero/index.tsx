@@ -1,5 +1,6 @@
 'use client'
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 const Hero = () => {
@@ -147,17 +148,12 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <a
-              href="#"
+              href="/contact"
               className="px-8 py-3 rounded-full bg-[#9345E0] text-white text-lg font-medium hover:bg-[#7d35c4] shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Get Started
+              Have a Product ?
             </a>
-            <a
-              href="#"
-              className="px-8 py-3 rounded-full bg-white text-[#1A1325] border border-gray-300 text-lg font-medium hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Book a Demo
-            </a>
+         
           </motion.div>
         </div>
 
@@ -168,20 +164,14 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
         >
-          <div className="absolute inset-0 rounded-xl overflow-hidden bg-[#9345E0] shadow-2xl flex items-center justify-center">
-            <div className="text-xl font-semibold text-white z-10">AI Dashboard Visualization</div>
-
-            <motion.div
-              className="absolute top-[20%] left-[20%] w-16 h-16 bg-white/10 rounded-full"
-              animate={{ y: [0, -10, 0], opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
-            />
-            <motion.div
-              className="absolute top-[70%] right-[25%] w-12 h-12 bg-white/10 rounded-full"
-              animate={{ y: [0, 10, 0], opacity: [0.5, 0.8, 0.5] }}
-              transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
-            />
-          </div>
+         <Image
+            src="/images/hero/hero.jpg"
+            alt="Hero Image"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg shadow-lg"
+            priority
+          />
         </motion.div>
       </motion.section>
     </div>

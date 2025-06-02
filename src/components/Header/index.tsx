@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 // Updated services data to match our service pages
 const services = {
@@ -99,7 +100,7 @@ export default function Navbar() {
     >
       <div className="container flex items-center justify-between h-16 md:h-20 px-4 sm:px-6">
         <Link href="/" className="flex items-center">
-          <span className="text-2xl font-bold text-white">Aictum</span>
+          <Image src="/images/Aictum.png" width={100} height={100} alt="logo" />
           
         </Link>
 
