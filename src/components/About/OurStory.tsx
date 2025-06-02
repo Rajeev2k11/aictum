@@ -14,7 +14,7 @@ export const OurStory = () => (
         <p className="text-black leading-relaxed">
         Our journey began with a simple yet powerful ambition—to make complex technologies 
         accessible, reliable, and impactful. From early challenges to strategic breakthroughs, 
-        we've consistently emphasized collaboration, innovation, and transparency.
+        we&rsquo;ve consistently emphasized collaboration, innovation, and transparency.
         </p>
 
         <p className="text-black leading-relaxed">
@@ -22,7 +22,7 @@ export const OurStory = () => (
         and dominate through intelligent solutions tailored specifically to their unique needs.
          Driven by passion, guided by expertise, and committed to excellence, we invite you to become a part of our evolving story.<br />
 
-<span className='font-bold '>Together, let's shape a smarter, secure, and more connected future.</span>
+<span className='font-bold '>Together, let&rsquo;s shape a smarter, secure, and more connected future.</span>
 
         </p>
       </div>

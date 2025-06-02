@@ -19,7 +19,7 @@ export const AboutHero = () => (
       className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed"
     >
       We are a global technology powerhouse dedicated to transforming businesses through innovative digital solutions. 
-      Since our founding, we've been pushing boundaries and redefining what's possible in the tech industry.
+      Since our founding, we&rsquo;ve been pushing boundaries and redefining what&rsquo;s possible in the tech industry.
     </motion.p>
   </motion.section>
 );

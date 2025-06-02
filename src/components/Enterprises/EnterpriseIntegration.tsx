@@ -35,7 +35,7 @@ const EnterpriseIntegration: React.FC = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-[#ffffff]"
         >
-          Tech We're Working
+          Tech We&rsquo;re Working
         </motion.h1>
         <motion.h2 
           initial={{ y: -50, opacity: 0 }}

@@ -151,7 +151,7 @@ const Hero = () => {
               href="/contact"
               className="px-8 py-3 rounded-full bg-[#9345E0] text-white text-lg font-medium hover:bg-[#7d35c4] shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Have a Vision? Let's Build It
+              Have a Vision? Let&rsquo;s Build It
             </a>
          
           </motion.div>

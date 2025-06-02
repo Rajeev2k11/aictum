@@ -36,7 +36,7 @@ export const CoreValues = () => (
           </div>
           <h3 className="text-lg sm:text-xl font-bold text-[#d8a7ef] mb-1 sm:mb-2 text-center">Innovation</h3>
           <p className="text-sm sm:text-base text-white text-center leading-relaxed">
-            We don't just follow trends - we set them. Our R&amp;D labs are constantly experimenting with emerging technologies to deliver groundbreaking solutions.
+            We don&rsquo;t just follow trends - we set them. Our R&amp;D labs are constantly experimenting with emerging technologies to deliver groundbreaking solutions.
           </p>
         </motion.div>
 
