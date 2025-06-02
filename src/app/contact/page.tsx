@@ -8,7 +8,7 @@ const ContactPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="Contact Page"
+        pageName="Contact Us"
         description="
 Let's connect and explore possibilities"
       />
