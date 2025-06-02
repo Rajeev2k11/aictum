@@ -1,16 +1,16 @@
 import * as motion from 'motion/react-client';
 
 export const OurStory = () => (
-  <section className="mb-24 bg-gradient-to-b from-[#d5cee0e7] via-[#fdfbff] to-[#32124d] py-12 px-4 ">
+  <section className="mb-24 bg-gradient-to-b from-[#d5cee0e7] via-[#fdfbff] to-[#52217a9c] py-12 px-4 ">
     <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 max-w-6xl mx-auto">
       <div className="flex-1">
-        <h3 className="text-3xl font-medium mb-8 text-purple-900">Our Story</h3>
-        <p className="text-gray-700 mb-6 leading-relaxed">
+        <h3 className="text-3xl font-medium mb-8 text-[#AE69DF]">Our Story</h3>
+        <p className="text-black mb-6 leading-relaxed">
           Founded in 2003 as a small startup with just three engineers, we've grown into a multinational 
           technology leader through relentless innovation and customer-focused solutions. Our journey has 
           been marked by milestones that reflect our commitment to pushing technological boundaries.
         </p>
-        <p className="text-gray-700 leading-relaxed">
+        <p className="text-black leading-relaxed">
           What sets us apart is our culture of continuous learning and our belief that technology should 
           be both powerful and accessible. We invest heavily in research and development, with 30% of our 
           revenue dedicated to creating the next generation of solutions.

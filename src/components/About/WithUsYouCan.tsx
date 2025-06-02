@@ -58,18 +58,18 @@ export const WithUsYouCan = () => {
             className={`
               flex flex-col ${step.reverse ? 'sm:flex-col-reverse md:flex-row-reverse' : 'sm:flex-col-reverse md:flex-row'}
               items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10
-              bg-[#1e1835]/50 rounded-xl p-4 sm:p-6 md:p-8
-              border border-purple-900/30 transition-all duration-300
+              rounded-xl p-4 sm:p-6 md:p-8
+              transition-all duration-300
             `}
           >
             {/* Text Content */}
             <div className="w-full md:w-1/2">
               <div className="mb-2 sm:mb-3">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-purple-200">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#AE69DF]">
                   {step.title}
                 </h3>
               </div>
-              <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed sm:leading-loose">
+              <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed sm:leading-loose">
                 {step.description}
               </p>
             </div>

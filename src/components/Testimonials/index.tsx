@@ -32,7 +32,7 @@ const features = [
 
 const Testimonials = () => {
   return (
-    <section className="relative z-10 py-20 bg-[#0C0C11] text-white overflow-hidden">
+    <section className="relative z-10 py-20 bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-white overflow-hidden">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Empowering the Digital Future with Innovation and Excellence"

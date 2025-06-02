@@ -14,7 +14,7 @@ export default function Video() {
         <div className="container">
           <SectionTitle
             title="Building a Web3 or AI product? Need a trusted tech partner to bring your vision to life?"
-            paragraph="We’re here to make it happen — with cutting-edge skills, startup speed, and enterprise-level quality.
+            videoparagraph="We’re here to make it happen — with cutting-edge skills, startup speed, and enterprise-level quality.
 
 At W3X, we don’t just deliver code.
 At Aictum, we don’t just deliver code.

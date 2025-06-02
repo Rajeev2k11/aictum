@@ -13,7 +13,7 @@ import { WorkTogether } from './WorkTogether';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1b152e] via-voilet-950 to-[#20183d] text-gray-100">
+    <div className="min-h-screen  bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-gray-100">
       <main className="mx-auto py-16">
         <AboutHero />
         <PurposePhilosophy />

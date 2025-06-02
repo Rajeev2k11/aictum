@@ -67,8 +67,8 @@ function OurProcessCard({ title, text, index }) {
     <motion.div
       className={`w-full md:w-[80%] lg:w-[70%] xl:w-[60%] min-h-[180px] sm:min-h-[220px] md:min-h-[250px] flex flex-col items-center justify-center border border-white/10 rounded-lg p-6 my-4 shadow-md transition duration-300 ${
         index % 2 === 0
-          ? "self-end bg-[#1F1531]"
-          : "self-start bg-[#1F1531]"
+          ? "self-end bg-[#572b7dcc]"
+          : "self-start bg-[#572b7dcc]"
       } hover:shadow-purple-600/30`}
       initial={{
         opacity: 0,
@@ -83,13 +83,13 @@ function OurProcessCard({ title, text, index }) {
       }}
       viewport={{ once: true }}
     >
-      <div className="text-purple-400 mb-4">
+      <div className="text-[#ffffff] mb-4">
         {icons[titleNumber]}
       </div>
-      <h3 className="text-purple-400 text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-center">
+      <h3 className="text-[#d8a7ef] text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-center">
         {title}
       </h3>
-      <p className="text-gray-300 text-sm sm:text-base md:text-lg text-center leading-relaxed">
+      <p className="text-white text-sm sm:text-base md:text-lg text-center leading-relaxed">
         {text}
       </p>
     </motion.div>

@@ -26,7 +26,7 @@ const Features = () => {
   return (
     <section
       id="features"
-      className="py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#140D1F] via-[#2E2450] to-[#0A0A10] text-white"
+      className="py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-white"
     >
       <div className="container px-4 mx-auto">
         <FadedToBold text="Our Services" />

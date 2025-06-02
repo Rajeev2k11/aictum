@@ -16,7 +16,7 @@ export const AboutHero = () => (
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
       viewport={{ once: false }}
-      className="text-xl md:text-2xl text-purple-300 max-w-4xl mx-auto leading-relaxed"
+      className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed"
     >
       We are a global technology powerhouse dedicated to transforming businesses through innovative digital solutions. 
       Since our founding, we've been pushing boundaries and redefining what's possible in the tech industry.

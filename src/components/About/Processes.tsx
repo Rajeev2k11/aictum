@@ -34,10 +34,13 @@ const Processes = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-full px-4 py-16 sm:px-6 md:py-20 lg:py-24 text-white 
-                  bg-[#120C1C] 
-                  [background-image:radial-gradient(circle,rgba(255,255,255,0.1)_1.5px,transparent_1px)] 
-                  [background-size:20px_20px]">
+    <section
+      className="
+        mx-auto max-w-full px-4 py-16 sm:px-6 md:py-20 lg:py-24 text-white
+        [background-image:radial-gradient(circle,rgba(255,255,255,0.1)_1.5px,transparent_1px),linear-gradient(to_bottom_right,#1A1325,#251636,#0A0A10)]
+        [background-size:20px_20px,cover]
+      "
+    >
       <div className="mx-auto max-w-4xl text-center">
         <SectionTitle
           title="Our Process"
