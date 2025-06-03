@@ -7,7 +7,7 @@ export const WithUsYouCan = () => {
       description:
         "Leverage our expertise to completely reinvent your operations, customer experiences, and market positioning through digital transformation.",
       image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
+        "https://img.freepik.com/premium-photo/kpi-key-performance-indicator-business-concept_31965-3300.jpg?uid=R200268884&ga=GA1.1.649360656.1737985464&semt=ais_hybrid&w=740",
       reverse: false,
     },
     {
@@ -15,7 +15,7 @@ export const WithUsYouCan = () => {
       description:
         "Our solutions are built with scalability and adaptability in mind, ensuring your tech stack evolves with your needs and the market.",
       image:
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+        "https://img.freepik.com/premium-photo/future-artificial-intelligence-robot-cyborg_31965-5456.jpg?uid=R200268884&ga=GA1.1.649360656.1737985464&semt=ais_hybrid&w=740",
       reverse: true,
     },
     {
@@ -23,7 +23,7 @@ export const WithUsYouCan = () => {
       description:
         "Access our cutting-edge labs and innovation teams to co-create solutions that give you a competitive edge.",
       image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+        "https://img.freepik.com/premium-photo/innovative-wireframe-illustration-hand-launching-futuristic-rocket_124865-70425.jpg?uid=R200268884&ga=GA1.1.649360656.1737985464&semt=ais_hybrid&w=740",
       reverse: false,
     },
     {
@@ -31,7 +31,7 @@ export const WithUsYouCan = () => {
       description:
         "Streamline your processes with our intelligent automation and AI-powered workflow solutions that reduce costs and improve efficiency.",
       image:
-        "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+        "https://img.freepik.com/free-photo/man-robot-working-together-high-tech-office_23-2151966702.jpg?ga=GA1.1.649360656.1737985464&semt=ais_hybrid&w=740",
       reverse: true,
     },
   ];

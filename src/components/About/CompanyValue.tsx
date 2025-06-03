@@ -56,22 +56,14 @@ const CompanyValue = () => {
 
           {/* Image Section */}
           <div className="w-full px-1 lg:w-1/2 lg:px-3">
-            <div className="relative mx-auto aspect-[25/24] w-full max-w-[280px] sm:max-w-[350px] md:max-w-[420px] lg:max-w-[500px]">
-              <Image
-                src="/images/about/about-image.svg"
-                alt="about-light"
-                fill
-                className="mx-auto hidden dark:hidden sm:block drop-shadow-lg"
-                sizes="(max-width: 640px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 420px, 500px"
-              />
-              <Image
-                src="/images/about/about-image-dark.svg"
-                alt="about-dark"
-                fill
-                className="mx-auto hidden dark:block sm:block drop-shadow-lg"
-                sizes="(max-width: 640px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 420px, 500px"
-              />
-            </div>
+          <div className="relative mx-auto w-full max-w-[280px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[550px] mt-2.5">
+          <img
+          src="https://img.freepik.com/premium-photo/top-view-business-team-making-scrum-task-board-meeting-room-convocation_31965-499177.jpg?ga=GA1.1.649360656.1737985464&semt=ais_hybrid&w=740"
+          className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover rounded-lg shadow-md ml-2 mr-2"
+          alt="Company Value"
+          loading="lazy"
+          />
+        </div>
           </div>
         </div>
       </div>
