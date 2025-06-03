@@ -5,28 +5,28 @@ import SingleTestimonial from "./SingleTestimonial";
 
 const features = [
   {
-    title: "UNIVERSAL",
-    subtitle: "Market Access",
+    title: "INTELLIGENT",
+    subtitle: "AI & ML Solutions",
     description:
-      "Gain the freedom to explore opportunities in both financial worlds. Whether you're trading derivatives on BTC, ETH, Alt coins, MEME tokens or native crypto assets, EthosX gives you direct access to the markets you need, without the hassle of intermediaries.",
+      "Harness the power of artificial intelligence and machine learning to automate and enhance your business processes. From predictive analytics to real-time data insights, our advanced AI solutions streamline operations, improve efficiency, and drive smarter decisions."
   },
   {
-    title: "TRANSPARENT",
-    subtitle: "Transactions",
+    title: "SECURE",
+    subtitle: "Blockchain Integration",
     description:
-      "With EthosX, you are in charge of your funds and every transaction is clear and straightforward. You'll always know where your money is going and how it's being handled, giving you the confidence to trade smarter.",
+      "Experience unparalleled transparency and security with our custom blockchain solutions. We develop decentralized applications, secure smart contracts, and robust blockchain-based platforms to enhance trust and efficiency across your business ecosystem.",
   },
   {
-    title: "EFFICIENCY",
-    subtitle: "Redefined",
+    title: "VISIONARY",
+    subtitle: "Computer Vision & NLP",
     description:
-      "No more waiting or hidden fees. EthosX streamlines the trading process, ensuring that your transactions are fast, efficient, and cost-effective. EthosX has redefined the relationship between risk & return.",
+      "Gain insightful analytics and automated content management through our state-of-the-art Computer Vision and Natural Language Processing technologies. From facial recognition to intelligent chatbots, we equip your business with tools that improve user experience and operational accuracy.",
   },
   {
-    title: "EMPOWERING",
-    subtitle: "Your Trades",
+    title: "INNOVATIVE",
+    subtitle: "Generative AI & Chatbots",
     description:
-      "EthosX puts the power in your hands, giving you the tools and support you need to make informed trading decisions. Our platform is designed to help you succeed in traditional and crypto markets.",
+      "Transform customer interactions and content creation through our innovative generative AI and chatbot solutions. AICTUM's conversational AI agents deliver personalized, engaging experiences, while our generative models enable automated, compelling content production to captivate your audience.",
   },
 ];
 

@@ -23,8 +23,8 @@ export const PurposePhilosophy = () => (
         <h3 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 text-[#d8a7ef]">Our Mission</h3>
         <p className="text-white leading-relaxed text-sm sm:text-base">
           To empower organizations worldwide with cutting-edge technology solutions that drive growth, 
-          efficiency, and innovation. We believe in creating tools that not only solve today's problems 
-          but anticipate tomorrow's challenges.
+          efficiency, and innovation. We believe in creating tools that not only solve today&rsquo;s problems 
+          but anticipate tomorrow&rsquo;s challenges.
         </p>
       </motion.div>
       <motion.div 
@@ -37,7 +37,7 @@ export const PurposePhilosophy = () => (
       >
         <h3 className="text-xl sm:text-2xl font-medium mb-3 sm:mb-4 text-[#d8a7ef]">Our Vision</h3>
         <p className="text-white leading-relaxed text-sm sm:text-base">
-          To be the world's most trusted technology partner, recognized for our relentless pursuit of 
+          To be the world&rsquo;s most trusted technology partner, recognized for our relentless pursuit of 
           excellence and our commitment to making a positive impact through technology. We envision 
           a future where our solutions become the backbone of digital transformation across industries.
         </p>

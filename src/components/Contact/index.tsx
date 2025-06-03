@@ -32,7 +32,7 @@ const Contact = () => {
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
             <div className="mb-12 rounded-md bg-[#473062] px-8 py-11 shadow-lg sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
               <h2 className="mb-3 text-2xl font-bold text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                Interested in Working Together? Let's Talk!
+                Interested in Working Together? Let&rsquo;s Talk!
               </h2>
               <p className="mb-12 text-base font-medium text-[#CCCCCC]">
                 Our support team will get back to you ASAP via email.
@@ -103,7 +103,7 @@ const Contact = () => {
                       type="submit"
                       className="rounded-md bg-[#9345E0] px-9 py-4 text-base font-medium text-white transition duration-300 hover:bg-[#B76CFF]"
                     >
-                      Let's Talk
+                      Let&rsquo;s Talk
                     </button>
                   </div>
                 </div>
