@@ -40,7 +40,7 @@ export const WorkTogether = () => (
         >
           {/* Schedule */}
           <motion.a
-            href="https://calendly.com/rajeev@aictum.com"
+            href="https://calendly.com/team-aictum"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
