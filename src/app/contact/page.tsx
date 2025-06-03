@@ -5,7 +5,6 @@ import { Metadata } from "next";
 
 
 
-
 const ContactPage = () => {
   return (
     <>
