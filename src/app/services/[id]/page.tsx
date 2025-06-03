@@ -6,6 +6,8 @@ import Image from "next/image";
 import { FaCheckCircle, FaLightbulb, FaChartLine, FaTools, FaShieldAlt, FaHandshake } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { GiProgression } from "react-icons/gi";
+import Link from "next/link";
+import AllService from "@/app/all-service/page"; 
 
 export default function ServiceDetailPage() {
   const searchParams = useSearchParams();
@@ -238,9 +240,11 @@ export default function ServiceDetailPage() {
           <button className="px-8 py-3 bg-gradient-to-r from-[#c9b4ff] to-[#8a5af9] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity duration-300 shadow-lg">
             Contact Our Team
           </button>
-          <button className="px-8 py-3 bg-transparent text-[#c9b4ff] font-semibold rounded-lg border-2 border-[#c9b4ff] hover:bg-[#c9b4ff]/10 transition-colors duration-300">
-            View All Services
-          </button>
+          <Link href="/all-service" passHref>
+  <button className="px-8 py-3 bg-transparent text-[#c9b4ff] font-semibold rounded-lg border-2 border-[#c9b4ff] hover:bg-[#c9b4ff]/10 transition-colors duration-300">
+    View All Services
+  </button>
+</Link>
         </div>
       </section>
     </main>
