@@ -60,8 +60,8 @@ const Features = () => {
 
         {/* CTA Button */}
         <div className="mt-14 flex justify-end">
-          <a
-            href="#_"
+          <Link
+            href="/all-service"
             className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-[#9345E0] rounded-full shadow-md group"
           >
             <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#9345E0] group-hover:translate-x-0 ease">
@@ -84,7 +84,7 @@ const Features = () => {
               → Explore all services
             </span>
             <span className="relative invisible">→ Explore all services</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

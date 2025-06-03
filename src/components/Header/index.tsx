@@ -171,7 +171,7 @@ export default function Navbar() {
 )}
           </div>
 
-          {['About', 'Contact', 'Blog', 'Team'].map((label) => (
+          {['About', 'Contact', 'Blog'].map((label) => (
             <Button
               key={label}
               variant="ghost"
@@ -218,7 +218,7 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center px-5 pt-5 pb-4 border-b border-[#9345E0]/20">
-                  <span className="text-2xl font-bold text-white">W3X</span>
+                 <Image src="/images/Aictum.png" width={100} height={100} alt="logo" />
                 </div>
 
                 {/* Navigation */}
@@ -269,7 +269,7 @@ export default function Navbar() {
                   </div>
 
                   {/* Other Links */}
-                  {['About', 'Contact', 'Blog', 'Team'].map((label) => (
+                  {['About', 'Contact', 'Blog'].map((label) => (
                     <Link
                       key={label}
                       href={`/${label.toLowerCase()}`}
