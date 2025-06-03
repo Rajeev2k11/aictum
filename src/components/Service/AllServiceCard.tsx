@@ -113,51 +113,60 @@ const getServiceLink = (category: string, item: string) => {
 
 export function AllServiceCard() {
   return (
-    <div className="py-8 px-4  bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-gray-100 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-white mb-12">
-        Explore All Services
-      </h2>
-      
-      {Object.entries(services).map(([category, data]) => (
-        <div key={category} className="mb-16">
-          <h3 className="text-2xl font-semibold text-[#9345E0] mb-8">
-            {category}
-          </h3>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {data.items.map((item) => (
-              <Link
-                key={item.title}
-                href={getServiceLink(category, item.title)}
-                className={cn(
-                  "group bg-[#1c1b1e] border border-[#9345E0]/40 rounded-xl overflow-hidden",
-                  "shadow-lg hover:shadow-[#9345E0]/30 transition-all duration-300",
-                  "hover:border-[#9345E0]/70 h-full flex flex-col"
-                )}
-              >
-                <div className="h-40 overflow-hidden">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-5 flex-1 flex flex-col">
-                  <h4 className="text-lg font-medium text-white mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-gray-300 flex-1">
-                    {item.description}
-                  </p>
-                  <div className="mt-4 text-[#9345E0] text-sm font-medium group-hover:underline">
-                    Explore more →
+    <div className="relative min-h-screen w-full flex justify-center items-start">
+      {/* Responsive full background gradient */}
+      <div
+        className="fixed inset-0 -z-10"
+        aria-hidden="true"
+      >
+        <div className="w-full h-full bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10]" />
+        {/* Optional: Add a subtle overlay for extra depth */}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+      <div className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl w-full mx-auto text-gray-100">
+        <h2 className="text-3xl font-bold text-center text-white mb-12">
+          Explore All Services
+        </h2>
+        {Object.entries(services).map(([category, data]) => (
+          <div key={category} className="mb-16">
+            <h3 className="text-2xl font-semibold text-[#9345E0] mb-8">
+              {category}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {data.items.map((item) => (
+                <Link
+                  key={item.title}
+                  href={getServiceLink(category, item.title)}
+                  className={cn(
+                    "group bg-[#1c1b1e] border border-[#9345E0]/40 rounded-xl overflow-hidden",
+                    "shadow-lg hover:shadow-[#9345E0]/30 transition-all duration-300",
+                    "hover:border-[#9345E0]/70 h-full flex flex-col"
+                  )}
+                >
+                  <div className="h-40 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                </div>
-              </Link>
-            ))}
+                  <div className="p-5 flex-1 flex flex-col">
+                    <h4 className="text-lg font-medium text-white mb-2">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-gray-300 flex-1">
+                      {item.description}
+                    </p>
+                    <div className="mt-4 text-[#9345E0] text-sm font-medium group-hover:underline">
+                      Explore more →
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

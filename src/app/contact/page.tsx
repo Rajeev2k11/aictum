@@ -4,6 +4,8 @@ import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 
+
+
 const ContactPage = () => {
   return (
     <>

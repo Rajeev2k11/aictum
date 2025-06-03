@@ -9,7 +9,7 @@ export const AboutHero = () => (
     className="text-center mb-20"
   >
     <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-500">
-      <span className='text-white'>About</span> Us
+      <span className='text-white'>About</span>
     </h1>
     <motion.p 
       initial={{ opacity: 0, y: 20 }}
