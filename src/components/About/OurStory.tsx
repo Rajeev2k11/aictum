@@ -1,4 +1,5 @@
 import * as motion from 'motion/react-client';
+import Image from 'next/image';
 
 export const OurStory = () => (
   <section className="mb-24 bg-gradient-to-b from-[#d5cee0e7] via-[#fdfbff] to-[#52217a9c] py-12 px-4 ">
@@ -27,7 +28,7 @@ export const OurStory = () => (
         </p>
       </div>
       <div className="flex-1 flex justify-center">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Our Story"
           className="rounded-xl shadow-lg w-full max-w-md md:max-w-lg object-cover h-[350px] md:h-[400px]"

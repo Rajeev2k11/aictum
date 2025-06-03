@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const services = {
   "AI & ML Solutions": {
@@ -144,7 +145,7 @@ export function AllServiceCard() {
                   )}
                 >
                   <div className="h-40 overflow-hidden">
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import * as motion from 'motion/react-client';
+import Image from 'next/image';
 
 const HiringModelsTabs: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'fixed' | 'dedicated' | 'timeMaterial'>('fixed');
@@ -183,7 +184,7 @@ const HiringModelsTabs: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:w-1/2 flex items-center justify-center mt-6 lg:mt-0"
           >
-            <img 
+            <Image
               src={tabContents[activeTab].image}
               alt={tabContents[activeTab].title}
               className="rounded-lg shadow-md w-full max-h-64 md:max-h-80 lg:max-h-96 object-cover border-2 border-[#9345E0]/30"

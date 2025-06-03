@@ -47,6 +47,10 @@ const Processes = () => {
           paragraph="We follow a proven process to bring your ideas to life with precision and quality."
           center
           mb="mb-14 md:mb-20"
+          viedoparagraph=""
+          color="#e6d6fa"
+
+          
         />
       </div>
 
