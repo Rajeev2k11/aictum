@@ -237,9 +237,11 @@ export default function ServiceDetailPage() {
           Whether you need a custom solution or expert consultation, we&rsquo;re here to help bring your vision to life.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link href="/contact" passHref>
           <button className="px-8 py-3 bg-gradient-to-r from-[#c9b4ff] to-[#8a5af9] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity duration-300 shadow-lg">
             Contact Our Team
           </button>
+          </Link>
           <Link href="/all-service" passHref>
   <button className="px-8 py-3 bg-transparent text-[#c9b4ff] font-semibold rounded-lg border-2 border-[#c9b4ff] hover:bg-[#c9b4ff]/10 transition-colors duration-300">
     View All Services
