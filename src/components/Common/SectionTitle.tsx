@@ -3,14 +3,14 @@ import { color } from "motion";
 const SectionTitle = ({
   title,
   paragraph,
-  videoparagraph,
+  videoparagraph = "",
   width = "1000px",
   center,
   mb = "100px",
 }: {
   title: string;
   paragraph: string;
-  viedoparagraph: string;
+  videoparagraph?: string;
   width?: string;
   center?: boolean;
   mb?: string;

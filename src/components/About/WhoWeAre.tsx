@@ -1,64 +1,67 @@
 import * as motion from 'motion/react-client';
 import React, { useEffect, useRef, useState } from "react";
 
+const useAnimatedNumber = (value: string) => {
+  const [display, setDisplay] = useState("0");
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    let start = 0;
+    let end = parseInt(value.replace(/\D/g, "")) || 0;
+    let suffix = value.replace(/\d/g, "");
+    let frame: number;
+    let startTime: number | null = null;
+    let duration = 900;
+
+    function animate(ts: number) {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      const current = Math.floor(progress * (end - start) + start);
+      setDisplay(current.toLocaleString() + suffix);
+      if (progress < 1) {
+        frame = requestAnimationFrame(animate);
+      }
+    }
+
+    let observer: IntersectionObserver | null = null;
+    if (ref.current) {
+      observer = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            requestAnimationFrame(animate);
+            observer?.disconnect();
+          }
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      observer?.disconnect();
+    };
+  }, [value]);
+
+  return { display, ref };
+};
 
 export const WhoWeAre = () => {
-  const stats = [
-    { value: "20+", label: "Years in Business" },
-    { value: "50+", label: "Global Offices" },
-    { value: "150+", label: "Products Launched" },
-    { value: "500+", label: "Team Members" },
-    { value: "2000+", label: "Satisfied Clients" },
-    { value: "10M+", label: "Users Worldwide" },
-  ];
+  const stat1 = useAnimatedNumber("20+");
+  const stat2 = useAnimatedNumber("50+");
+  const stat3 = useAnimatedNumber("150+");
+  const stat4 = useAnimatedNumber("500+");
+  const stat5 = useAnimatedNumber("2000+");
+  const stat6 = useAnimatedNumber("10M+");
 
-  // Fix: call hooks outside map
-  const useAnimatedNumber = (value: string) => {
-    const [display, setDisplay] = useState("0");
-    const ref = useRef<HTMLSpanElement>(null);
-  
-    useEffect(() => {
-      let start = 0;
-      let end = parseInt(value.replace(/\D/g, "")) || 0;
-      let suffix = value.replace(/\d/g, ""); // <-- Only remove digits, keep '+'
-      let frame: number;
-      let startTime: number | null = null;
-      let duration = 900;
-  
-      function animate(ts: number) {
-        if (!startTime) startTime = ts;
-        const progress = Math.min((ts - startTime) / duration, 1);
-        const current = Math.floor(progress * (end - start) + start);
-        setDisplay(current.toLocaleString() + suffix);
-        if (progress < 1) {
-          frame = requestAnimationFrame(animate);
-        }
-      }
-  
-      let observer: IntersectionObserver | null = null;
-      if (ref.current) {
-        observer = new window.IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              requestAnimationFrame(animate);
-              observer?.disconnect();
-            }
-          },
-          { threshold: 0.5 }
-        );
-        observer.observe(ref.current);
-      }
-  
-      return () => {
-        if (frame) cancelAnimationFrame(frame);
-        observer?.disconnect();
-      };
-      // eslint-disable-next-line
-    }, [value]);
-  
-    return { display, ref };
-  };
-  
+  const stats = [
+    { label: "Years in Business", ...stat1 },
+    { label: "Global Offices", ...stat2 },
+    { label: "Products Launched", ...stat3 },
+    { label: "Team Members", ...stat4 },
+    { label: "Satisfied Clients", ...stat5 },
+    { label: "Users Worldwide", ...stat6 },
+  ];
 
   return (
     <section className="mb-16 md:mb-24 lg:mb-32 px-4 sm:px-6 lg:px-8">
@@ -81,7 +84,7 @@ export const WhoWeAre = () => {
       >
         {/* First row */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          {animatedStats.slice(0, 3).map((stat) => {
+          {stats.slice(0, 3).map((stat) => {
             const match = stat.display.match(/(\d[\d,]*)(\+?)(.*)$/);
             return (
               <div className="text-center p-3 sm:p-4" key={stat.label}>
@@ -106,7 +109,7 @@ export const WhoWeAre = () => {
 
         {/* Second row */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          {animatedStats.slice(3, 6).map((stat) => {
+          {stats.slice(3, 6).map((stat) => {
             const match = stat.display.match(/(\d[\d,]*)(\+?)(.*)$/);
             return (
               <div className="text-center p-3 sm:p-4" key={stat.label}>
