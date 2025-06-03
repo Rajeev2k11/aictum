@@ -1,6 +1,7 @@
 // data/services.ts
 
 export interface ServiceDetail {
+  [x: string]: any;
   title: string;
   description: string;
   images: string[];

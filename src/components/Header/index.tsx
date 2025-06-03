@@ -171,7 +171,7 @@ export default function Navbar() {
 )}
           </div>
 
-          {['About', 'Contact', 'Blog', 'Team'].map((label) => (
+          {['About', 'Contact', 'Blog'].map((label) => (
             <Button
               key={label}
               variant="ghost"
@@ -269,7 +269,7 @@ export default function Navbar() {
                   </div>
 
                   {/* Other Links */}
-                  {['About', 'Contact', 'Blog', 'Team'].map((label) => (
+                  {['About', 'Contact', 'Blog'].map((label) => (
                     <Link
                       key={label}
                       href={`/${label.toLowerCase()}`}
