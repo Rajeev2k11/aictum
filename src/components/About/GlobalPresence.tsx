@@ -28,14 +28,13 @@ export const GlobalPresence = () => (
         >
           <h3 className="text-xl sm:text-2xl font-medium mb-3 md:mb-4 text-[#d8a7ef]">Our Headquarters</h3>
           <p className="text-sm sm:text-base text-white mb-3 md:mb-4 leading-relaxed">
-            Our global headquarters in San Francisco serves as our 
-            executive leadership and primary research facilities. This 200,000 sq ft campus 
-            includes state-of-the-art labs and collaborative workspaces.
+          We are proudly headquartered in Delhi, India — a growing hub for cutting-edge technology and innovation. 
+          Our office serves as the central base for all client operations, product development, and research in AI, Blockchain, and Software Engineering.
           </p>
           <p className="text-sm sm:text-base text-white leading-relaxed">
-            <strong>Address:</strong> 123 Tech Boulevard, San Francisco, CA 94107<br />
-            <strong>Phone:</strong> +1 (555) 123-4567<br />
-            <strong>Email:</strong> headquarters@company.com
+            <strong>Address:</strong> Gaur Complex, Sector 16B <br />
+            <strong>Phone:</strong> +91 7209236123<br />
+            <strong>Email:</strong> team@aictum.com
           </p>
         </motion.div>
         
@@ -45,18 +44,13 @@ export const GlobalPresence = () => (
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
         >
-          <h3 className="text-xl sm:text-2xl font-medium mb-3 md:mb-4 text-[#d8a7ef]">Regional Offices</h3>
+          <h3 className="text-xl sm:text-2xl font-medium mb-3 md:mb-4 text-[#d8a7ef]">Centralized & Focused</h3>
           <p className="text-sm sm:text-base text-white leading-relaxed">
-            We operate in major tech hubs across North America, Europe, Asia, and Australia. 
-            Our regional offices are strategically located to serve our global client base with 
-            local expertise and 24/7 support.
+          We operate from a single location to maintain a lean, highly efficient, and skilled team. This model allows us to provide seamless service to clients across the globe with agile communication, 24/7 availability, and deep technical expertise from one cohesive hub.
           </p>
-          <ul className="mt-3 md:mt-4 space-y-1 sm:space-y-2 text-sm sm:text-base text-white">
-            <li>• London (EMEA Headquarters)</li>
-            <li>• Singapore (APAC Headquarters)</li>
-            <li>• Berlin (AI Research Center)</li>
-            <li>• Tokyo (IoT Innovation Lab)</li>
-          </ul>
+          <p className="text-sm sm:text-base text-white leading-relaxed">
+            Our team is dedicated to delivering exceptional results, leveraging the latest technologies and methodologies to drive innovation and success for our clients.
+          </p>
         </motion.div>
       </div>
       

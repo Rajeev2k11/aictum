@@ -31,7 +31,7 @@ const CompanyValue = () => {
           {/* Text + List Section */}
           <div className="w-full px-1 lg:w-1/2 lg:px-3">
             <h2 className="mb-6 text-lg leading-relaxed text-white sm:mb-8 sm:text-xl md:text-2xl md:leading-relaxed">
-              At every step of your digital journey, we're right beside you. From
+              At every step of your digital journey, we&rsquo;re right beside you. From
               idea to launch — and beyond — we ensure your vision is built,
               scaled, and supported with care.
             </h2>

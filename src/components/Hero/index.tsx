@@ -130,7 +130,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Unlock the Power of <span className="text-[#9345E0]">AI</span>
+            Build the Future with <span className="text-[#9345E0]">AI & Web3</span>
           </motion.h1>
           <motion.p
             className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto"
@@ -138,8 +138,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Build intelligent conversational experiences with our AI platform.
-            Transform your business with cutting-edge conversational AI solutions.
+           From smart automation to decentralized solutions — we help startups and enterprises 
+           launch cutting-edge products using AI and Blockchain technology.
           </motion.p>
           <motion.div
             className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
@@ -151,7 +151,7 @@ const Hero = () => {
               href="/contact"
               className="px-8 py-3 rounded-full bg-[#9345E0] text-white text-lg font-medium hover:bg-[#7d35c4] shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              Have a Product ?
+              Have a Vision? Let&rsquo;s Build It
             </a>
          
           </motion.div>

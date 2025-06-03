@@ -29,7 +29,7 @@ export const WorkTogether = () => (
           Interested in Working Together?
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed">
-          We're interested in hearing your ideas. Before we proceed, we'll send you a Non-Disclosure Agreement (NDA) to ensure the confidentiality of all information shared. Your privacy is our priority.
+          We&rsquo;re interested in hearing your ideas. Before we proceed, we&rsquo;ll send you a Non-Disclosure Agreement (NDA) to ensure the confidentiality of all information shared. Your privacy is our priority.
         </p>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
