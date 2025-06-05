@@ -55,12 +55,19 @@ export const WhoWeAre = () => {
   const stat6 = useAnimatedNumber("10M+");
 
   const stats = [
-    { label: "Years in Business", ...stat1 },
-    { label: "Global Offices", ...stat2 },
-    { label: "Products Launched", ...stat3 },
-    { label: "Team Members", ...stat4 },
-    { label: "Satisfied Clients", ...stat5 },
-    { label: "Users Worldwide", ...stat6 },
+    { value: "20+", label: "Years in Business" },
+    { value: "50+", label: "Global Offices" },
+    { value: "150+", label: "Products Launched" },
+    { value: "500+", label: "Team Members" },
+    { value: "2000+", label: "Satisfied Clients" },
+    { value: "10M+", label: "Users Worldwide" },
+  ];
+
+  // Split stats into 3 rows of 2 items each
+  const rows = [
+    stats.slice(0, 2),
+    stats.slice(2, 4),
+    stats.slice(4, 6),
   ];
 
   return (
@@ -82,55 +89,32 @@ export const WhoWeAre = () => {
         viewport={{ once: false }}
         className="flex flex-col gap-6 md:gap-8 mb-12 md:mb-16"
       >
-        {/* First row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          {stats.slice(0, 3).map((stat) => {
-            const match = stat.display.match(/(\d[\d,]*)(\+?)(.*)$/);
-            return (
-              <div className="text-center p-3 sm:p-4" key={stat.label}>
-                <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
-                  <span ref={stat.ref}>
-                    {match ? (
-                      <>
-                        <span className="text-white">{match[1]}</span>
-                        {match[2] && <span className="text-white">{match[2]}</span>}
-                        {match[3] && <span>{match[3]}</span>}
-                      </>
-                    ) : stat.display}
-                  </span>
-                </p>
-                <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
-                  {stat.label}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Second row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          {stats.slice(3, 6).map((stat) => {
-            const match = stat.display.match(/(\d[\d,]*)(\+?)(.*)$/);
-            return (
-              <div className="text-center p-3 sm:p-4" key={stat.label}>
-                <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
-                  <span ref={stat.ref}>
-                    {match ? (
-                      <>
-                        <span className="text-white">{match[1]}</span>
-                        {match[2] && <span className="text-white">{match[2]}</span>}
-                        {match[3] && <span>{match[3]}</span>}
-                      </>
-                    ) : stat.display}
-                  </span>
-                </p>
-                <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
-                  {stat.label}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+        {rows.map((row, rowIdx) => (
+          <div key={rowIdx} className="grid grid-cols-2 gap-4 sm:gap-6">
+            {row.map((stat) => {
+              const { display, ref } = useAnimatedNumber(stat.value);
+              const match = display.match(/(\d[\d,]*)(\+?)(.*)$/);
+              return (
+                <div className="text-center p-3 sm:p-4" key={stat.label}>
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
+                    <span ref={ref}>
+                      {match ? (
+                        <>
+                          <span className="text-white">{match[1]}</span>
+                          {match[2] && <span className="text-white">{match[2]}</span>}
+                          {match[3] && <span>{match[3]}</span>}
+                        </>
+                      ) : display}
+                    </span>
+                  </p>
+                  <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
+                    {stat.label}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        ))}
       </motion.div>
     </section>
   );
