@@ -146,6 +146,10 @@ export function AllServiceCard() {
                 >
                   <div className="h-40 overflow-hidden">
                     <Image
+                      width={500}
+                      height={300}
+                      loading="lazy"
+
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

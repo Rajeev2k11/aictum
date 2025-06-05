@@ -41,19 +41,13 @@ const useAnimatedNumber = (value: string) => {
       if (frame) cancelAnimationFrame(frame);
       observer?.disconnect();
     };
+    // eslint-disable-next-line
   }, [value]);
 
   return { display, ref };
 };
 
 export const WhoWeAre = () => {
-  const stat1 = useAnimatedNumber("20+");
-  const stat2 = useAnimatedNumber("50+");
-  const stat3 = useAnimatedNumber("150+");
-  const stat4 = useAnimatedNumber("500+");
-  const stat5 = useAnimatedNumber("2000+");
-  const stat6 = useAnimatedNumber("10M+");
-
   const stats = [
     { value: "20+", label: "Years in Business" },
     { value: "50+", label: "Global Offices" },
@@ -81,7 +75,7 @@ export const WhoWeAre = () => {
       >
         Who We Are
       </motion.h2>
-
+      
       <motion.div 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +87,7 @@ export const WhoWeAre = () => {
           <div key={rowIdx} className="grid grid-cols-2 gap-4 sm:gap-6">
             {row.map((stat) => {
               const { display, ref } = useAnimatedNumber(stat.value);
-              const match = display.match(/(\d[\d,]*)(\+?)(.*)$/);
+              const match = display.match(/(\d[\d,])(\+?)(.)$/);
               return (
                 <div className="text-center p-3 sm:p-4" key={stat.label}>
                   <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">

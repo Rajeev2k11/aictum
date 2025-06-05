@@ -62,6 +62,8 @@ const CompanyValue = () => {
           className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover rounded-lg shadow-md ml-2 mr-2"
           alt="Company Value"
           loading="lazy"
+          width={550}
+          height={450}
           />
         </div>
           </div>

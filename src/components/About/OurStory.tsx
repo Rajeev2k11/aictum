@@ -29,6 +29,9 @@ export const OurStory = () => (
       </div>
       <div className="flex-1 flex justify-center">
         <Image
+          width={2070}
+          height={400}
+          loading="lazy"
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Our Story"
           className="rounded-xl shadow-lg w-full max-w-md md:max-w-lg object-cover h-[350px] md:h-[400px]"

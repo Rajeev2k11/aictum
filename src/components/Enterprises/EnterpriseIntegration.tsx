@@ -64,7 +64,7 @@ const EnterpriseIntegration: React.FC = () => {
               className="bg-white rounded-lg p-4 w-28 h-20 md:w-48 md:h-32 lg:w-56 lg:h-36 flex items-center justify-center 
                 hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-[#ac82d1cc]/30 border border-[#3a1d6e]"
             >
-              <Image src={Icon} alt={`Icon ${index + 1}`} className={` ${
+              <Image src={Icon} width={26} height={26} alt={`Icon ${index + 1}`} className={` ${
                 index === 0 ? 'w-26 h-26 text-white' : 
                 index === 1 ? 'w-26 h-26' :
                 
@@ -93,7 +93,7 @@ const EnterpriseIntegration: React.FC = () => {
               className="bg-white rounded-lg p-2 w-20 h-16 md:w-40 md:h-28 lg:w-48 lg:h-32 flex items-center justify-center
                 hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-[#ac82d1cc]/30 border border-[#3a1d6e]"
             >
-              <Image src={Icon} alt={`Icon ${index + 4}`} className={` ${
+              <Image src={Icon} width={48} height={48} alt={`Icon ${index + 4}`}  className={` ${
                 index === 0 ? 'w-48 h-48 text-white' : 
                 index === 1 ? 'w-38 h-38' :
                 index === 2 ? 'w-16 h-16' :
@@ -124,7 +124,7 @@ const EnterpriseIntegration: React.FC = () => {
               className="bg-white rounded-lg p-4 w-28 h-20 md:w-48 md:h-32 lg:w-56 lg:h-36 flex items-center justify-center
                 hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-[#ac82d1cc]/30 border border-[#3a1d6e]"
             >
-              <Image src={Icon} alt={`Icon ${index + 8}`} className={` ${
+              <Image src={Icon} height={38} width={38} alt={`Icon ${index + 8}`} className={` ${
                 index === 0 ? 'w-38 h-38 text-white' :
                 index === 1 ? 'w-20 h-20' : 
                 index === 2 ? 'w-28 h-28' : 'w-16'}`}/>
