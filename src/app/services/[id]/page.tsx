@@ -160,7 +160,7 @@ export default function ServiceDetailPage() {
           {/* Static CTA Card */}
           <div className="bg-gradient-to-br from-[#6c3bd9] to-[#4b2d8a] rounded-2xl p-6 border border-[#c9b4ff]/50 shadow-lg">
             <h3 className="text-xl font-bold mb-3 text-white">Ready to Transform Your Business?</h3>
-            <p className="text-[#e0d7fa] mb-5">Let's discuss how we can help you achieve your goals with our expertise.</p>
+            <p className="text-[#e0d7fa] mb-5">Let&apos;s discuss how we can help you achieve your goals with our expertise.</p>
             <button className="w-full py-3 px-6 bg-white text-[#6c3bd9] font-semibold rounded-lg hover:bg-[#e0d7fa] transition-colors duration-300 shadow-md">
               Schedule a Free Consultation
             </button>
@@ -219,7 +219,7 @@ export default function ServiceDetailPage() {
                   </svg>
                 ))}
               </div>
-              <p className="text-[#e0d7fa] italic mb-4">"{testimonial.quote}"</p>
+              <p className="text-[#e0d7fa] italic mb-4">{testimonial.quote}</p>
               <div className="text-[#c9b4ff] font-medium">
                 <p>{testimonial.name}</p>
                 <p className="text-sm text-[#e0d7fa]/70">{testimonial.role}</p>
@@ -233,7 +233,7 @@ export default function ServiceDetailPage() {
       <section className="max-w-4xl mx-auto mt-20 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#c9b4ff]">Ready to Get Started?</h2>
         <p className="text-xl text-[#e0d7fa] mb-8 max-w-3xl mx-auto">
-          Whether you need a custom solution or expert consultation, we're here to help bring your vision to life.
+          Whether you need a custom solution or expert consultation, we&apos;re here to help bring your vision to life.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link href="/contact" passHref>

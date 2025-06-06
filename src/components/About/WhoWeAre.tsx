@@ -41,10 +41,34 @@ const useAnimatedNumber = (value: string) => {
       if (frame) cancelAnimationFrame(frame);
       observer?.disconnect();
     };
-    // eslint-disable-next-line
   }, [value]);
 
   return { display, ref };
+};
+
+// ✅ Reusable Component that calls the hook at top level
+const AnimatedStat = ({ value, label }: { value: string; label: string }) => {
+  const { display, ref } = useAnimatedNumber(value);
+  const match = display.match(/(\d[\d,]*)(\+?)(.*)$/);
+
+  return (
+    <div className="text-center p-3 sm:p-4">
+      <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
+        <span ref={ref}>
+          {match ? (
+            <>
+              <span className="text-white">{match[1]}</span>
+              {match[2] && <span className="text-white">{match[2]}</span>}
+              {match[3] && <span>{match[3]}</span>}
+            </>
+          ) : display}
+        </span>
+      </p>
+      <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
+        {label}
+      </p>
+    </div>
+  );
 };
 
 export const WhoWeAre = () => {
@@ -57,7 +81,6 @@ export const WhoWeAre = () => {
     { value: "10M+", label: "Users Worldwide" },
   ];
 
-  // Split stats into 3 rows of 2 items each
   const rows = [
     stats.slice(0, 2),
     stats.slice(2, 4),
@@ -75,7 +98,7 @@ export const WhoWeAre = () => {
       >
         Who We Are
       </motion.h2>
-      
+
       <motion.div 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -85,28 +108,9 @@ export const WhoWeAre = () => {
       >
         {rows.map((row, rowIdx) => (
           <div key={rowIdx} className="grid grid-cols-2 gap-4 sm:gap-6">
-            {row.map((stat) => {
-              const { display, ref } = useAnimatedNumber(stat.value);
-              const match = display.match(/(\d[\d,])(\+?)(.)$/);
-              return (
-                <div className="text-center p-3 sm:p-4" key={stat.label}>
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
-                    <span ref={ref}>
-                      {match ? (
-                        <>
-                          <span className="text-white">{match[1]}</span>
-                          {match[2] && <span className="text-white">{match[2]}</span>}
-                          {match[3] && <span>{match[3]}</span>}
-                        </>
-                      ) : display}
-                    </span>
-                  </p>
-                  <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
-                    {stat.label}
-                  </p>
-                </div>
-              );
-            })}
+            {row.map((stat) => (
+              <AnimatedStat key={stat.label} value={stat.value} label={stat.label} />
+            ))}
           </div>
         ))}
       </motion.div>
