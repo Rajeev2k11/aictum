@@ -8,7 +8,7 @@ const useAnimatedNumber = (value: string) => {
   useEffect(() => {
     let start = 0;
     let end = parseInt(value.replace(/\D/g, "")) || 0;
-    let suffix = value.replace(/\d/g, "");
+    let suffix = value.replace(/\d/g, ""); // <-- Only remove digits, keep '+'
     let frame: number;
     let startTime: number | null = null;
     let duration = 900;
@@ -46,9 +46,8 @@ const useAnimatedNumber = (value: string) => {
   return { display, ref };
 };
 
-// ✅ Reusable Component that calls the hook at top level
-const AnimatedStat = ({ value, label }: { value: string; label: string }) => {
-  const { display, ref } = useAnimatedNumber(value);
+const StatItem = ({ stat }: { stat: { value: string; label: string } }) => {
+  const { display, ref } = useAnimatedNumber(stat.value);
   const match = display.match(/(\d[\d,]*)(\+?)(.*)$/);
 
   return (
@@ -65,7 +64,7 @@ const AnimatedStat = ({ value, label }: { value: string; label: string }) => {
         </span>
       </p>
       <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
-        {label}
+        {stat.label}
       </p>
     </div>
   );
@@ -81,6 +80,7 @@ export const WhoWeAre = () => {
     { value: "10M+", label: "Users Worldwide" },
   ];
 
+  // Split stats into 3 rows of 2 items each
   const rows = [
     stats.slice(0, 2),
     stats.slice(2, 4),
@@ -104,15 +104,41 @@ export const WhoWeAre = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: false }}
-        className="flex flex-col gap-6 md:gap-8 mb-12 md:mb-16"
+        className="mb-12 md:mb-16"
       >
         {rows.map((row, rowIdx) => (
           <div key={rowIdx} className="grid grid-cols-2 gap-4 sm:gap-6">
-            {row.map((stat) => (
-              <AnimatedStat key={stat.label} value={stat.value} label={stat.label} />
+            {row.map((stat) => {
+              const { display, ref } = useAnimatedNumber(stat.value);
+              const match = display.match(/(\d[\d,])(\+?)(.)$/);
+              return (
+                <div className="text-center p-3 sm:p-4" key={stat.label}>
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
+                    <span ref={ref}>
+                      {match ? (
+                        <>
+                          <span className="text-white">{match[1]}</span>
+                          {match[2] && <span className="text-white">{match[2]}</span>}
+                          {match[3] && <span>{match[3]}</span>}
+                        </>
+                      ) : display}
+                    </span>
+                  </p>
+                  <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
+                    {stat.label}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          
+          {/* Second Row - 3 items */}
+          <div className="grid grid-cols-3 gap-6">
+            {stats.slice(3, 6).map((stat) => (
+              <StatItem key={stat.label} stat={stat} />
             ))}
           </div>
-        ))}
+        </div>
       </motion.div>
     </section>
   );
