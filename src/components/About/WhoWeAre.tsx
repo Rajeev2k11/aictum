@@ -80,13 +80,6 @@ export const WhoWeAre = () => {
     { value: "10M+", label: "Users Worldwide" },
   ];
 
-  // Split stats into 3 rows of 2 items each
-  const rows = [
-    stats.slice(0, 2),
-    stats.slice(2, 4),
-    stats.slice(4, 6),
-  ];
-
   return (
     <section className="mb-16 md:mb-24 lg:mb-32 px-4 sm:px-6 lg:px-8">
       <motion.h2 
@@ -106,30 +99,20 @@ export const WhoWeAre = () => {
         viewport={{ once: false }}
         className="mb-12 md:mb-16"
       >
-        {rows.map((row, rowIdx) => (
-          <div key={rowIdx} className="grid grid-cols-2 gap-4 sm:gap-6">
-            {row.map((stat) => {
-              const { display, ref } = useAnimatedNumber(stat.value);
-              const match = display.match(/(\d[\d,])(\+?)(.)$/);
-              return (
-                <div className="text-center p-3 sm:p-4" key={stat.label}>
-                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
-                    <span ref={ref}>
-                      {match ? (
-                        <>
-                          <span className="text-white">{match[1]}</span>
-                          {match[2] && <span className="text-white">{match[2]}</span>}
-                          {match[3] && <span>{match[3]}</span>}
-                        </>
-                      ) : display}
-                    </span>
-                  </p>
-                  <p className="text-xs sm:text-sm md:text-md text-purple-300 leading-tight sm:leading-normal">
-                    {stat.label}
-                  </p>
-                </div>
-              );
-            })}
+        {/* Mobile Layout - 2 columns */}
+        <div className="sm:hidden grid grid-cols-2 gap-4 sm:gap-6">
+          {stats.map((stat, index) => (
+            <StatItem key={stat.label} stat={stat} />
+          ))}
+        </div>
+
+        {/* Desktop Layout - 3 columns */}
+        <div className="hidden sm:block">
+          {/* First Row - 3 items */}
+          <div className="grid grid-cols-3 gap-6 mb-6">
+            {stats.slice(0, 3).map((stat) => (
+              <StatItem key={stat.label} stat={stat} />
+            ))}
           </div>
           
           {/* Second Row - 3 items */}
