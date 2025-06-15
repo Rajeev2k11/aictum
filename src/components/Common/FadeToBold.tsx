@@ -18,7 +18,7 @@ export default function FadedToBold({ text }: { text: string }) {
         transition: { duration: 1, ease: 'easeOut' },
       });
     }
-  }, [inView]);
+  }, [inView, controls]);
 
   return (
     <motion.h1

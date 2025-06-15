@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 export type Feature = {
   id: number;
-  icon: JSX.Element;
+  bgImage: string; // Path to the background image
   title: string;
   paragraph: string;
 };

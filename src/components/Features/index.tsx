@@ -1,16 +1,22 @@
 'use client';
-import Link from "next/link";
-
+import { useRef, useEffect, useState } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import SingleFeature from "./SingleFeature";
 import featuresData from "./featuresData";
 import FadedToBold from "../Common/FadeToBold";
-import { useRef, useEffect } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Features = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
   const controls = useAnimation();
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isDown, setIsDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
 
   useEffect(() => {
     if (inView) {
@@ -21,7 +27,67 @@ const Features = () => {
         transition: { duration: 1, ease: 'easeOut' },
       });
     }
-  }, [inView]);
+  }, [inView, controls]);
+
+  // Check scroll position to show/hide arrows
+  const checkScrollPosition = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setShowLeftArrow(scrollLeft > 0);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  // Improved smooth scroll handler
+  const scrollByOffset = (offset: number) => {
+    if (!scrollContainerRef.current) return;
+    
+    const start = scrollContainerRef.current.scrollLeft;
+    const startTime = performance.now();
+    const duration = 500; // milliseconds
+    
+    const animateScroll = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeProgress = 0.5 * (1 - Math.cos(Math.PI * progress)); // Smooth easing function
+      
+      scrollContainerRef.current!.scrollLeft = start + offset * easeProgress;
+      
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      } else {
+        checkScrollPosition();
+      }
+    };
+    
+    requestAnimationFrame(animateScroll);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDown(true);
+    setStartX(e.pageX - (scrollContainerRef.current?.offsetLeft ?? 0));
+    setScrollLeft(scrollContainerRef.current?.scrollLeft ?? 0);
+  };
+
+  const handleMouseLeave = () => setIsDown(false);
+  const handleMouseUp = () => setIsDown(false);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDown || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+    checkScrollPosition();
+  };
+
+  // Initialize arrow visibility
+  useEffect(() => {
+    checkScrollPosition();
+    const container = scrollContainerRef.current;
+    container?.addEventListener('scroll', checkScrollPosition);
+    return () => container?.removeEventListener('scroll', checkScrollPosition);
+  }, []);
 
   return (
     <section
@@ -39,52 +105,86 @@ const Features = () => {
             fontVariationSettings: "'wght' 300",
           }}
           animate={controls}
-          className="text-center text-xl md:text-3xl max-w-4xl mx-auto py-6 mb-10 text-gray-200"
+          className="text-center text-xl md:text-1xl max-w-3xl mx-auto py-6 mb-10 text-gray-300"
           style={{
             fontFamily: '"InterVariable", sans-serif',
             fontVariationSettings: "'wght' 300",
           }}
         >
           Aictum brings personalization to digitalization. Feasible, grounded in
-          reality, and tied to the client’s business goals, our digital strategy
+          reality, and tied to the client's business goals, our digital strategy
           services generate commercial value with custom-tailored digital
           transformation strategies.
         </motion.h1>
 
-        {/* Feature Cards Grid - original style retained */}
-        <div className="grid grid-cols-1 gap-y-14 md:grid-cols-2 lg:grid-cols-3 gap-x-6">
-          {featuresData.map((feature) => (
-            <SingleFeature key={feature.id} feature={feature} />
-          ))}
+        {/* Scrollable Carousel */}
+        <div className="relative group">
+          {/* Scrollable Cards */}
+          <div
+            ref={scrollContainerRef}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            className="flex gap-6 overflow-x-scroll no-scrollbar px-4 py-6"
+            style={{ cursor: isDown ? 'grabbing' : 'grab' }}
+          >
+            {featuresData.map((feature) => (
+              <SingleFeature key={feature.id} feature={feature} />
+            ))}
+          </div>
         </div>
 
-        {/* CTA Button */}
-        <div className="mt-14 flex justify-end">
-          <Link
+        {/* Combined Navigation and CTA Section */}
+        <div className="flex justify-between items-center mt-8">
+          {/* Navigation Arrows - Now with partial visibility when inactive */}
+          <div className="flex items-center gap-4">
+            <motion.button
+              onClick={() => scrollByOffset(-300)}
+              className={`bg-[#9345E0] hover:bg-[#a55af0] p-3 rounded-full shadow-lg transition-all duration-300 ${
+                showLeftArrow ? 'opacity-100' : 'opacity-20 hover:opacity-50'
+              }`}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ 
+                opacity: showLeftArrow ? 1 : 0.2,
+                x: showLeftArrow ? 0 : -10
+              }}
+              transition={{ duration: 0.3 }}
+              disabled={!showLeftArrow}
+            >
+              <ChevronLeft className="text-white w-6 h-6" />
+            </motion.button>
+
+            <motion.button
+              onClick={() => scrollByOffset(300)}
+              className={`bg-[#9345E0] hover:bg-[#a55af0] p-3 rounded-full shadow-lg transition-all duration-300 ${
+                showRightArrow ? 'opacity-100' : 'opacity-20 hover:opacity-50'
+              }`}
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ 
+                opacity: showRightArrow ? 1 : 0.2,
+                x: showRightArrow ? 0 : 10
+              }}
+              transition={{ duration: 0.3 }}
+              disabled={!showRightArrow}
+            >
+              <ChevronRight className="text-white w-6 h-6" />
+            </motion.button>
+          </div>
+
+          {/* CTA Button - Now on the same line */}
+          <a
             href="/all-service"
-            className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-[#9345E0] rounded-full shadow-md group"
+            className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-[#9345E0] rounded-full shadow-md group hover:shadow-[0_0_15px_2px_rgba(147,69,224,0.4)]"
           >
             <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[#9345E0] group-hover:translate-x-0 ease">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
+              <ChevronRight className="w-6 h-6" />
             </span>
             <span className="absolute flex items-center justify-center w-full h-full text-[#9345E0] transition-all duration-300 transform group-hover:translate-x-full ease">
               → Explore all services
             </span>
             <span className="relative invisible">→ Explore all services</span>
-          </Link>
+          </a>
         </div>
       </div>
     </section>
