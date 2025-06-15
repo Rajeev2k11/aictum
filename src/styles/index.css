@@ -157,9 +157,15 @@ layer(base);
   }
 }
 
-/*
-  ---break---
-*/
+/* Hide Scrollbar - globals.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

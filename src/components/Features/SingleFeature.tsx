@@ -2,33 +2,61 @@ import { Feature } from "@/types/feature";
 import * as motion from "motion/react-client";
 
 const SingleFeature = ({ feature }: { feature: Feature }) => {
-  const { icon, title, paragraph } = feature;
+  const { title, paragraph, bgImage } = feature;
 
   return (
     <motion.div
-      // Removed rotateY animation
       initial={{ opacity: 1, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false }}
       transition={{ duration: 0.1, ease: "easeInOut" }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.97 }}
-      className="w-[90%] sm:w-full max-w-[350px] min-h-[350px] md:h-[400px] p-5 rounded-xl bg-[#572b7dcc] border border-[#5C3D91] shadow-xl transition-all duration-300 ease-in-out mx-auto"
-      style={{ backfaceVisibility: "hidden" }} // helps with 3D rotation
+      className="flex-shrink-0 w-[280px] sm:w-[320px] max-w-[320px] min-h-[420px] rounded-xl shadow-lg overflow-hidden relative select-none" // Added select-none here
+      style={{ 
+        backfaceVisibility: "hidden",
+        willChange: 'transform',
+        userSelect: 'none', // Additional cross-browser support
+        WebkitUserSelect: 'none', // For Safari
+        MozUserSelect: 'none', // For Firefox
+        msUserSelect: 'none' // For IE/Edge
+      }}
     >
-      <div className="h-full flex flex-col">
-        {/* Icon Wrapper */}
-        <div className="bg-[#3d393f] text-[#d1aef1] mb-6 md:mb-10 flex h-[60px] w-[60px] md:h-[70px] md:w-[70px] items-center justify-center rounded-md shadow-md">
-          {icon}
-        </div>
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
+        <div className="absolute bottom-0 h-3/4 w-full bg-gradient-to-t from-black/95 via-black/70 to-transparent" />
+      </div>
 
-        {/* Title */}
-        <h3 className="mb-3 md:mb-4 text-lg sm:text-xl md:text-xl lg:text-xl xl:text-2xl font-bold text-[#d8a7ef]">
+      <div 
+        className="h-full flex flex-col justify-end relative z-10 p-6 pb-7"
+        style={{
+          userSelect: 'none', // Additional protection
+          WebkitUserSelect: 'none',
+          MozUserSelect: 'none',
+          msUserSelect: 'none'
+        }}
+      >
+        <h3 
+          className="text-xl font-bold text-white mb-3"
+          style={{
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+            MozUserSelect: 'none',
+            msUserSelect: 'none'
+          }}
+        >
           {title}
         </h3>
-
-        {/* Paragraph */}
-        <p className="text-white text-sm md:text-base leading-relaxed font-medium flex-grow">
+        <p 
+          className="text-white/90 text-sm leading-relaxed"
+          style={{
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+            MozUserSelect: 'none',
+            msUserSelect: 'none'
+          }}
+        >
           {paragraph}
         </p>
       </div>
