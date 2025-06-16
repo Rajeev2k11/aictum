@@ -3,45 +3,67 @@ import { Feature } from "@/types/feature";
 const featuresData: Feature[] = [
   {
     id: 1,
-    bgImage: "/images/cards/web-dev.jpg", // Replace with your actual image path
-    title: "Web3 Product Development",
+    bgImage: "/images/cards/AI-Agent.jpg", // Replace with your actual image path
+    title: "Custom AI Agent Builder for Finance and Operations",
     paragraph:
-      "Build next-gen decentralized applications (dApps) that scale. From tokenized platforms to smart contract systems, we architect and develop full-stack blockchain solutions across Ethereum, Polygon, and other major networks.",
+      "Develop tailored AI agents for trading, DeFi interactions, community management, and workflow automation—trained on your proprietary data.",
   },
   {
     id: 2,
-    bgImage: "/images/cards/ai.jpg",
-    title: "AI Integration & Automation",
+    bgImage: "/images/cards/Bitcoin.jpg",
+    title: "Bitcoin & Ordinals Ecosystem",
     paragraph:
-      "Turn your product into an intelligent system.We integrate cutting-edge AI models (LLMs, GPT, custom-trained models) to automate workflows, boost user engagement, and create smarter digital experiences.",
+      "A complete Ordinals suite with inscription tools, marketplace infra, BRC-20 support, and wallet integration.",
   },
   {
     id: 3,
-    bgImage: "/images/cards/business-dev.jpg",
-    title: "MVP Development for Startups",
+    bgImage: "/images/cards/Digital-crypto.jpg",
+    title: "Comprehensive Digital and Crypto Banking Platform",
     paragraph:
-      "Idea to working MVP — built fast, lean, and smart. We help startups validate and launch their first product in 30–60 days with full support on product planning, UI/UX, and scalable architecture.",
+      "A full-stack Web3 banking solution featuring custodian wallets, digital accounts, seamless crypto payments, and integrated fiat on/off ramps.",
   },
   {
     id: 4,
-    bgImage: "/images/cards/agency-dev.jpg",
-    title: "White-Label Development for Agencies",
+    bgImage: "/images/cards/crypto-exchange.jpg",
+    title: "Turnkey Centralized Crypto Exchange Platform",
     paragraph:
-      "Your tech partner behind the scenes. We build under your brand — letting you scale operations without hiring or worrying about dev timelines. Clean code. Clear sprints. No micromanaging needed.",
+      "A fully deployable centralized exchange solution with built-in compliance, integrated liquidity providers, and robust KYC/AML modules.",
   },
   {
     id: 5,
-    bgImage: "/images/cards/smart-contract.jpg",
-    title: "Smart Contract Audits & Security Services",
+    bgImage: "/images/cards/AI-Trading.png",
+    title: "Advanced AI Platforms for Intelligent Trading",
     paragraph:
-      "Ensure your blockchain project is secure before launch. We review, audit, and optimize your smart contracts for vulnerabilities, gas efficiency, and compliance with the latest best practices.",
+      "A professional-grade AI trading strategist equipped with real-time chart analysis, a multi-timeframe engine, and a capital-preserving decision-making framework.",
   },
   {
     id: 6,
-    bgImage: "/images/cards/blockchain.jpg",
-    title: "Blockchain Consulting & Architecture Design",
+    bgImage: "/images/cards/Treding-Platform.jpg",
+    title: "Secure OTC and Peer-to-Peer Trading Platform",
     paragraph:
-      "Make the right technical decisions from day one. We guide you through the product architecture, ideal tech stack, and launch strategies based on your goals, user base, and market.",
+      "A trusted platform for OTC and P2P trading, featuring multi-currency support, integrated escrow services, and powerful moderation tools.",
   },
+  {
+    id: 7,
+    bgImage: "/images/cards/Token-Presale.jpg",
+    title: "Turnkey Platform for Token Presales and Investor Management",
+    paragraph:
+      "Effortlessly manage token presales with features like vesting schedules, whitelisting, investor dashboards, and full control over campaign execution.",
+  },
+  {
+    id: 8,
+    bgImage: "/images/cards/GameFi.jpg",
+    title: "GameFi Launch Suite with Integrated Tokenomics",
+    paragraph:
+      "Deploy blockchain-based games with built-in token economies, NFT functionality, and sustainable play-to-earn reward systems.",
+  },
+  {
+    id: 9,
+    bgImage: "/images/cards/NFT.jpg",
+    title: "Turnkey Multi-Chain NFT Marketplace Platform",
+    paragraph:
+      "A fully featured NFT marketplace solution with cross-chain support, integrated minting, trading, auctions, and automated royalty distribution.",
+  },
+  
 ];
 export default featuresData;

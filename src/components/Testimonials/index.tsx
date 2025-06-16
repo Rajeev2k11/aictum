@@ -1,122 +1,142 @@
 'use client';
-import { Testimonial } from "@/types/testimonial";
+import { useState, useEffect } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import SingleTestimonial from "./SingleTestimonial";
+import { useMediaQuery } from "react-responsive";
 
 const features = [
-  {
-    title: "INTELLIGENT",
-    subtitle: "AI & ML Solutions",
-    description:
-      "Harness the power of artificial intelligence and machine learning to automate and enhance your business processes. From predictive analytics to real-time data insights, our advanced AI solutions streamline operations, improve efficiency, and drive smarter decisions."
+   {
+    title: "AI Agent Platform-as-a-Service",
+    subtitle: "Launch Smart AI Solutions",
+    image: "https://img.freepik.com/free-photo/macro-eye-iris_23-2151618659.jpg",
+    description: "Build, deploy, and monetize AI agents and copilots for real-world use cases with ease. Designed for teams needing speed, control, and scalability in one platform. Perfect for developers, startups, and enterprises looking to create internal tools, customer solutions, or commercial AI products without sacrificing flexibility or development speed.",
   },
   {
-    title: "SECURE",
-    subtitle: "Blockchain Integration",
-    description:
-      "Experience unparalleled transparency and security with our custom blockchain solutions. We develop decentralized applications, secure smart contracts, and robust blockchain-based platforms to enhance trust and efficiency across your business ecosystem.",
+    title: "NIL-Powered Blockchain Platform",
+    subtitle: "Monetize NIL with Blockchain",
+    image: "https://img.freepik.com/free-photo/beautiful-cryptocurrency-hologram-design_23-2149250217.jpg",
+    description: "Unlock new opportunities at the intersection of Name, Image, and Likeness (NIL) and blockchain technology. This platform enables athletes, creators, and brands to securely tokenize NIL rights, manage digital assets, and create transparent, verifiable revenue streams—all backed by the trust and immutability of blockchain infrastructure.",
   },
   {
-    title: "VISIONARY",
-    subtitle: "Computer Vision & NLP",
-    description:
-      "Gain insightful analytics and automated content management through our state-of-the-art Computer Vision and Natural Language Processing technologies. From facial recognition to intelligent chatbots, we equip your business with tools that improve user experience and operational accuracy.",
+    title: "Real-World Assets on Blockchain",
+    subtitle: "Tokenize Real Assets with Ease",
+    image: "https://img.freepik.com/premium-photo/hands-showing-bitcoin-icon-as-virtual-money-digital_158104-1493.jpg?uid=R159235966&ga=GA1.1.2022678480.1747276619&semt=ais_hybrid&w=740",
+    description: "Unlock liquidity and accessibility by tokenizing real-world assets (RWA) like real estate, art, or commodities. This platform enables secure, transparent, and compliant asset tokenization, making it easy to fractionalize ownership and trade globally. Bring traditional assets into the digital age with blockchain-powered efficiency, security, and market reach.",
   },
   {
-    title: "INNOVATIVE",
-    subtitle: "Generative AI & Chatbots",
-    description:
-      "Transform customer interactions and content creation through our innovative generative AI and chatbot solutions. AICTUM's conversational AI agents deliver personalized, engaging experiences, while our generative models enable automated, compelling content production to captivate your audience.",
+    title: "Ordinals on Bitcoin: NFTs Reimagined",
+    subtitle: "NFTs on Bitcoin, Reinvented",
+    image: "https://plus.unsplash.com/premium_photo-1681400668073-a1947604dd36?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fHJlYWwlMjBlc3RhdGUlMjBibG9ja2NoYWlufGVufDB8fDB8fHww",
+    description: "Discover a new era of digital ownership with Bitcoin Ordinals—NFTs inscribed directly on the Bitcoin blockchain. This innovation allows users to create, trade, and preserve digital artifacts on the world’s most secure network. Empowering artists, collectors, and developers with decentralized, immutable, and censorship-resistant digital assets built on Bitcoin.",
   },
 ];
 
 const Testimonials = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const isTouchDevice = useMediaQuery({ maxWidth: 1024 }); // Applies to tablets and mobiles
+
+  // Auto-rotate slides for touch devices
+  useEffect(() => {
+    if (!isTouchDevice) return;
+
+    const interval = setInterval(() => {
+      goToNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isTouchDevice, currentSlide]);
+
+  const goToPrev = () => {
+    setCurrentSlide(prev => (prev === 0 ? features.length - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentSlide(prev => (prev === features.length - 1 ? 0 : prev + 1));
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <section className="relative z-10 py-20 bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-white overflow-hidden">
+    <section className="relative z-10 py-20 bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-white">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Empowering the Digital Future with Innovation and Excellence"
-          paragraph="With over 6+ years of industry expertise, we specialize in crafting impactful digital solutions for startups, enterprises, and visionary founders. From Web3 platforms to AI-driven applications, our work has empowered businesses to generate billions in revenue and connect with millions of users worldwide."
+          paragraph="At Aictum, we are committed to delivering cutting-edge solutions that redefine the digital landscape. Our expertise spans AI, blockchain, and more, ensuring your business stays ahead in a rapidly evolving world."
           center
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          {features.map((feature, index) => (
-            <SingleTestimonial
-              key={index}
-              title={feature.title}
-              subtitle={feature.subtitle}
-              description={feature.description}
-            />
-          ))}
-        </div>
-      </div>
+        {/* Desktop Version (Hover Effect - for large screens) */}
+        {!isTouchDevice ? (
+          <div className="relative mt-12 w-full h-[400px] overflow-hidden">
+            <div className="flex h-full">
+              {features.map((feature, index) => (
+                <SingleTestimonial
+                  key={index}
+                  {...feature}
+                  isActive={activeIndex === index}
+                  onHover={() => setActiveIndex(index)}
+                  onLeave={() => setActiveIndex(null)}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          // Mobile/Tablet Version (Carousel)
+          <div className="mt-12 w-full h-[400px] overflow-hidden relative">
+            {/* Navigation Buttons */}
+            <button 
+              onClick={goToPrev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 rounded-full p-2 hover:bg-[#9345E0] transition-all"
+              aria-label="Previous slide"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            
+            <button 
+              onClick={goToNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 rounded-full p-2 hover:bg-[#9345E0] transition-all"
+              aria-label="Next slide"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
 
-      {/* Top Right Gradient Overlay */}
-      <div className="absolute right-0 top-0 z-[-1] opacity-40">
-        <svg width="238" height="531" viewBox="0 0 238 531" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect
-            opacity="0.3"
-            x="422.819"
-            y="-70.8145"
-            width="196"
-            height="541.607"
-            rx="2"
-            transform="rotate(51.2997 422.819 -70.8145)"
-            fill="url(#paint0_linear)"
-          />
-          <rect
-            opacity="0.3"
-            x="426.568"
-            y="144.886"
-            width="59.7544"
-            height="541.607"
-            rx="2"
-            transform="rotate(51.2997 426.568 144.886)"
-            fill="url(#paint1_linear)"
-          />
-          <defs>
-            <linearGradient id="paint0_linear" x1="517.152" y1="-251.373" x2="517.152" y2="459.865" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#9345E0" />
-              <stop offset="1" stopColor="#9345E0" stopOpacity="0" />
-            </linearGradient>
-            <linearGradient id="paint1_linear" x1="455.327" y1="-35.673" x2="455.327" y2="675.565" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#9345E0" />
-              <stop offset="1" stopColor="#9345E0" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-
-      {/* Bottom Left Gradient Waves */}
-      <div className="absolute bottom-0 left-0 z-[-1] opacity-30">
-        <svg width="279" height="106" viewBox="0 0 279 106" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g opacity="0.5">
-            {[0, 1, 2, 3].map((i) => (
-              <path
-                key={i}
-                d={`M-57 ${12 + i * 12}L50.0728 ${74.8548 + i * 11}C55.5501 ${79.0219 + i * 11} 70.8513 ${85.7589 + i * 11} 88.2373 ${79.3692 + i * 11}C109.97 ${71.3821 + i * 11} 116.861 ${60.9642 + i * 11} 156.615 ${63.7423 + i * 11}C178.778 ${65.291 + i * 11} 195.31 ${69.2985 + i * 11} 205.911 ${62.3533 + i * 11}C216.513 ${55.408 + i * 11} 224.994 ${47.7682 + i * 11} 243.016 ${49.1572 + i * 11}C255.835 ${50.1453 + i * 11} 265.278 ${50.8936 + i * 11} 278 ${45.3373 + i * 11}`}
-                stroke={`url(#paint${i}_linear)`}
-              />
-            ))}
-          </g>
-          <defs>
-            {[0, 1, 2, 3].map((i) => (
-              <linearGradient
-                key={i}
-                id={`paint${i}_linear`}
-                x1="256.267"
-                y1={`${53.6717 + i * 11}`}
-                x2="-40.8688"
-                y2={`${8.15715 + i * 11}`}
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#9345E0" stopOpacity="0" />
-                <stop offset="1" stopColor="#9345E0" />
-              </linearGradient>
-            ))}
-          </defs>
-        </svg>
+            {/* Slides Container */}
+            <div className="flex h-full transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+              {features.map((feature, index) => (
+                <div key={index} className="w-full flex-shrink-0 h-full relative">
+                  <SingleTestimonial
+                    {...feature}
+                    isActive={true} // Always show full content on touch devices
+                    onHover={() => {}}
+                    onLeave={() => {}}
+                    index={index}
+                  />
+                </div>
+              ))}
+            </div>
+            
+            {/* Carousel Indicators */}
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+              {features.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${currentSlide === index ? 'bg-[#9345E0] w-6' : 'bg-white/30'}`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
