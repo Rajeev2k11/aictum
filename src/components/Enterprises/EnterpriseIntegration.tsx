@@ -5,7 +5,7 @@ import { DiGoogleCloudPlatform, DiMongodb, DiMysql } from 'react-icons/di';
 import * as motion from 'motion/react-client';
 import Image from 'next/image';
 
-const Icons = ["/images/icons/python.svg", "/images/icons/react.svg", "/images/icons/nodejs.svg", "/images/icons/huggingFace.svg", "/images/icons/openAi.svg", "/images/icons/solidity.svg", "/images/icons/langChain.svg", "/images/icons/hard-hat.svg", "/images/icons/fastApi.svg", "/images/icons/pytorch.svg", "/images/icons/metamask.svg"];
+const Icons = ["images/collab/ernst.svg","images/collab/energyfi.svg","images/collab/plex.svg","images/collab/crypto.svg","images/collab/socialswap-1.svg","images/collab/neo.svg","images/collab/wenbit-2.svg","images/collab/q.svg","images/collab/3coswape.svg","images/collab/af.svg","images/collab/snap.svg"];
 
 const EnterpriseIntegration: React.FC = () => {
   // Animation variants
@@ -34,18 +34,18 @@ const EnterpriseIntegration: React.FC = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-[#ffffff]"
+          className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-[#ffffff]"
         >
-          Tech We&rsquo;re Working
+          Driven by a Strong Community of Innovators
         </motion.h1>
         <motion.h2 
           initial={{ y: -50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-4xl font-semibold mb-8 md:mb-12 text-[#AE69DF]"
+          className="text-1xl md:text-3xl font-semibold mb-8 md:mb-12 text-[#AE69DF]"
         >
-          With Leading Enterprises
+           Collaborations
         </motion.h2>
         
         {/* First Row - 3 items */}
