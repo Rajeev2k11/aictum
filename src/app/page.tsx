@@ -1,14 +1,13 @@
 import CompanyValue from "@/components/About/CompanyValue";
 import Processes from "@/components/About/Processes";
-// import AboutUs from "../components/About/ModifyAbout";
 import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
+import TechStackIcon from "@/components/TechStack/TechStackIcon";
 import EnterpriseIntegration from "@/components/Enterprises/EnterpriseIntegration";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
-import Pricing from "@/components/Pricing";
 import TechStack from "@/components/TechStack";
 import Testimonials from "@/components/Testimonials";
 import HiringModels from "@/components/HiringModels/HiringModels";
@@ -26,7 +25,7 @@ export default function Home() {
    
       <ScrollUp />
       <Hero />
-      <Brands />
+      {/* <Brands /> */}
       <Features />
       <Video />
 
@@ -37,6 +36,7 @@ export default function Home() {
       
       <TechStack />
       <EnterpriseIntegration />
+      <TechStackIcon />
       <Testimonials />
       <HiringModels />
    
