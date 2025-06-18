@@ -189,7 +189,7 @@ export default function Navbar() {
               asChild
             >
               <a
-                href="https://calendly.com/rajeev@aictum.com"
+                href="https://calendly.com/team-aictum"
                 target="_blank"
                 rel="noopener noreferrer"
               >
