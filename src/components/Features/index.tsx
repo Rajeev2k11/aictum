@@ -95,7 +95,8 @@ const Features = () => {
       className="py-16 md:py-20 lg:py-28 bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-white"
     >
       <div className="container px-4 mx-auto">
-        <FadedToBold text="Our Services" />
+        {/* <FadedToBold text="Ready-to-Run Web3 & AI Platforms for Growth" /> */}
+        <h1 className='text-center text-4xl md:text-4xl font-bold mb-6'>Ready-to-Run <span className='text-[#9345E0]'>Web3 & AI </span> Platforms for Growth</h1>
 
         <motion.h1
           ref={ref}
@@ -111,10 +112,7 @@ const Features = () => {
             fontVariationSettings: "'wght' 300",
           }}
         >
-          Aictum brings personalization to digitalization. Feasible, grounded in
-          reality, and tied to the client's business goals, our digital strategy
-          services generate commercial value with custom-tailored digital
-          transformation strategies.
+          Explore our suite of customizable, ready-to-deploy platforms designed to accelerate your Web3 and AI initiatives. From AI agent builders to tokenization solutions, we provide the tools you need to innovate and scale.
         </motion.h1>
 
         {/* Scrollable Carousel */}
