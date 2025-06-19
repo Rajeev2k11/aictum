@@ -22,9 +22,9 @@ const CompanyValue = () => {
       id="about"
       className="p-5 shadow-2xl sm:p-7 md:p-10 lg:p-14 xl:p-20 bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10]"
     >
-      <div className="border-b container border-white/10 text-[#d8a7ef] pb-10 sm:pb-12 md:pb-16">
+      <div className="border-b container border-white/10 text-[#c98de5] pb-10 sm:pb-12 md:pb-16">
         <div className="mb-8 sm:mb-10 md:mb-12">
-          <FadedToBold text="We Have Your Back" />
+          <h1 className="text-5xl text-center font-bold">We Have Your Back</h1>
         </div>
 
         <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-12">

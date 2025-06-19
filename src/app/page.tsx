@@ -11,6 +11,7 @@ import Hero from "@/components/Hero";
 import TechStack from "@/components/TechStack";
 import Testimonials from "@/components/Testimonials";
 import HiringModels from "@/components/HiringModels/HiringModels";
+import FAQ from "@/components/FAQ/FAQ";
 import Video from "@/components/Video";
 import { Metadata } from "next";
 
@@ -39,6 +40,8 @@ export default function Home() {
       <TechStackIcon />
       <Testimonials />
       <HiringModels />
+      <FAQ />
+  
    
       <Blog />
       <Contact />
