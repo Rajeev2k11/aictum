@@ -31,13 +31,13 @@ export default function Home() {
 
 
       <CompanyValue />
-      <Processes />
+      <Testimonials />
+      {/* <Processes /> */}
     
       
       <TechStack />
       <EnterpriseIntegration />
       <TechStackIcon />
-      <Testimonials />
       <HiringModels />
    
       <Blog />

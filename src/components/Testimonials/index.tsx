@@ -6,27 +6,27 @@ import { useMediaQuery } from "react-responsive";
 
 const features = [
    {
-    title: "AI Agent Platform-as-a-Service",
+    title: "AI Platform-as-a-Service",
     subtitle: "Launch Smart AI Solutions",
-    image: "https://img.freepik.com/free-photo/macro-eye-iris_23-2151618659.jpg",
+    image: "/images/testnomialImg/ai1.jpg",
     description: "Build, deploy, and monetize AI agents and copilots for real-world use cases with ease. Designed for teams needing speed, control, and scalability in one platform. Perfect for developers, startups, and enterprises looking to create internal tools, customer solutions, or commercial AI products without sacrificing flexibility or development speed.",
   },
   {
     title: "NIL-Powered Blockchain Platform",
     subtitle: "Monetize NIL with Blockchain",
-    image: "https://img.freepik.com/free-photo/beautiful-cryptocurrency-hologram-design_23-2149250217.jpg",
+    image: "/images/testnomialImg/blockchain1.jpg",
     description: "Unlock new opportunities at the intersection of Name, Image, and Likeness (NIL) and blockchain technology. This platform enables athletes, creators, and brands to securely tokenize NIL rights, manage digital assets, and create transparent, verifiable revenue streams—all backed by the trust and immutability of blockchain infrastructure.",
   },
   {
     title: "Real-World Assets on Blockchain",
     subtitle: "Tokenize Real Assets with Ease",
-    image: "https://img.freepik.com/premium-photo/hands-showing-bitcoin-icon-as-virtual-money-digital_158104-1493.jpg?uid=R159235966&ga=GA1.1.2022678480.1747276619&semt=ais_hybrid&w=740",
+    image: "/images/testnomialImg/real-assest.jpg",
     description: "Unlock liquidity and accessibility by tokenizing real-world assets (RWA) like real estate, art, or commodities. This platform enables secure, transparent, and compliant asset tokenization, making it easy to fractionalize ownership and trade globally. Bring traditional assets into the digital age with blockchain-powered efficiency, security, and market reach.",
   },
   {
     title: "Ordinals on Bitcoin: NFTs Reimagined",
     subtitle: "NFTs on Bitcoin, Reinvented",
-    image: "https://plus.unsplash.com/premium_photo-1681400668073-a1947604dd36?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fHJlYWwlMjBlc3RhdGUlMjBibG9ja2NoYWlufGVufDB8fDB8fHww",
+    image: "/images/testnomialImg/bitcoin2.jpg",
     description: "Discover a new era of digital ownership with Bitcoin Ordinals—NFTs inscribed directly on the Bitcoin blockchain. This innovation allows users to create, trade, and preserve digital artifacts on the world’s most secure network. Empowering artists, collectors, and developers with decentralized, immutable, and censorship-resistant digital assets built on Bitcoin.",
   },
 ];
