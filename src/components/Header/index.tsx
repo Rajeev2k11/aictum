@@ -145,9 +145,9 @@ export default function Navbar() {
       {Object.entries(services).map(([category, data]) => (
         <div key={category} className="space-y-2">
           <Link 
-            href={`/services/${data.id}`}
-            className="text-[#9345E0] font-semibold text-base mb-2 pb-1 border-b border-[#9345E0]/30 block hover:text-[#b36ef7] transition-colors"
-            onClick={() => setIsServicesHovered(false)}
+            href='#'
+            className="text-[#9345E0] font-semibold text-base mb-2 pb-1 border-b border-[#9345E0]/30 block hover:text-[#b36ef7] cursor-default transition-colors"
+            
           >
             {category}
           </Link>
@@ -243,9 +243,9 @@ export default function Navbar() {
                         {Object.entries(services).map(([category, data]) => (
                           <div key={category}>
                             <Link
-                              href={`/services/${data.id}`}
+                              href='#'
                               className="text-sm font-semibold text-[#9345E0] mb-2 block hover:text-[#b36ef7]"
-                              onClick={() => setMobileMenuOpen(false)}
+                             
                             >
                               {category}
                             </Link>
@@ -287,7 +287,7 @@ export default function Navbar() {
                     className="w-full bg-[#9345E0] hover:bg-[#9345E0]/90 text-white shadow-lg shadow-[#9345E0]/30"
                     asChild
                   >
-                    <Link href="/demo">Call us</Link>
+                    <Link href="https://calendly.com/team-aictum">Call us</Link>
                   </Button>
                 </div>
               </div>
