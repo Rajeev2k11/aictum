@@ -14,7 +14,7 @@ const features = [
   {
     title: "NIL-Powered Blockchain Platform",
     subtitle: "Monetize NIL with Blockchain",
-    image: "/images/testnomialImg/blockchain1.jpg",
+    image: "https://img.freepik.com/free-photo/futuristic-technology-hologram_23-2151917444.jpg?uid=R200268884&ga=GA1.1.352842097.1750174499&semt=ais_hybrid&w=740",
     description: "Unlock new opportunities at the intersection of Name, Image, and Likeness (NIL) and blockchain technology. This platform enables athletes, creators, and brands to securely tokenize NIL rights, manage digital assets, and create transparent, verifiable revenue streams—all backed by the trust and immutability of blockchain infrastructure.",
   },
   {
