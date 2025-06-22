@@ -45,7 +45,7 @@ const Contact = () => {
               {/* Box for Stay Updated and Social Links - Hidden on mobile/tablet */}
               <div className="hidden lg:block mt-44 p-4 bg-[#141418] rounded-lg max-w-xs">
                 <p className="text-sm text-[#CCCCCC] mb-4">
-                  Stay up to date with what's happening at Ment Tech Labs
+                  Stay up to date with what's happening at Aictum
                 </p>
                 
                 {/* Social Links */}
