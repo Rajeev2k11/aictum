@@ -3,7 +3,7 @@ import Processes from "@/components/About/Processes";
 import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
-import Contact from "@/components/Contact";
+import Enquiry from "@/components/Contact/Enquiry";  
 import TechStackIcon from "@/components/TechStack/TechStackIcon";
 import EnterpriseIntegration from "@/components/Enterprises/EnterpriseIntegration";
 import Features from "@/components/Features";
@@ -44,7 +44,7 @@ export default function Home() {
   
    
       <Blog />
-      <Contact />
+      <Enquiry />
       
     </>
   );

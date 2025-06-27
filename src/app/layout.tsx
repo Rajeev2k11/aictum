@@ -18,6 +18,7 @@ export default function RootLayout({
       <head>
         {/* Add viewport meta tag if not already present in head.js */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="icon" href="/images/AictumFavicon.jpg" />
       </head>
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>

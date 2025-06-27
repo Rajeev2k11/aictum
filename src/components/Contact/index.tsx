@@ -2,21 +2,61 @@
 
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_ajdfpoa', 'template_dlmn09a', e.target, 'hhoPVbwa0abzpHb39')
+      .sendForm('service_cmhf5er', 'template_td5mnag', e.target, 'Wp2nwGffVrFwN0ib2')
       .then(
         (result) => {
           console.log(result.text);
-          alert("Email sent successfully!");
+          toast.success("Thank you for your message! We'll get back to you soon.", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            style: {
+              background: '#9345E0',
+              color: '#ffffff',
+              border: '1px solid #B76CFF',
+              borderRadius: '8px',
+              boxShadow: '0 4px 12px rgba(147, 69, 224, 0.3)',
+              fontFamily: 'inherit',
+              fontSize: '14px',
+              fontWeight: '500'
+            }
+          });
         },
         (error) => {
           console.log(error.text);
-          alert("Email sending failed.");
+          toast.error("Oops! Something went wrong. Please try again later.", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            style: {
+              background: '#ff4d4f',
+              color: '#ffffff',
+              border: '1px solid #ff7875',
+              borderRadius: '8px',
+              boxShadow: '0 4px 12px rgba(255, 77, 79, 0.3)',
+              fontFamily: 'inherit',
+              fontSize: '14px',
+              fontWeight: '500'
+            }
+          });
         }
       );
 
@@ -24,69 +64,102 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="overflow-hidden py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#d5cee0e7] via-[#fdfbff] to-[#9d7db7]">
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap items-start">
-          {/* Left Content - Adjusted spacing */}
-          <div className="w-full px-4 lg:w-5/12">
-            <div className="lg:pr-8 lg:pt-4">
-              <h2 className="mb-3 text-1xl font-bold text-purple-900">
-                ENQUIRY
-              </h2>
-              <h3 className="mb-4 text-2xl font-bold text-purple-700">
-                Build Smarter Tech with Expert-Led AI, Blockchain & Web3 Solutions
-              </h3>
-              <div className="space-y-5 mb-6">
-                <p className="text-base text-[#141418]">
-                  Start Your Project with a Free Strategy Call
+    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-24 bg-gradient-to-br from-[#d5cee0e7] via-[#fdfbff] to-[#9d7db7]">
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+      />
+      
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Left Content - Contact Info */}
+          <div className="lg:w-5/12">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  Let's Build Something Amazing Together
+                </h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  Got an idea or a project in mind? Share a few details, and we'll be in touch.
+                  <br /><br />
+                  No pressure, just a simple conversation.
                 </p>
               </div>
               
-              {/* Box for Stay Updated and Social Links - Hidden on mobile/tablet */}
-              <div className="hidden lg:block mt-44 p-4 bg-[#141418] rounded-lg max-w-xs">
-                <p className="text-sm text-[#CCCCCC] mb-4">
-                  Stay up to date with what`&apos;`s happening at Aictum
-                </p>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="mt-1 flex-shrink-0">
+                    <svg className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
+                    <p className="text-gray-600">+91 7209236123</p>
+                    <p className="text-sm text-gray-500 mt-1">Mon-Fri, 9am-6pm</p>
+                  </div>
+                </div>
                 
-                {/* Social Links */}
-                <div className="flex space-x-3">
-                  <Link
-                    href="#"
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#d5d4d7] text-black hover:bg-[#9345E0] hover:text-white transition-colors duration-300"
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 16 16"
-                      className="fill-current"
-                    >
-                      <path d="M14.3442 0H1.12455C0.499798 0 0 0.497491 0 1.11936V14.3029C0 14.8999 0.499798 15.4222 1.12455 15.4222H14.2942C14.919 15.4222 15.4188 14.9247 15.4188 14.3029V1.09448C15.4688 0.497491 14.969 0 14.3442 0ZM4.57316 13.1088H2.29907V5.7709H4.57316V13.1088ZM3.42362 4.75104C2.67392 4.75104 2.09915 4.15405 2.09915 3.43269C2.09915 2.71133 2.69891 2.11434 3.42362 2.11434C4.14833 2.11434 4.74809 2.71133 4.74809 3.43269C4.74809 4.15405 4.19831 4.75104 3.42362 4.75104ZM13.1947 13.1088H10.9206V9.55183C10.9206 8.7061 10.8956 7.58674 9.72108 7.58674C8.52156 7.58674 8.34663 8.53198 8.34663 9.47721V13.1088H6.07255V5.7709H8.29665V6.79076H8.32664C8.64661 6.19377 9.37132 5.59678 10.4958 5.59678C12.8194 5.59678 13.2447 7.08925 13.2447 9.12897V13.1088H13.1947Z" />
+                <div className="flex items-start gap-4">
+                  <div className="mt-1 flex-shrink-0">
+                    <svg className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">Email</h3>
+                    <p className="text-gray-600">team@aictum.com</p>
+                    <p className="text-sm text-gray-500 mt-1">Typically replies within 24 hours</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="mt-1 flex-shrink-0">
+                    <svg className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">Headquarters</h3>
+                    <p className="text-gray-600">Noida</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="pt-8">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Connect With Us</h3>
+                <div className="flex space-x-4">
+                  <Link href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
+                    <span className="sr-only">Facebook</span>
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
                     </svg>
                   </Link>
-                  <Link
-                    href="#"
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#d5d4d7] text-black hover:bg-[#9345E0] hover:text-white transition-colors duration-300"
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 16 16"
-                      className="fill-current"
-                    >
-                      <path d="M15.5456 2.45429C14.1818 1.09091 12.3636 0.363636 10.3636 0.363636C7.09091 0.363636 3.81818 2.90909 2.90909 6.72727C1.45455 6.72727 0.363636 7.81818 0.363636 9.27273V14.5455C0.363636 15.6364 1.45455 16.3636 2.54545 16.3636H7.81818C8.90909 16.3636 9.63636 15.6364 9.63636 14.5455V9.27273H7.81818V14.5455H2.54545V9.27273C2.54545 8.72727 2.90909 8.36364 3.45455 8.36364H4.36364C5.09091 5.09091 8.36364 2.90909 10.3636 2.90909C11.8182 2.90909 13.0909 3.63636 14.0909 4.63636C15.0909 5.63636 15.8182 6.90909 15.8182 8.36364C15.8182 10.3636 14.5455 12.1818 12.7273 12.7273V10.9091C13.8182 10.5455 14.5455 9.45455 14.5455 8.36364C14.5455 6.72727 13.6364 5.09091 12 4.18182C10.3636 3.27273 8.72727 3.63636 7.45455 4.90909C6.18182 6.18182 5.81818 7.81818 6.72727 9.45455C7.63636 11.0909 9.27273 11.8182 10.9091 11.0909V13.0909C7.63636 12.7273 5.09091 9.81818 5.09091 6.72727C5.09091 4.72727 6.18182 3.09091 7.81818 2.18182C9.45455 1.27273 11.4545 1.63636 12.7273 2.90909C13.4545 3.63636 14.1818 4.72727 14.5455 5.81818H12.7273V7.63636H15.8182V4.54545C15.8182 3.45455 15.0909 2.45429 15.5456 2.45429Z" />
+                  <Link href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
+                    <span className="sr-only">Twitter</span>
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                     </svg>
                   </Link>
-                  <Link
-                    href="#"
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-[#d5d4d7] text-black hover:bg-[#9345E0] hover:text-white transition-colors duration-300"
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 16 16"
-                      className="fill-current"
-                    >
-                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                  <Link href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
+                    <span className="sr-only">LinkedIn</span>
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                  <Link href="#" className="text-gray-600 hover:text-purple-600 transition-colors duration-300">
+                    <span className="sr-only">Instagram</span>
+                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
                     </svg>
                   </Link>
                 </div>
@@ -95,153 +168,146 @@ const Contact = () => {
           </div>
 
           {/* Right Contact Form */}
-          <div className="w-full px-4 lg:w-7/12">
-            <div className="relative rounded-lg bg-[#141418] p-4 shadow-lg lg:ml-auto" style={{ maxWidth: '450px' }}>
+          <div className="lg:w-7/12">
+            <div className="bg-gray-50 rounded-xl shadow-lg p-8 border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Get in Touch</h3>
+              <p className="text-gray-600 mb-6">We'd love to hear about your project. Fill out the form below and we'll get back to you within 24 hours.</p>
+              
               <form onSubmit={sendEmail}>
-                <div className="-mx-3 flex flex-wrap">
-                  {/* First Name & Last Name */}
-                  <div className="w-full px-3 md:w-1/2">
-                    <div className="mb-4">
-                      <label
-                        htmlFor="firstName"
-                        className="mb-1 block text-xs font-medium text-[#d8a7ef]"
-                      >
-                        First Name
-                      </label>
-                      <input
-                        type="text"
-                        name="firstName"
-                        id="firstName"
-                        placeholder="First name"
-                        className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-xs text-gray-700 placeholder:text-gray-600 focus:border-[#9345E0] focus:outline-none focus:ring-1 focus:ring-[#9345E0]"
-                      />
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* First Name */}
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                      First Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:bg-[#eccffae7] focus:text-black not-focus-within:text-black transition-all duration-300"
+                      placeholder="John"
+                    />
                   </div>
-                  <div className="w-full px-3 md:w-1/2">
-                    <div className="mb-4">
-                      <label
-                        htmlFor="lastName"
-                        className="mb-1 block text-xs font-medium text-[#d8a7ef]"
-                      >
-                        Last Name
-                      </label>
-                      <input
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        placeholder="Last name"
-                        className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-xs text-gray-700 placeholder:text-gray-600 focus:border-[#9345E0] focus:outline-none focus:ring-1 focus:ring-[#9345E0]"
-                      />
-                    </div>
+                  
+                  {/* Last Name */}
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+                      Last Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:bg-[#eccffae7] focus:text-black not-focus-within:text-black transition-all duration-300"
+                      placeholder="Doe"
+                    />
                   </div>
-
+                  
                   {/* Email */}
-                  <div className="w-full px-3">
-                    <div className="mb-4">
-                      <label
-                        htmlFor="email"
-                        className="mb-1 block text-xs font-medium text-[#d8a7ef]"
-                      >
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="name@mycompany.com"
-                        className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-xs text-gray-700 placeholder:text-gray-600 focus:border-[#9345E0] focus:outline-none focus:ring-1 focus:ring-[#9345E0]"
-                      />
+                  <div className="md:col-span-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      Email <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:bg-[#eccffae7] focus:text-black not-focus-within:text-black transition-all duration-300"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                  
+                  {/* Phone */}
+                  <div className="md:col-span-2">
+                    <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="contactNumber"
+                      name="contactNumber"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:bg-[#eccffae7] focus:text-black not-focus-within:text-black transition-all duration-300"
+                      placeholder="+1 (123) 456-7890"
+                    />
+                  </div>
+                  
+                  {/* Subject */}
+                  <div className="md:col-span-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                      What can we help you with? <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:text-black not-focus-within:text-black transition-all duration-300"
+                    >
+                      <option value="">Select an option</option>
+                      <option value="Web Development">Web Development</option>
+                      <option value="Mobile App Development">Mobile App Development</option>
+                      <option value="UI/UX Design">UI/UX Design</option>
+                      <option value="Consultation">Consultation</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  
+                  {/* Message */}
+                  <div className="md:col-span-2">
+                    <label htmlFor="projectDescription" className="block text-sm font-medium text-gray-700 mb-1">
+                      Tell us about your project <span className="text-red-500">*</span>
+                    </label>
+                    <textarea
+                      id="projectDescription"
+                      name="projectDescription"
+                      rows={5}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:bg-[#eccffae7] focus:text-black not-focus-within:text-black transition-all duration-300"
+                      placeholder="Briefly describe your project goals, timeline, and any specific requirements..."
+                    ></textarea>
+                  </div>
+                  
+                  {/* Privacy Policy */}
+                  <div className="md:col-span-2">
+                    <div className="flex items-start">
+                      <div className="flex items-center h-5">
+                        <input
+                          id="privacyPolicy"
+                          name="privacyPolicy"
+                          type="checkbox"
+                          required
+                          className="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300 rounded"
+                        />
+                      </div>
+                      <div className="ml-3 text-sm">
+                        <label htmlFor="privacyPolicy" className="text-gray-700">
+                          I agree to the <Link href="/privacy-policy" className="text-purple-600 hover:text-purple-500">Privacy Policy</Link> and 
+                          <Link href="/terms" className="text-purple-600 hover:text-purple-500"> Terms of Service</Link>
+                        </label>
+                      </div>
                     </div>
                   </div>
-
-                  {/* Contact Number */}
-                  <div className="w-full px-3">
-                    <div className="mb-4">
-                      <label
-                        htmlFor="contactNumber"
-                        className="mb-1 block text-xs font-medium text-[#d8a7ef]"
-                      >
-                        Contact Number
-                      </label>
-                      <input
-                        type="tel"
-                        name="contactNumber"
-                        id="contactNumber"
-                        placeholder="+33 01 23 45 67 89"
-                        className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-xs text-gray-700 placeholder:text-gray-600 focus:border-[#9345E0] focus:outline-none focus:ring-1 focus:ring-[#9345E0]"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Budget */}
-                  <div className="w-full px-3">
-                    <div className="mb-4">
-                      <label
-                        htmlFor="budget"
-                        className="mb-1 block text-xs font-medium text-[#d8a7ef]"
-                      >
-                        Budget
-                      </label>
-                      <select
-                        name="budget"
-                        id="budget"
-                        className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-xs text-gray-700 placeholder:text-gray-600 focus:border-[#9345E0] focus:outline-none focus:ring-1 focus:ring-[#9345E0]"
-                      >
-                        <option value="Still Evaluating">Still Evaluating</option>
-                        <option value="Less than $10K">Less than $10K</option>
-                        <option value="$10K - $50K">$10K - $50K</option>
-                        <option value="$50K - $100K">$50K - $100K</option>
-                        <option value="More than $100K">More than $100K</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Project Description */}
-                  <div className="w-full px-3">
-                    <div className="mb-4">
-                      <label
-                        htmlFor="projectDescription"
-                        className="mb-1 block text-xs font-medium text-[#d8a7ef]"
-                      >
-                        Describe Your Project
-                      </label>
-                      <textarea
-                        id="projectDescription"
-                        name="projectDescription"
-                        rows={3}
-                        placeholder="Write down all the details here"
-                        className="w-full resize-none rounded-md border border-gray-300 bg-white px-3 py-2 text-xs text-gray-700 placeholder:text-gray-600 focus:border-[#9345E0] focus:outline-none focus:ring-1 focus:ring-[#9345E0]"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  {/* Privacy Policy Checkbox */}
-                  <div className="w-full px-3 mb-4">
-                    <div className="flex items-center">
-                      <input
-                        type="checkbox"
-                        id="privacyPolicy"
-                        name="privacyPolicy"
-                        className="h-3 w-3 rounded border-gray-900 text-[#9345E0] focus:ring-[#9345E0]"
-                        required
-                      />
-                      <label htmlFor="privacyPolicy" className="ml-2 block text-[10px] text-[#ffffff]">
-                        I acknowledge receipt of the brand Privacy Policy.
-                      </label>
-                    </div>
-                  </div>
-
+                  
                   {/* Submit Button */}
-                  <div className="w-full px-3">
+                  <div className="md:col-span-2">
                     <button
                       type="submit"
-                      className="w-full rounded-md bg-[#9345E0] px-4 py-2 text-xs font-medium text-white transition duration-300 hover:bg-[#B76CFF]"
+                      className="w-full bg-purple-900 hover:bg-purple-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-lg hover:shadow-xl"
                     >
-                      Request Proposal
+                      Send Message
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
                     </button>
                   </div>
                 </div>
               </form>
+              
+              <div className="mt-6 text-center text-sm text-gray-500">
+                <p>We respect your privacy. Your information will never be shared.</p>
+              </div>
             </div>
           </div>
         </div>
