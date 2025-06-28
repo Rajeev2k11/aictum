@@ -48,6 +48,14 @@ const services = {
   }
 };
 
+// New top-level navigation items
+const topLevelServices = [
+  { name: "AI & ML", href: "/ai-ml" },
+  { name: "Blockchain", href: "/blockchain" },
+  { name: "Development", href: "/development" },
+  { name: "Consulting", href: "/consulting" }
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -101,11 +109,22 @@ export default function Navbar() {
       <div className="container flex items-center justify-between h-16 md:h-20 px-4 sm:px-6">
         <Link href="/" className="flex items-center">
           <Image src="/images/Aictum.png" width={100} height={100} alt="logo" />
-          
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
+          {/* Add the new top-level service links */}
+          {topLevelServices.map((service) => (
+            <Button
+              key={service.name}
+              variant="ghost"
+              className="text-white hover:text-[#9345E0] transition-colors duration-300"
+              asChild
+            >
+              <Link href={service.href}>{service.name}</Link>
+            </Button>
+          ))}
+
           <div 
             className="relative"
             onMouseEnter={handleMouseEnter}
@@ -123,52 +142,51 @@ export default function Navbar() {
             </Button>
 
             {isServicesHovered && (
-  <div 
-    className="
-      absolute left-1/2 top-full 
-      bg-[#2B1D40] backdrop-blur-sm border border-[#9345E0]/40 shadow-xl rounded-lg p-4 mt-1
-      w-[95vw] max-w-[800px] 
-      sm:w-[600px] sm:max-w-[90vw]
-      md:w-[700px] md:max-w-[90vw]
-      lg:w-[800px] lg:max-w-[90vw]
-      overflow-y-auto
-      z-50
-    "
-    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
-    style={{
-      transform: 'translateX(-50%)',
-      maxHeight: '70vh'
-    }}
-  >
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-      {Object.entries(services).map(([category, data]) => (
-        <div key={category} className="space-y-2">
-          <Link 
-            href='#'
-            className="text-[#9345E0] font-semibold text-base mb-2 pb-1 border-b border-[#9345E0]/30 block hover:text-[#b36ef7] cursor-default transition-colors"
-            
-          >
-            {category}
-          </Link>
-          <ul className="space-y-2">
-            {data.items.map((item) => (
-              <li key={item}>
-                <Link 
-                  href={getServiceLink(category, item)}
-                  className="block rounded-md px-2 py-1.5 hover:bg-[#9345E0]/20 text-white transition-all duration-200 text-sm"
-                  onClick={() => setIsServicesHovered(false)}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
+              <div 
+                className="
+                  absolute left-1/2 top-full 
+                  bg-[#2B1D40] backdrop-blur-sm border border-[#9345E0]/40 shadow-xl rounded-lg p-4 mt-1
+                  w-[95vw] max-w-[800px] 
+                  sm:w-[600px] sm:max-w-[90vw]
+                  md:w-[700px] md:max-w-[90vw]
+                  lg:w-[800px] lg:max-w-[90vw]
+                  overflow-y-auto
+                  z-50
+                "
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  transform: 'translateX(-50%)',
+                  maxHeight: '70vh'
+                }}
+              >
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                  {Object.entries(services).map(([category, data]) => (
+                    <div key={category} className="space-y-2">
+                      <Link 
+                        href='#'
+                        className="text-[#9345E0] font-semibold text-base mb-2 pb-1 border-b border-[#9345E0]/30 block hover:text-[#b36ef7] cursor-default transition-colors"
+                      >
+                        {category}
+                      </Link>
+                      <ul className="space-y-2">
+                        {data.items.map((item) => (
+                          <li key={item}>
+                            <Link 
+                              href={getServiceLink(category, item)}
+                              className="block rounded-md px-2 py-1.5 hover:bg-[#9345E0]/20 text-white transition-all duration-200 text-sm"
+                              onClick={() => setIsServicesHovered(false)}
+                            >
+                              {item}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {['About', 'Contact', 'Blog'].map((label) => (
@@ -218,11 +236,23 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center px-5 pt-5 pb-4 border-b border-[#9345E0]/20">
-                 <Image src="/images/Aictum.png" width={100} height={100} alt="logo" />
+                  <Image src="/images/Aictum.png" width={100} height={100} alt="logo" />
                 </div>
 
                 {/* Navigation */}
                 <nav className="flex-1 flex flex-col space-y-1 px-5 py-6 overflow-y-auto">
+                  {/* Add new top-level service links for mobile */}
+                  {topLevelServices.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className="block text-base font-medium text-white hover:text-[#9345E0] transition-colors py-2 border-b border-[#9345E0]/10"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+
                   {/* Services Dropdown */}
                   <div className="mb-4 border-b border-[#9345E0]/10 pb-4">
                     <button
@@ -245,7 +275,6 @@ export default function Navbar() {
                             <Link
                               href='#'
                               className="text-sm font-semibold text-[#9345E0] mb-2 block hover:text-[#b36ef7]"
-                             
                             >
                               {category}
                             </Link>
