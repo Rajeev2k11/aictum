@@ -231,7 +231,7 @@ export default function ServiceDetailPage() {
             Ready to Get Started?
           </h2>
           <p className="mx-auto mb-8 max-w-3xl text-xl text-[#e2e1e3]">
-            Let's discuss how we can help you achieve your business goals.
+            Let&apos;s discuss how we can help you achieve your business goals.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link href="/contact" passHref>

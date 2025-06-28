@@ -85,10 +85,10 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Let's Build Something Amazing Together
+                  Let&apos;s Build Something Amazing Together
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Got an idea or a project in mind? Share a few details, and we'll be in touch.
+                  Got an idea or a project in mind? Share a few details, and we&apos;ll be in touch.
                   <br /><br />
                   No pressure, just a simple conversation.
                 </p>
@@ -171,7 +171,7 @@ const Contact = () => {
           <div className="lg:w-7/12">
             <div className="bg-gray-50 rounded-xl shadow-lg p-8 border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Get in Touch</h3>
-              <p className="text-gray-600 mb-6">We'd love to hear about your project. Fill out the form below and we'll get back to you within 24 hours.</p>
+              <p className="text-gray-600 mb-6">We&apos;d love to hear about your project. Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
               
               <form onSubmit={sendEmail}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
