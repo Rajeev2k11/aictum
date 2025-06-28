@@ -1,16 +1,21 @@
 // data/services.ts
 
+export interface FeatureItem {
+  title: string;
+  description: string;
+}
+
 export interface ServiceDetail {
   [x: string]: any;
   title: string;
   description: string;
   images: string[];
   content: string[];
-  features?: string[];          
+  features?: (string | FeatureItem)[];          
   benefits?: string[];         
   caseStudies?: string[];      
   technologies?: string[];     
-  whyAictum?: string[];
+  whyAictum?: (string | FeatureItem)[];
   futureReady?: string[];
 }
 
@@ -36,16 +41,44 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Cross-platform integration: AR/VR vision systems, drone surveillance, and robotic vision for autonomous navigation."
   ],
 
-  "features": [
-    "Custom model training with your proprietary datasets",
-    "Edge computing deployment for real-time processing",
-    "Multi-camera synchronization for wide-area monitoring",
-    "Anomaly detection in video streams",
-    "Automated quality control in manufacturing lines",
-    "Low-light and night-vision compatibility",
-    "3D vision systems with depth perception",
-    "AI explainability features for regulatory compliance"
-  ],
+  features: [
+  {
+    title: "Custom Model Training",
+    description: "Custom model training with your proprietary datasets for specialized computer vision applications"
+  },
+  {
+    title: "Edge Computing",
+    description: "Edge computing deployment for real-time processing of visual data with low latency"
+  },
+  {
+    title: "Object Detection",
+    description: "Accurate identification and localization of objects within images and video streams"
+  },
+  {
+    title: "Facial Recognition",
+    description: "Advanced facial recognition systems with high accuracy and anti-spoofing capabilities"
+  },
+  {
+    title: "Image Segmentation",
+    description: "Pixel-level segmentation for precise object boundaries and scene understanding"
+  },
+  {
+    title: "Optical Character Recognition",
+    description: "Text extraction from images and documents with support for multiple languages"
+  },
+  {
+    title: "Motion Analysis",
+    description: "Tracking and analysis of movement patterns in video sequences"
+  },
+  {
+    title: "3D Reconstruction",
+    description: "Conversion of 2D images into 3D models for spatial analysis"
+  },
+  {
+    title: "Quality Inspection",
+    description: "Automated visual inspection for manufacturing and production lines"
+  }
+],
 
   "benefits": [
     "Reduce manual inspection costs by up to 70%",
@@ -76,13 +109,32 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Docker, Kubernetes for scalable deployments"
   ],
 
-  "whyAictum": [
-    "Deep expertise in AI/ML and computer vision domains with a proven portfolio across industries",
-    "In-house team of data scientists, AI engineers, and domain consultants for tailored solutioning",
-    "Accelerated development using reusable modules and pre-trained models",
-    "End-to-end lifecycle support — from POC to production-grade deployment and monitoring",
-    "Trusted by Fortune 500 companies and startups alike for innovation in visual AI"
-  ],
+  whyAictum: [
+  {
+    title: "AI/ML Expertise",
+    description: "Deep expertise in AI/ML and computer vision domains with a proven portfolio across industries"
+  },
+  {
+    title: "In-house Team",
+    description: "In-house team of data scientists, AI engineers, and domain consultants for tailored solutioning"
+  },
+  {
+    title: "Cutting-Edge Research",
+    description: "Dedicated R&D team continuously innovating with the latest computer vision architectures and techniques"
+  },
+  {
+    title: "Scalable Solutions",
+    description: "Proven frameworks that scale from pilot to enterprise-level deployment across thousands of devices"
+  },
+  {
+    title: "Domain Specialization",
+    description: "Deep vertical expertise in healthcare, manufacturing, retail and smart city applications"
+  },
+  {
+    title: "Performance Guarantee",
+    description: "Accuracy and latency SLAs tailored to your specific business requirements"
+  }
+],
 
   "futureReady": [
     "Working on vision-language models that understand both images and text (e.g., GPT-4V, Flamingo, BLIP)",
@@ -111,15 +163,39 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Generative AI tools for automatic email drafting, report generation, proposal writing, and knowledge base creation."
   ],
 
-  "features": [
-    "Transformer-based models trained on custom corpora",
-    "Contextual memory for multi-turn conversations",
-    "Speech-to-text and text-to-speech with domain-specific vocabulary",
-    "Named entity recognition, relationship extraction, and classification",
-    "Automated summarization and paraphrasing",
-    "Emotion and sarcasm detection in customer feedback",
-    "Integration with CRMs, ERPs, and communication platforms",
-    "Real-time processing pipelines with streaming NLP support"
+  features: [
+    {
+      title: "Text Classification",
+      description: "Automatically categorize documents, emails, and content with high accuracy"
+    },
+    {
+      title: "Sentiment Analysis",
+      description: "Detect emotions, opinions, and attitudes in customer feedback and social media"
+    },
+    {
+      title: "Named Entity Recognition",
+      description: "Identify and extract people, organizations, locations from unstructured text"
+    },
+    {
+      title: "Machine Translation",
+      description: "Real-time translation between multiple languages with context preservation"
+    },
+    {
+      title: "Chatbot Framework",
+      description: "Conversational AI agents with contextual understanding and memory"
+    },
+    {
+      title: "Text Summarization",
+      description: "Automatic summarization of documents while preserving key information"
+    },
+    {
+      title: "Speech Recognition",
+      description: "Convert speech to text with industry-leading accuracy rates"
+    },
+    {
+      title: "Language Generation",
+      description: "Generate human-like text for reports, product descriptions, and more"
+    }
   ],
 
   "benefits": [
@@ -152,12 +228,31 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Dockerized NLP APIs with REST & gRPC support"
   ],
 
-  "whyAictum": [
-    "Proven NLP deployments in legaltech, fintech, healthcare, and enterprise automation sectors.",
-    "In-house R&D and fine-tuning capabilities for transformer models on secure infrastructure.",
-    "Human-in-the-loop NLP workflows with expert validation when needed.",
-    "Customizable APIs and UI interfaces for seamless integration into existing business systems.",
-    "Ongoing support for updates, accuracy improvements, and domain drift handling."
+  whyAictum: [
+    {
+      title: "NLP Specialists",
+      description: "Team of computational linguists and ML engineers with PhD-level expertise in language technologies"
+    },
+    {
+      title: "Domain Adaptation",
+      description: "Custom model tuning for legal, medical, and technical terminology handling"
+    },
+    {
+      title: "Privacy Compliance",
+      description: "On-premise deployment options for sensitive data with full GDPR/HIPAA compliance"
+    },
+    {
+      title: "Multilingual Models",
+      description: "Proven experience with 50+ languages including low-resource dialects"
+    },
+    {
+      title: "Explainable AI",
+      description: "Transparent decision-making with model interpretability features"
+    },
+    {
+      title: "Continuous Learning",
+      description: "Systems that automatically adapt to evolving language use and new terminology"
+    }
   ],
 
   "futureReady": [
@@ -188,15 +283,39 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Enterprise-grade governance: human-in-the-loop content review, moderation pipelines, and ethical filters for safe and responsible AI deployment."
   ],
 
-  "features": [
-    "Custom fine-tuning on brand-specific datasets",
-    "Multi-turn memory and dynamic persona injection",
-    "Text, image, and video generation from unified prompts",
-    "Plug-and-play integrations with CMS, CRM, and helpdesk tools",
-    "Built-in content safety, bias detection, and response filtering",
-    "Scalable deployment via APIs, widgets, and embedded agents",
-    "Visual story generation and creative campaign assistance",
-    "A/B testing of AI-generated variants for performance optimization"
+  features: [
+    {
+      title: "Conversational AI",
+      description: "Context-aware chatbots with memory and personalized responses"
+    },
+    {
+      title: "Content Generation",
+      description: "Automated creation of marketing copy, reports, and creative content"
+    },
+    {
+      title: "Multimodal AI",
+      description: "Generate and process text, images, and audio in unified workflows"
+    },
+    {
+      title: "Knowledge Assistants",
+      description: "AI-powered search and Q&A systems using your proprietary data"
+    },
+    {
+      title: "Persona Customization",
+      description: "Tailor AI personality, tone, and style to match your brand"
+    },
+    {
+      title: "API Integration",
+      description: "Easy integration with CRM, ERP, and business applications"
+    },
+    {
+      title: "Sentiment Adaptation",
+      description: "Real-time emotional intelligence for appropriate responses"
+    },
+    {
+      title: "Analytics Dashboard",
+      description: "Monitor performance, user satisfaction, and conversation trends"
+    }
   ],
 
   "benefits": [
@@ -229,12 +348,31 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Secure REST APIs and WebSocket integrations"
   ],
 
-  "whyAictum": [
-    "Specialized expertise in Generative AI, LLM orchestration, and prompt engineering for enterprise needs",
-    "Full-stack development team to deliver UI, APIs, cloud infra, and custom models",
-    "Flexible IP and hosting — deploy on your cloud or ours with complete data control",
-    "Modular architecture for chatbot, content engine, or hybrid experiences",
-    "Committed to ethical AI — all deployments include safety checks and responsible content policies"
+  whyAictum: [
+    {
+      title: "LLM Experts",
+      description: "Specialists in fine-tuning GPT, Claude, and proprietary LLMs for business applications"
+    },
+    {
+      title: "Enterprise Ready",
+      description: "Solutions designed for scalability, security, and compliance from day one"
+    },
+    {
+      title: "Hybrid Architecture",
+      description: "Combine public models with private data without compromising security"
+    },
+    {
+      title: "Continuous Learning",
+      description: "Systems that improve automatically from user interactions"
+    },
+    {
+      title: "Multichannel Deployment",
+      description: "Deploy across web, mobile, WhatsApp, and internal communication platforms"
+    },
+    {
+      title: "Ethical AI",
+      description: "Built-in safeguards against bias, hallucinations, and inappropriate content"
+    }
   ],
 
   "futureReady": [
@@ -264,17 +402,40 @@ export const servicesData: Record<string, ServiceDetail> = {
     "AI model monitoring and retraining workflows to ensure performance over time and adapt to market or data shifts."
   ],
 
-  "features": [
-    "AutoML pipelines with hyperparameter tuning",
-    "Explainable AI (XAI) with SHAP, LIME for auditability",
-    "Scenario modeling and simulation for ‘what-if’ analysis",
-    "REST APIs for real-time predictions at scale",
-    "Seamless integration with Tableau, Power BI, Looker",
-    "Drift detection and automated model re-training",
-    "Data preprocessing and feature engineering automation",
-    "Custom alerting for threshold breaches or anomaly spikes"
+   features: [
+    {
+      title: "Demand Forecasting",
+      description: "Predict customer demand patterns with machine learning models"
+    },
+    {
+      title: "Predictive Maintenance",
+      description: "Anticipate equipment failures before they occur"
+    },
+    {
+      title: "Customer Churn Prediction",
+      description: "Identify at-risk customers with 85%+ accuracy"
+    },
+    {
+      title: "Risk Modeling",
+      description: "Quantify and mitigate financial, operational, and market risks"
+    },
+    {
+      title: "Price Optimization",
+      description: "Dynamic pricing models to maximize revenue and competitiveness"
+    },
+    {
+      title: "Real-time Analytics",
+      description: "Stream processing for instant insights from live data"
+    },
+    {
+      title: "Scenario Planning",
+      description: "Simulate business outcomes under different conditions"
+    },
+    {
+      title: "Automated Reporting",
+      description: "AI-generated insights with natural language explanations"
+    }
   ],
-
   "benefits": [
     "Increase forecasting accuracy by up to 60% over legacy models",
     "Detect fraudulent patterns with >95% precision and <1% false positives",
@@ -304,12 +465,31 @@ export const servicesData: Record<string, ServiceDetail> = {
     "MLflow, Airflow for MLOps and retraining pipelines"
   ],
 
-  "whyAictum": [
-    "Years of experience designing and deploying predictive models across domains: retail, finance, healthcare, and manufacturing",
-    "Strong foundation in statistical modeling, time-series forecasting, and modern ML techniques",
-    "In-house data scientists and business analysts working in tandem to align predictions with strategy",
-    "Secure, scalable deployments on AWS, Azure, or GCP — with full data privacy compliance",
-    "Agile delivery with frequent iterations, dashboards, and stakeholder demos"
+  whyAictum: [
+    {
+      title: "Proven Methodology",
+      description: "CRISP-DM based approach refined across 100+ implementations"
+    },
+    {
+      title: "Full-stack Expertise",
+      description: "From data engineering to model deployment and monitoring"
+    },
+    {
+      title: "Industry Templates",
+      description: "Pre-built models for retail, manufacturing, and financial services"
+    },
+    {
+      title: "Explainable AI",
+      description: "Transparent models with clear rationale for all predictions"
+    },
+    {
+      title: "Data Agnostic",
+      description: "Work with structured, unstructured, and real-time data streams"
+    },
+    {
+      title: "ROI Focused",
+      description: "Clear metrics linking insights to business outcomes"
+    }
   ],
 
   "futureReady": [
@@ -340,14 +520,39 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Support for zero-knowledge-based privacy contracts, off-chain computation (via oracles), and cross-chain interoperability."
   ],
 
-  "features": [
-    "Audited ERC-20, ERC-721, and ERC-1155 token contracts",
-    "Role-based access control (RBAC) and permission layers",
-    "Timelocks, pausability, and emergency circuit breakers",
-    "Upgradeable contracts via UUPS or transparent proxy pattern",
-    "Multi-chain deployment pipelines and chain-agnostic logic",
-    "Gas fee estimators and optimization reports",
-    "Integration-ready with OpenZeppelin, Chainlink, and major L2s"
+  features: [
+    {
+      title: "DeFi Protocols",
+      description: "Custom DEXs, lending platforms, and yield farming contracts"
+    },
+    {
+      title: "NFT Ecosystems",
+      description: "ERC-721A/1155 contracts with advanced minting and royalty features"
+    },
+    {
+      title: "DAO Frameworks",
+      description: "Governance systems with voting, treasury management, and proposals"
+    },
+    {
+      title: "Oracles Integration",
+      description: "Secure data feeds from Chainlink, Band, and custom oracle networks"
+    },
+    {
+      title: "Multi-sig Wallets",
+      description: "Customizable multi-signature solutions for institutional security"
+    },
+    {
+      title: "Upgradeable Contracts",
+      description: "Proxy patterns for future-proof, modifiable logic"
+    },
+    {
+      title: "Token Standards",
+      description: "ERC-20, SPL, BEP-20 with custom tax/burn/reward mechanisms"
+    },
+    {
+      title: "ZK-SNARKs Circuits",
+      description: "Privacy-preserving smart contracts with zero-knowledge proofs"
+    }
   ],
 
   "benefits": [
@@ -375,12 +580,31 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Polygon, Optimism, Arbitrum, Solana"
   ],
 
-  "whyAictum": [
-    "Deep expertise in smart contract architecture, audit-readiness, and gas optimization",
-    "Cross-functional teams with smart contract engineers, protocol designers, and Web3 front-end developers",
-    "End-to-end delivery from contract development to wallet integrations and testnet/mainnet deployment",
-    "Battle-tested workflows using Hardhat, Foundry, and CI pipelines for secure and reliable releases",
-    "On-chain analytics and monitoring support post-deployment for sustained performance and transparency"
+  whyAictum: [
+    {
+      title: "Security First",
+      description: "300+ vulnerability checks and formal verification using Certora"
+    },
+    {
+      title: "Full Audit Trail",
+      description: "Comprehensive reports with MythX, Slither, and manual review"
+    },
+    {
+      title: "Cross-chain Experts",
+      description: "EVM, Solana, Cosmos, and Polkadot development experience"
+    },
+    {
+      title: "Gas Optimization",
+      description: "30-70% gas reduction techniques through advanced coding patterns"
+    },
+    {
+      title: "Legal Compliance",
+      description: "Regulatory-friendly architectures for enterprise adoption"
+    },
+    {
+      title: "Post-deployment Support",
+      description: "Monitoring, incident response, and version upgrade services"
+    }
   ],
 
   "futureReady": [
@@ -408,13 +632,39 @@ export const servicesData: Record<string, ServiceDetail> = {
     "UI/UX design that abstracts blockchain complexity, delivering intuitive experiences for crypto-native and Web2-first users alike."
   ],
 
-  "features": [
-    "Modular wallet integration components (MetaMask, WalletConnect, Ledger)",
-    "Real-time transaction status tracking and gas fee estimators",
-    "Cross-chain token bridge UI elements and alerts",
-    "GraphQL-powered on-chain analytics dashboards",
-    "Fully responsive mobile-first and PWA-ready design",
-    "Support for IPFS/Filecoin for decentralized media and metadata storage"
+  features: [
+    {
+      title: "DeFi Dashboards",
+      description: "Interactive interfaces for trading, staking, and yield optimization"
+    },
+    {
+      title: "NFT Marketplaces",
+      description: "White-label platforms with auctions, bundles, and royalty management"
+    },
+    {
+      title: "GameFi Integration",
+      description: "Play-to-earn mechanics with in-game asset tokenization"
+    },
+    {
+      title: "DAO Management",
+      description: "Complete governance interfaces with proposal systems and voting"
+    },
+    {
+      title: "Wallet Connectivity",
+      description: "Multi-wallet support (MetaMask, WalletConnect, Phantom)"
+    },
+    {
+      title: "Web3 Social",
+      description: "Decentralized social platforms with tokenized content"
+    },
+    {
+      title: "Data Indexing",
+      description: "Optimized blockchain data queries using The Graph protocol"
+    },
+    {
+      title: "Hybrid dApps",
+      description: "Combine on-chain logic with off-chain computation"
+    }
   ],
 
   "benefits": [
@@ -440,14 +690,32 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Polygon, Ethereum, Solana, Optimism"
   ],
 
-  "whyAictum": [
-    "End-to-end Web3 development expertise, from UI to smart contracts",
-    "Strong UX focus to simplify blockchain interactions for all users",
-    "Battle-tested workflows for rapid prototyping and testnet deployments",
-    "Experience building scalable dApps with 100k+ users",
-    "Support for custom analytics, NFT rendering, and DAO tooling"
+   whyAictum: [
+    {
+      title: "UX Specialists",
+      description: "Web3-native designers who prioritize user experience"
+    },
+    {
+      title: "Gas Optimization",
+      description: "Reduce user transaction costs by 40-60%"
+    },
+    {
+      title: "Security Audits",
+      description: "Smart contract audits + frontend penetration testing"
+    },
+    {
+      title: "Cross-chain Ready",
+      description: "Build once, deploy to EVM, Cosmos, and Solana ecosystems"
+    },
+    {
+      title: "Proven Frameworks",
+      description: "Reusable components that accelerate development"
+    },
+    {
+      title: "24/7 Monitoring",
+      description: "Real-time alerts for smart contract events and anomalies"
+    }
   ],
-
   "futureReady": [
     "Integrating account abstraction (ERC-4337) for walletless onboarding",
     "Building zk-enabled privacy layers into public dApps",
@@ -474,12 +742,38 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "features": [
-    "Lazy minting to reduce upfront gas costs",
-    "Bulk NFT creation and batch metadata upload tools",
-    "Automated royalty distribution and split payments",
-    "Support for fixed price, auction, and offer-based sales",
-    "Trait rarity filtering and collection-level analytics",
-    "Support for IPFS pinning and metadata freezing"
+    {
+      title: "NFT Minting",
+      description: "Custom minting flows with gas optimization and batch minting"
+    },
+    {
+      title: "Marketplace Functionality",
+      description: "Listing, bidding, and trading with real-time updates"
+    },
+    {
+      title: "Royalty Management",
+      description: "On-chain royalty distribution for creators"
+    },
+    {
+      title: "Tokenization Frameworks",
+      description: "Real-world asset tokenization with compliance checks"
+    },
+    {
+      title: "Cross-chain Support",
+      description: "Bridging NFTs across Ethereum, Solana, and Polygon"
+    },
+    {
+      title: "Community Tools",
+      description: "Social features like comments, likes, and shares"
+    },
+    {
+      title: "Analytics Dashboard",
+      description: "Real-time sales data, user activity, and market trends"
+    },
+    {
+      title: "Gas Optimization",
+      description: "Reduce minting costs by up to 50% with advanced patterns"
+    }
   ],
 
   "benefits": [
@@ -505,14 +799,32 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Alchemy, Moralis, Pinata integrations"
   ],
 
-  "whyAictum": [
-    "Experience building large-scale NFT platforms with custom smart contracts",
-    "Deep integration with IPFS, royalty engines, and off-chain metadata APIs",
-    "Secure auditing pipelines to prevent exploits and ensure trust",
-    "Support for brand-specific UX flows and mobile-first experiences",
-    "Rapid deployment with battle-tested NFT marketplace modules"
+  whyAictum: [
+    {
+      title: "Tokenization Experts",
+      description: "200+ NFT projects launched across 12 industries"
+    },
+    {
+      title: "Gas Optimization",
+      description: "60-80% lower minting costs compared to standard contracts"
+    },
+    {
+      title: "Legal Compliance",
+      description: "KYC/AML integration for regulated token offerings"
+    },
+    {
+      title: "Multi-chain Deploy",
+      description: "One-click deployment to Ethereum, Polygon, BSC, and Solana"
+    },
+    {
+      title: "White-label Solution",
+      description: "Fully customizable UI with your brand identity"
+    },
+    {
+      title: "End-to-end Security",
+      description: "Smart contract audits + frontend penetration testing"
+    }
   ],
-
   "futureReady": [
     "ERC-6551 (token-bound accounts) and dynamic NFTs for evolving use cases",
     "Bringing NFTs to social protocols and metaverse platforms",
@@ -538,11 +850,42 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "features": [
-    "Competitive and regulatory landscape analysis",
-    "Token valuation and pricing simulation models",
-    "Investor pitch deck and whitepaper support",
-    "Go-to-market planning and KPI definition",
-    "Compliance mapping across regions and sectors"
+    {
+      title: "Competitive Analysis",
+      description: "In-depth market research to identify opportunities and threats"
+    },
+    {
+      title: "Token Valuation",
+      description: "Comprehensive models to assess token worth and potential"
+    },
+    {
+      title: "Investor Support",
+      description: "Crafting compelling narratives for pitches and presentations"
+    },
+    {
+      title: "Go-to-Market Strategy",
+      description: "Tailored plans to ensure successful product launches"
+    },
+    {
+      title: "Compliance Frameworks",
+      description: "Mapping regulatory requirements across jurisdictions"
+    },
+    {
+      title: "Market Entry Strategy",
+      description: "Comprehensive plans for launching in new regions"
+    },
+    {
+      title: "Risk Assessment",
+      description: "Identifying and mitigating technical and business risks"
+    },
+    {
+      title: "Training & Workshops",
+      description: "Hands-on sessions to upskill teams on blockchain fundamentals"
+    },
+    {
+      title: "Architecture Review",
+      description: "Evaluating existing blockchain solutions for scalability and security"
+    }
   ],
 
   "benefits": [
@@ -567,12 +910,31 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Financial modeling tools (Excel/Sheets + crypto-specific plugins)"
   ],
 
-  "whyAictum": [
-    "Cross-functional team of blockchain engineers, economists, and legal advisors",
-    "Proven track record of venture-scale and enterprise-grade strategy design",
-    "Deep ecosystem understanding across Ethereum, Layer-2s, and alt-L1s",
-    "Investor and GTM support from whitepaper to pitch deck",
-    "Trusted by corporates and crypto-native startups alike"
+  whyAictum: [
+    {
+      title: "Blockchain Strategists",
+      description: "Team with 10+ years of combined blockchain consulting experience"
+    },
+    {
+      title: "Cross-industry Expertise",
+      description: "Worked with fintech, healthcare, supply chain, and gaming sectors"
+    },
+    {
+      title: "Regulatory Specialists",
+      description: "In-house legal advisors for compliance across 20+ jurisdictions"
+    },
+    {
+      title: "Data-driven Insights",
+      description: "Leverage analytics to inform strategy and execution"
+    },
+    {
+      title: "Agile Methodology",
+      description: "Iterative approach ensuring alignment with business goals"
+    },
+    {
+      title: "Long-term Partnerships",
+      description: "Focus on building sustainable, scalable blockchain solutions"
+    }
   ],
 
   "futureReady": [
@@ -601,12 +963,43 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Microservice, monorepo, and event-driven architectures tailored to business scale and engineering velocity."
   ],
 
-  "features": [
-    "JAMstack-ready static and dynamic rendering options",
-    "Serverless and containerized backend capabilities",
-    "Real-time data via WebSockets and pub/sub integrations",
-    "OpenAPI and GraphQL schema generation with auto-docs",
-    "Offline-first and Progressive Web App (PWA) support"
+  features: [
+    {
+      title: "Frontend Development",
+      description: "React, Angular, or Vue.js with TypeScript and state management"
+    },
+    {
+      title: "Backend Systems",
+      description: "Node.js, Django, or Spring Boot with REST/GraphQL APIs"
+    },
+    {
+      title: "Database Solutions",
+      description: "SQL (PostgreSQL), NoSQL (MongoDB), and caching layers"
+    },
+    {
+      title: "Cloud Deployment",
+      description: "AWS, Azure, or GCP with containerization (Docker/Kubernetes)"
+    },
+    {
+      title: "Mobile Integration",
+      description: "React Native or Flutter for cross-platform mobile apps"
+    },
+    {
+      title: "Real-time Features",
+      description: "WebSockets, Server-Sent Events, and Firebase integration"
+    },
+    {
+      title: "Testing Suite",
+      description: "Unit, integration, and E2E testing (Jest, Cypress, Selenium)"
+    },
+    {
+      title: "DevOps Automation",
+      description: "GitHub Actions, CircleCI, and infrastructure-as-code"
+    },
+    {
+      title: "Security Practices",
+      description: "OWASP compliance, data encryption, and secure coding standards"
+    }
   ],
 
   "benefits": [
@@ -631,14 +1024,32 @@ export const servicesData: Record<string, ServiceDetail> = {
     "AWS (Lambda, ECS, RDS), GCP (Cloud Run, Firebase), Azure"
   ],
 
-  "whyAictum": [
-    "Cross-functional team with frontend, backend, DevOps, and mobile expertise",
-    "Battle-tested patterns from startups to enterprises",
-    "API-first and developer-experience-driven workflows",
-    "Strong UX/Dev handoff processes for pixel-perfect outcomes",
-    "Cloud-agnostic deployments and infrastructure-as-code support"
+  whyAictum: [
+    {
+      title: "Full-stack Expertise",
+      description: "10+ years building complex, scalable applications across industries"
+    },
+    {
+      title: "Agile Methodology",
+      description: "Iterative development with continuous feedback loops"
+    },
+    {
+      title: "DevOps Culture",
+      description: "Integrated CI/CD pipelines for rapid delivery and iteration"
+    },
+    {
+      title: "Security First",
+      description: "Built-in security practices from day one"
+    },
+    {
+      title: "Cross-functional Teams",
+      description: "Design, engineering, and DevOps working in sync"
+    },
+    {
+      title: "Long-term Partnerships",
+      description: "Focus on sustainable, maintainable solutions"
+    }
   ],
-
   "futureReady": [
     "AI-assisted user interfaces and API integrations",
     "Modular monorepo support for product suites",
@@ -664,11 +1075,38 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "features": [
-    "Click-through prototypes with multi-device flows",
-    "Design tokens and component libraries",
-    "Usability testing coordination and analysis",
-    "Dev-mode specs and redlines for seamless handoff",
-    "Dark mode, responsive states, and interaction variants"
+    {
+      title: "User Research",
+      description: "Qualitative and quantitative studies to inform design decisions"
+    },
+    {
+      title: "Prototyping",
+      description: "Interactive prototypes for user testing and stakeholder feedback"
+    },
+    {
+      title: "Design Systems",
+      description: "Reusable components and style guides for brand consistency"
+    },
+    {
+      title: "Accessibility",
+      description: "Inclusive design practices ensuring WCAG compliance"
+    },
+    {
+      title: "Responsive Design",
+      description: "Adaptive layouts for mobile, tablet, and desktop experiences"
+    },
+    {
+      title: "Visual Design",
+      description: "High-fidelity mockups with pixel-perfect attention to detail"
+    },
+    {
+      title: "User Testing",
+      description: "Iterative testing with real users to validate designs"
+    },
+    {
+      title: "Analytics Integration",
+      description: "Data-driven design improvements based on user behavior"
+    }
   ],
 
   "benefits": [
@@ -693,12 +1131,31 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Storybook, Zeroheight, Zeplin"
   ],
 
-  "whyAictum": [
-    "Human-centered design backed by real-world usability insights",
-    "Integrated design-to-dev pipeline for frictionless delivery",
-    "Scalable design systems for product ecosystems",
-    "Experience designing for fintech, healthtech, SaaS, and Web3",
-    "Iterative design process anchored in research and experimentation"
+  whyAictum: [
+    {
+      title: "User-Centric Design",
+      description: "Empathy-driven approach with real user insights"
+    },
+    {
+      title: "Cross-functional Collaboration",
+      description: "Designers working closely with developers and product teams"
+    },
+    {
+      title: "Agile Process",
+      description: "Iterative design sprints aligned with development cycles"
+    },
+    {
+      title: "Accessibility Focus",
+      description: "Inclusive design practices from the ground up"
+    },
+    {
+      title: "Data-Driven Decisions",
+      description: "Continuous improvement based on user analytics"
+    },
+    {
+      title: "Scalable Solutions",
+      description: "Design systems that grow with your product"
+    }
   ],
 
   "futureReady": [
@@ -726,13 +1183,43 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "features": [
-    "Biometric authentication (Face ID, fingerprint)",
-    "Offline-first sync with local cache fallback",
-    "Deep linking and universal links support",
-    "In-app purchases and subscriptions",
-    "Background tasks, push notifications, and geolocation"
+    {
+      title: "Native Mobile Apps",
+      description: "SwiftUI for iOS, Jetpack Compose for Android with full device access"
+    },
+    {
+      title: "Cross-platform Frameworks",
+      description: "Flutter and React Native for shared codebases"
+    },
+    {
+      title: "Progressive Web Apps",
+      description: "Offline-first, installable web experiences"
+    },
+    {
+      title: "Backend Integration",
+      description: "Firebase, Supabase, or custom REST/GraphQL APIs"
+    },
+    {
+      title: "CI/CD Automation",
+      description: "Fastlane, App Center, Bitrise for streamlined releases"
+    },
+    {
+      title: "Push Notifications",
+      description: "Real-time updates via Firebase Cloud Messaging or APNs"
+    },
+    {
+      title: "App Store Optimization",
+      description: "ASO strategies to improve visibility and downloads"
+    },
+    {
+      title: "Security Best Practices",
+      description: "Data encryption, secure storage, and authentication"
+    },
+    {
+      title: "Analytics Integration",
+      description: "Firebase Analytics, Mixpanel, or Amplitude for user insights"
+    }
   ],
-
   "benefits": [
     "Launch faster with cross-platform efficiency",
     "Cut dev and maintenance costs with shared codebases",
@@ -756,11 +1243,26 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "whyAictum": [
-    "Expertise in both native and cross-platform ecosystems",
-    "End-to-end app lifecycle management from design to deployment",
-    "DevOps and release automation built-in from day one",
-    "UX-led mobile design with proven engagement metrics",
-    "Experience delivering regulated apps (e.g. healthcare, fintech)"
+    {
+      title: "Cross-Platform Expertise",
+      description: "Deep knowledge of both native and cross-platform frameworks"
+    },
+    {
+      title: "Full Lifecycle Support",
+      description: "From ideation to deployment, we’ve got you covered"
+    },
+    {
+      title: "DevOps Integration",
+      description: "Seamless CI/CD pipelines for faster time-to-market"
+    },
+    {
+      title: "User-Centric Design",
+      description: "Focus on user experience and engagement metrics"
+    },
+    {
+      title: "Regulated Industry Experience",
+      description: "Proven track record in healthcare, fintech, and more"
+    }
   ],
 
   "futureReady": [
@@ -788,13 +1290,43 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "features": [
-    "Infrastructure as Code (IaC) with CI/CD integration",
-    "Zero-downtime blue/green and canary deployments",
-    "Observability stacks: logs, metrics, traces in one place",
-    "Security compliance mapping (SOC 2, HIPAA, ISO 27001)",
-    "FinOps dashboards with actionable savings insights"
+    {
+      title: "Infrastructure as Code",
+      description: "Terraform, Pulumi, or AWS CDK for reproducible deployments"
+    },
+    {
+      title: "Container Orchestration",
+      description: "Kubernetes with GitOps workflows (ArgoCD, Flux)"
+    },
+    {
+      title: "Serverless Architectures",
+      description: "AWS Lambda, GCP Cloud Functions, Azure Functions"
+    },
+    {
+      title: "Monitoring & Observability",
+      description: "Prometheus, Grafana, ELK stack for real-time insights"
+    },
+    {
+      title: "Security & Compliance",
+      description: "Automated vulnerability scanning and compliance checks"
+    },
+    {
+      title: "Cost Optimization",
+      description: "FinOps practices to reduce cloud spend by up to 60%"
+    },
+    {
+      title: "Disaster Recovery",
+      description: "Automated backups, failover strategies, and geo-redundancy"
+    },
+    {
+      title: "Network Design",
+      description: "VPCs, subnets, security groups, and private connectivity"
+    },
+    {
+      title: "Identity & Access Management",
+      description: "IAM policies, role-based access control, and SSO integration"
+    }
   ],
-
   "benefits": [
     "Scale to meet global demand with 99.99%+ uptime",
     "Reduce cloud spend by up to 60% via automation",
@@ -817,12 +1349,27 @@ export const servicesData: Record<string, ServiceDetail> = {
     "Kubecost, CloudHealth, Spot.io"
   ],
 
-  "whyAictum": [
-    "Certified cloud engineers across all major providers",
-    "Production-grade architecture blueprints for regulated industries",
-    "DevSecOps baked into every layer of your infrastructure",
-    "FinOps strategy integrated into the build lifecycle",
-    "Proven success scaling from MVP to global infrastructure"
+  whyAictum: [
+    {
+      title: "Cloud-Native Experts",
+      description: "10+ years of experience architecting scalable cloud solutions"
+    },
+    {
+      title: "Multi-Cloud Proficiency",
+      description: "AWS, GCP, Azure, and hybrid cloud strategies"
+    },
+    {
+      title: "Security First",
+      description: "Built-in security practices from day one"
+    },
+    {
+      title: "Cost Optimization Focus",
+      description: "Proven track record of reducing cloud spend by 30-60%"
+    },
+    {
+      title: "Agile DevOps Culture",
+      description: "Integrated CI/CD pipelines for rapid delivery"
+    }
   ],
 
   "futureReady": [
@@ -851,11 +1398,42 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "features": [
-    "Actionable architecture and codebase reports",
-    "Quantitative scoring of technical debt",
-    "Migration and integration risk analysis",
-    "Third-party vendor selection matrix",
-    "Technology innovation alignment canvas"
+    {
+      title: "Architecture Review",
+      description: "In-depth analysis of system design, scalability, and performance"
+    },
+    {
+      title: "Code Quality Assessment",
+      description: "Static code analysis, technical debt evaluation, and maintainability scoring"
+    },
+    {
+      title: "Security Posture Review",
+      description: "Vulnerability scanning, compliance checks, and risk assessment"
+    },
+    {
+      title: "Vendor Due Diligence",
+      description: "Objective evaluation of third-party solutions and partnerships"
+    },
+    {
+      title: "Technology Benchmarking",
+      description: "Comparative analysis against industry standards and best practices"
+    },
+    {
+      title: "Innovation Workshops",
+      description: "Collaborative sessions to explore emerging technologies"
+    },
+    {
+      title: "Capability Gap Analysis",
+      description: "Identifying skill and technology gaps in current teams"
+    },
+    {
+      title: "Transformation Roadmap",
+      description: "Phased plan with milestones for modernization initiatives"
+    },
+    {
+      title: "Risk Mitigation Strategy",
+      description: "Structured approach to reduce technical and operational risks"
+    }
   ],
 
   "benefits": [
@@ -881,13 +1459,31 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "whyAictum": [
-    "Vendor-agnostic experts with hands-on implementation experience",
-    "Proven methodology blending technical depth with business acumen",
-    "Ability to align legacy systems with modern cloud-native goals",
-    "Cross-industry insight into emerging technology trends",
-    "Delivered $10M+ in tech-driven value across clients"
+    {
+      title: "Objective Assessments",
+      description: "Data-driven insights free from vendor bias"
+    },
+    {
+      title: "Cross-Industry Expertise",
+      description: "Experience across finance, healthcare, logistics, and more"
+    },
+    {
+      title: "Actionable Roadmaps",
+      description: "Clear, phased plans with measurable outcomes"
+    },
+    {
+      title: "Innovation Focus",
+      description: "Proven track record of driving digital transformation"
+    },
+    {
+      title: "Long-term Partnerships",
+      description: "We grow with you, adapting to changing business needs"
+    },
+    {
+      title: "Agile Methodology",
+      description: "Iterative approach ensuring alignment with business goals"
+    }
   ],
-
   "futureReady": [
     "AI-readiness assessments for data infrastructure and MLOps",
     "Sustainable tech strategy including carbon-aware computing",
@@ -914,11 +1510,38 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "features": [
-    "Architecture decision records (ADR) for transparency",
-    "Service granularity and dependency mapping",
-    "Integration pattern playbooks (pub/sub, CQRS, sync/async)",
-    "Resilience planning and circuit breaker strategies",
-    "Data lineage and flow visualization models"
+    {
+      title: "Microservices Design",
+      description: "Domain-driven design with bounded contexts and service granularity"
+    },
+    {
+      title: "Event-Driven Architecture",
+      description: "Asynchronous messaging patterns for decoupled systems"
+    },
+    {
+      title: "Legacy Modernization",
+      description: "Strangler pattern and API facades for gradual migration"
+    },
+    {
+      title: "Data Mesh Strategy",
+      description: "Decentralized data ownership and federated governance"
+    },
+    {
+      title: "Integration Patterns",
+      description: "Canonical models, message brokers, and API gateways"
+    },
+    {
+      title: "Resiliency Design",
+      description: "Circuit breakers, bulkheads, and retry patterns"
+    },
+    {
+      title: "Scalability Planning",
+      description: "Horizontal scaling strategies and load balancing"
+    },
+    {
+      title: "Security Architecture",
+      description: "Zero-trust principles, encryption, and access control"
+    }
   ],
 
   "benefits": [
@@ -944,11 +1567,30 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "whyAictum": [
-    "Architecture-first mindset grounded in business outcomes",
-    "Deep experience across domains: finance, healthcare, logistics",
-    "Tool-agnostic strategies adapted to existing enterprise ecosystems",
-    "Full lifecycle support from planning to implementation",
-    "Trusted by enterprises for mission-critical integration delivery"
+    {
+      title: "Architecture Specialists",
+      description: "10+ years designing complex, scalable systems"
+    },
+    {
+      title: "Cross-Industry Experience",
+      description: "Worked with fintech, healthcare, logistics, and more"
+    },
+    {
+      title: "Agile Methodology",
+      description: "Iterative design ensuring alignment with business goals"
+    },
+    {
+      title: "Security First",
+      description: "Built-in security practices from day one"
+    },
+    {
+      title: "Long-term Partnerships",
+      description: "Focus on sustainable, maintainable solutions"
+    },
+    {
+      title: "Innovation Focus",
+      description: "Proven track record of driving digital transformation"
+    }
   ],
 
   "futureReady": [
@@ -977,11 +1619,43 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "features": [
-    "Synthetic load and stress testing",
-    "Profiling of memory, CPU, and I/O",
-    "Real-time user experience monitoring",
-    "Core Web Vitals audits",
-    "Custom performance dashboards and alerts"
+    {
+      title: "Synthetic Load Testing",
+      description: "Simulate user traffic to identify performance bottlenecks"
+    },
+    {
+      title: "Real User Monitoring",
+      description: "Capture and analyze real user interactions for insights"
+    },
+    {
+      title: "Performance Audits",
+      description: "Comprehensive assessments against industry benchmarks"
+    },
+    {
+      title: "Custom Dashboards",
+      description: "Tailored views for monitoring key performance metrics"
+    },
+    {
+      title: "API Performance Testing",
+      description: "Load testing and optimization for REST and GraphQL APIs"
+    },
+    {
+      title: "Infrastructure Performance Testing",
+      description: "Load testing and optimization for infrastructure components"
+    },
+    {
+      title: "End-to-End Testing",
+      description: "Comprehensive testing across the entire application stack"
+    },
+    {
+      title: "Continuous Performance Monitoring",
+      description: "Automated alerts and dashboards for ongoing performance health"
+    },
+    {
+      title: "Performance Benchmarking",
+      description: "Comparative analysis against industry standards and best practices"
+    },
+    
   ],
 
   "benefits": [
@@ -1007,10 +1681,30 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "whyAictum": [
-    "Full-stack performance engineers with deep cloud and systems expertise",
-    "Proven success across high-traffic B2B and B2C platforms",
-    "Tool-agnostic approach tailored to tech stack and business KPIs",
-    "Transparent benchmarking and results reporting"
+    {
+      title: "Expertise",
+      description: "Full-stack performance engineers with deep cloud and systems expertise"
+    },
+    {
+      title: "Proven Success",
+      description: "Proven success across high-traffic B2B and B2C platforms"
+    },
+    {
+      title: "Tool-Agnostic Approach",
+      description: "Tool-agnostic approach tailored to tech stack and business KPIs"
+    },
+    {
+      title: "Transparency",
+      description: "Transparent benchmarking and results reporting"
+    },
+    {
+      title: "Long-term Partnerships",
+      description: "Focus on sustainable performance improvements"
+    },
+    {
+      title: "Agile Methodology",
+      description: "Iterative optimization aligned with development cycles"
+    }
   ],
 
   "futureReady": [
@@ -1037,11 +1731,38 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "features": [
-    "Role-specific training and hands-on labs",
-    "Custom training portals and LMS integration",
-    "Certification-aligned curriculum (AWS, GCP, CNCF, etc.)",
-    "Incident management and escalation playbooks",
-    "Self-service knowledge base and FAQs"
+    {
+      title: "Tailored Training Programs",
+      description: "Custom workshops and courses for your tech stack and team needs"
+    },
+    {
+      title: "Hands-on Labs",
+      description: "Real-world scenarios with sandbox environments for practical learning"
+    },
+    {
+      title: "Documentation Strategy",
+      description: "Knowledge bases, wikis, and playbooks for self-service support"
+    },
+    {
+      title: "24/7 Production Support",
+      description: "SLA-backed response with dedicated support engineers"
+    },
+    {
+      title: "Incident Management",
+      description: "Proactive monitoring, alerting, and incident response"
+    },
+    {
+      title: "Onboarding Programs",
+      description: "Structured ramp-up for new hires and cross-functional teams"
+    },
+    {
+      title: "Continuous Learning",
+      description: "Ongoing upskilling in emerging technologies and practices"
+    },
+    {
+      title: "Community Engagement",
+      description: "Access to forums, webinars, and knowledge-sharing events"
+    }
   ],
 
   "benefits": [
@@ -1067,10 +1788,30 @@ export const servicesData: Record<string, ServiceDetail> = {
   ],
 
   "whyAictum": [
-    "Enterprise-grade training with real-world labs and tools",
-    "Integrated support services from the same teams who built your systems",
-    "Scalable knowledge-sharing platforms and documentation strategies",
-    "SLA-backed response with transparent reporting and escalation processes"
+    {
+      title: "Expertise",
+      description: "Full-stack performance engineers with deep cloud and systems expertise"
+    },
+    {
+      title: "Proven Success",
+      description: "Proven success across high-traffic B2B and B2C platforms"
+    },
+    {
+      title: "Tool-Agnostic Approach",
+      description: "Tool-agnostic approach tailored to tech stack and business KPIs"
+    },
+    {
+      title: "Transparency",
+      description: "Transparent benchmarking and results reporting"
+    },
+    {
+      title: "Long-term Partnerships",
+      description: "Focus on sustainable performance improvements"
+    },
+    {
+      title: "Agile Methodology",
+      description: "Iterative optimization aligned with development cycles"
+    }
   ],
 
   "futureReady": [
