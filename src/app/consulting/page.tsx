@@ -375,7 +375,7 @@ const TrainingConsultingPage = () => {
                 "/images/collab/energyfi.svg",
                 "/images/collab/crypto.svg",
                 "/images/collab/wenbit-2.svg",
-                "/images/collab/neo.svg",
+                // "/images/collab/neo.svg",
                 "/images/collab/plex.svg",
                 "/images/collab/3coswape.svg",
                 "/images/collab/q.svg",

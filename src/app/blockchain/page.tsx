@@ -356,48 +356,48 @@ const BlockchainServicesPage = () => {
         </section>
 
         {/* Clients Logo Section - Light Theme */}
-        <section className="bg-gradient-to-br from-[#d5cee0e7] via-[#fdfbff] to-[#32124d] py-8">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mb-14 text-center"
-            >
-              <h3 className="text-sm font-semibold tracking-wider text-purple-900 uppercase">
-                Trusted by industry leaders
-              </h3>
-            </motion.div>
-            <div className="flex flex-wrap items-center justify-center gap-14 md:gap-24">
-              {[
-                "/images/collab/energyfi.svg",
-                "/images/collab/crypto.svg",
-                "/images/collab/wenbit-2.svg",
-                "/images/collab/neo.svg",
-                "/images/collab/plex.svg",
-                "/images/collab/3coswape.svg",
-                "/images/collab/q.svg",
-              ].map((client, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="transition hover:scale-105 hover:opacity-100"
-                >
-                  <img
-                    src={client}
-                    alt="Client logo"
-                    className="h-16 w-auto max-w-[180px] object-contain md:h-20 md:max-w-[200px]"
-                    loading="lazy"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="bg-gradient-to-br from-[#d5cee0e7] via-[#fdfbff] to-[#32124d] py-8 md:py-12 lg:py-16">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="mb-8 sm:mb-10 md:mb-14 text-center"
+    >
+      <h3 className="text-xs sm:text-sm md:text-base font-semibold tracking-wider text-purple-900 uppercase">
+        Trusted by industry leaders
+      </h3>
+    </motion.div>
+    <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 md:gap-14 lg:gap-24">
+      {[
+        "/images/collab/energyfi.svg",
+        "/images/collab/crypto.svg",
+        "/images/collab/wenbit-2.svg",
+        // "/images/collab/neo.svg",
+        "/images/collab/plex.svg",
+        "/images/collab/3coswape.svg",
+        "/images/collab/q.svg",
+      ].map((client, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="transition hover:scale-105 hover:opacity-100 w-1/4 sm:w-1/5 md:w-auto"
+        >
+          <img
+            src={client}
+            alt="Client logo"
+            className="h-8 sm:h-10 md:h-12 lg:h-16 xl:h-20 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[140px] lg:max-w-[160px] xl:max-w-[180px] object-contain mx-auto"
+            loading="lazy"
+          />
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
         {/* About Blockchain Services Section - Dark Purple Theme */}
         <section className="bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] px-6 py-16 text-white md:py-28">
