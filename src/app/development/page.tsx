@@ -21,6 +21,7 @@ import {
   FaRocket,
   FaTools,
 } from "react-icons/fa";
+import Image from "next/image";
 
 const ProductDevelopmentPage = () => {
   const services = [
@@ -712,7 +713,7 @@ const ProductDevelopmentPage = () => {
                 variants={fadeInUp}
                 className="mx-auto max-w-3xl text-lg text-white"
               >
-                Discover how we've helped businesses across industries build
+                Discover how we&apos;ve helped businesses across industries build
                 successful digital products that solve real problems.
               </motion.p>
             </motion.div>
@@ -962,7 +963,7 @@ const ProductDevelopmentPage = () => {
                   className="relative"
                 >
                   <div className="group relative overflow-hidden rounded-2xl shadow-2xl">
-                    <img
+                    <Image
                       src="/images/extra-service/why-business.jpg"
                       alt="Product Development Team"
                       className="h-[400px] w-full object-cover transition-all duration-500 group-hover:scale-105 md:h-[500px]"
