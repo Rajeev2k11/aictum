@@ -21,7 +21,7 @@ export const WithUsYouCan = () => {
     {
       title: "Accelerate Innovation",
       description:
-        "Access our cutting-edge labs and innovation teams to co-create solutions that give you a competitive edge.",
+        "Access our cutting-edge Technology and innovation teams to co-create solutions that give you a competitive edge.",
       image:
         "https://img.freepik.com/premium-photo/innovative-wireframe-illustration-hand-launching-futuristic-rocket_124865-70425.jpg?uid=R200268884&ga=GA1.1.649360656.1737985464&semt=ais_hybrid&w=740",
       reverse: false,

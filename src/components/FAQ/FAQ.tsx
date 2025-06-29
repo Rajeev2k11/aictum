@@ -32,8 +32,8 @@ const FAQ = () => {
             answer: "The time required depends on the complexity of the project—simple apps may take 4–8 weeks, while more advanced solutions can span several months. Aictum provides accurate timelines after analyzing your specific requirements."
         },
         {
-            question: "Does Aictum Labs support starting small and scaling as needed?",
-            answer: "Absolutely! Aictum Labs supports starting with a Minimum Viable Product (MVP) to validate your idea, with the flexibility to scale based on user feedback and evolving business goals."
+            question: "Does Aictum  support starting small and scaling as needed?",
+            answer: "Absolutely! Aictum  supports starting with a Minimum Viable Product (MVP) to validate your idea, with the flexibility to scale based on user feedback and evolving business goals."
         }
     ];
 
