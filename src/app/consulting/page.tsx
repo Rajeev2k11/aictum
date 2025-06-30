@@ -20,6 +20,7 @@ import {
   FaBookOpen,
   FaSyncAlt,
 } from "react-icons/fa";
+import Image from "next/image";
 
 const TrainingConsultingPage = () => {
   const services = [
@@ -388,7 +389,7 @@ const TrainingConsultingPage = () => {
                   viewport={{ once: true }}
                   className="transition hover:scale-105 hover:opacity-100"
                 >
-                  <img
+                  <Image
                     src={client}
                     alt="Client logo"
                     className="h-16 w-auto max-w-[180px] object-contain md:h-20 md:max-w-[200px]"
@@ -414,7 +415,7 @@ const TrainingConsultingPage = () => {
                 <div className="relative">
                   <div className="absolute -top-4 -left-4 h-full w-full rounded-xl md:-top-6 md:-left-6"></div>
                   <div className="relative overflow-hidden rounded-xl bg-[#141418] shadow-xl">
-                    <img
+                    <Image
                       src="/images/extra-service/consulting.jpg"
                       alt="Training and Consulting Team"
                       className="aspect-video h-auto w-full md:aspect-auto md:h-[500px]"
@@ -436,7 +437,7 @@ const TrainingConsultingPage = () => {
                 <p className="mb-6 text-base text-white md:text-lg">
                   Our training and consulting services are designed to empower
                   organizations and individuals with the knowledge, skills, and
-                  strategies needed to excel in today's competitive landscape.
+                  strategies needed to excel in today&apos;s competitive landscape.
                   With a focus on practical application and measurable results,
                   we deliver solutions that drive real impact.
                 </p>
@@ -654,14 +655,14 @@ const TrainingConsultingPage = () => {
                 className="flex flex-col justify-center lg:w-1/2"
               >
                 <h1 className="mb-4 text-2xl leading-tight font-bold text-purple-900 md:text-3xl lg:text-4xl">
-                  Let's Discuss Your{" "}
+                  Let&apos;s Discuss Your{" "}
                   <span className="text-purple-900">
                     Training & Consulting Needs
                   </span>
                 </h1>
                 <p className="mb-6 text-base text-[#3b3a3c] md:text-lg">
                   Our team offers practical training programs and consulting
-                  services tailored to your goals. Let's figure out what makes
+                  services tailored to your goals. Let&apos;s figure out what makes
                   sense for your organization—no pressure, just clarity.
                 </p>
                 <a
@@ -681,7 +682,7 @@ const TrainingConsultingPage = () => {
                 className="lg:w-1/2"
               >
                 <div className="relative h-full min-h-[300px] w-full">
-                  <img
+                  <Image
                     src="/images/extra-service/discus.jpg"
                     alt="Consultation Meeting"
                     loading="lazy"
@@ -718,7 +719,7 @@ const TrainingConsultingPage = () => {
                 variants={fadeInUp}
                 className="mx-auto max-w-3xl text-lg text-white"
               >
-                Discover how we've helped organizations across industries
+                Discover how we&apos;ve helped organizations across industries
                 develop their workforce and optimize operations through our
                 training and consulting services.
               </motion.p>
@@ -969,7 +970,7 @@ const TrainingConsultingPage = () => {
                   className="relative"
                 >
                   <div className="group relative overflow-hidden rounded-2xl shadow-2xl">
-                    <img
+                    <Image
                       src="/images/extra-service/why-choose.jpg"
                       alt="Training Session"
                       className="h-[400px] w-full object-cover transition-all duration-500 group-hover:scale-105 md:h-[500px]"

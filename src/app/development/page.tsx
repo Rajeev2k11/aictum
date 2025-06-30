@@ -387,7 +387,7 @@ const ProductDevelopmentPage = () => {
                   viewport={{ once: true }}
                   className="transition hover:scale-105 hover:opacity-100"
                 >
-                  <img
+                  <Image
                     src={client}
                     alt="Client logo"
                     className="h-16 w-auto max-w-[180px] object-contain md:h-20 md:max-w-[200px]"
@@ -413,7 +413,7 @@ const ProductDevelopmentPage = () => {
                 <div className="relative">
                   <div className="absolute -top-4 -left-4 h-full w-full rounded-xl md:-top-6 md:-left-6"></div>
                   <div className="relative overflow-hidden rounded-xl bg-[#141418] shadow-xl">
-                    <img
+                    <Image
                       src="/images/extra-service/develop.jpg"
                       alt="Product Development Team"
                       className="aspect-video h-auto w-full md:aspect-auto md:h-[500px]"
@@ -676,7 +676,7 @@ const ProductDevelopmentPage = () => {
                 className="lg:w-1/2"
               >
                 <div className="relative h-full min-h-[300px] w-full">
-                  <img
+                  <Image
                     src="/images/extra-service/let's.jpg"
                     alt="Product Development Discussion"
                     loading="lazy"
