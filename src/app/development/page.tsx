@@ -651,12 +651,12 @@ const ProductDevelopmentPage = () => {
                 className="flex flex-col justify-center lg:w-1/2"
               >
                 <h1 className="mb-4 text-2xl leading-tight font-bold text-purple-900 md:text-3xl lg:text-4xl">
-                  Let's Talk About Your{" "}
+                  Let&apos;s Talk About Your{" "}
                   <span className="text-purple-900">Product Vision</span>
                 </h1>
                 <p className="mb-6 text-base text-[#3b3a3c] md:text-lg">
                   Our team offers practical product development services
-                  tailored to your goals. Let's figure out what makes sense for
+                  tailored to your goals. Let&apos;s figure out what makes sense for
                   your business—no pressure, just clarity.
                 </p>
                 <a
