@@ -1,6 +1,9 @@
 import React from "react";
+import AictumBot from "@/components/AictumBot";
 
 const PrivacyPolicy = () => (
+  <>
+    <AictumBot />
   <section className="min-h-screen py-12 px-4 sm:px-8 md:px-16 lg:px-32 bg-gradient-to-br from-[#d5cee0e7] via-[#fdfbff] to-[#32124d] mt-24 md:mt-20">
     <div className="max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 sm:p-10 border border-purple-900/20">
       <h1 className="text-3xl md:text-4xl font-bold text-purple-900 mb-6 text-center">
@@ -54,6 +57,7 @@ const PrivacyPolicy = () => (
       </p>
     </div>
   </section>
+  </>
 );
 
 export default PrivacyPolicy;

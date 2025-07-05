@@ -1,3 +1,4 @@
+import AictumBot from "@/components/AictumBot";
 import SingleBlog from "@/components/Blog/SingleBlog";
 import blogData from "@/components/Blog/blogData";
 import Breadcrumb from "@/components/Common/Breadcrumb";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 const Blog = () => {
   return (
     <>
+      <AictumBot />
       <Breadcrumb
         pageName="Blog Grid"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
