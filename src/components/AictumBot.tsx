@@ -178,7 +178,7 @@ const AictumBot = () => {
             {
               text: "Open Calendly",
               action: () =>
-                window.open("https://calendly.com/aictum", "_blank"),
+                window.open("https://calendly.com/team-aictum", "_blank"), // Updated link
             },
             "Back to previous",
             "Main menu",
@@ -350,4 +350,5 @@ const AictumBot = () => {
 };
 
 export default AictumBot;
+
 
