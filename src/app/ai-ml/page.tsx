@@ -1,5 +1,4 @@
 "use client";
-import AictumBot from "@/components/AictumBot";
 import CountUp from "react-countup";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
@@ -19,7 +18,6 @@ import {
   FaRegLightbulb,
   FaSearchDollar,
 } from "react-icons/fa";
-import Image from "next/image";
 
 const AIServicesPage = () => {
   const services = [
@@ -281,7 +279,6 @@ const AIServicesPage = () => {
 
   return (
     <>
-    <AictumBot />
       <Head>
         <title>AI & ML Development Services | YourCompany</title>
         <meta
@@ -393,7 +390,7 @@ const AIServicesPage = () => {
                   viewport={{ once: true }}
                   className="transition hover:scale-105 hover:opacity-100"
                 >
-                  <Image
+                  <img
                     src={client}
                     alt="Client logo"
                     className="h-16 w-auto max-w-[180px] object-contain md:h-20 md:max-w-[200px]"
@@ -420,7 +417,7 @@ const AIServicesPage = () => {
                 <div className="relative">
                   <div className="absolute -top-4 -left-4 h-full w-full rounded-xl md:-top-6 md:-left-6"></div>
                   <div className="relative overflow-hidden rounded-xl bg-[#141418] shadow-xl">
-                    <Image
+                    <img
                       src="/images/extra-service/advance-ai.jpg"
                       alt="AI Development Team"
                       className="aspect-video h-auto w-full object-cover md:aspect-auto md:h-[500px]"
@@ -661,12 +658,12 @@ const AIServicesPage = () => {
                 className="flex flex-col justify-center lg:w-1/2"
               >
                 <h1 className="mb-4 text-2xl leading-tight font-bold text-purple-900 md:text-3xl lg:text-4xl">
-                  Let&apos;s Talk About Your{" "}
+                  Let's Talk About Your{" "}
                   <span className="text-purple-900">AI Project</span>
                 </h1>
                 <p className="mb-6 text-base text-[#3b3a3c] md:text-lg">
                   Our team offers practical AI development services and
-                  consulting tailored to your goals. Let&apos;s figure out what makes
+                  consulting tailored to your goals. Let's figure out what makes
                   sense for your business—no pressure, just clarity.
                 </p>
                 <a
@@ -687,7 +684,7 @@ const AIServicesPage = () => {
                 className="lg:w-1/2"
               >
                 <div className="relative h-full min-h-[300px] w-full">
-                  <Image
+                  <img
                     src="/images/extra-service/whyA.jpg"
                     alt="AI Project Discussion"
                     loading="lazy"
@@ -724,7 +721,7 @@ const AIServicesPage = () => {
                 variants={fadeInUp}
                 className="mx-auto max-w-3xl text-lg text-white"
               >
-                Discover how we&apos;ve helped businesses across industries leverage
+                Discover how we've helped businesses across industries leverage
                 AI to solve complex challenges and achieve remarkable results.
               </motion.p>
             </motion.div>
@@ -990,10 +987,10 @@ const AIServicesPage = () => {
                   {/* Main Image Container */}
                   <div className="group relative overflow-hidden rounded-2xl shadow-2xl">
                     {/* Your Image */}
-                    <Image
+                    <img
                       src="/images/extra-service/why.jpg"
                       alt="AI Development Team"
-                      className="w-full h-[400px] md:h-[500px]  transition-all duration-500 group-hover:scale-105"
+                      className="h-[400px] w-full object-cover transition-all duration-500 group-hover:scale-105 md:h-[500px]"
                     />
 
                     {/* Decorative Elements */}
