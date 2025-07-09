@@ -1,4 +1,5 @@
 "use client";
+import AictumBot from "@/components/AictumBot";
 import CountUp from "react-countup";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
@@ -279,6 +280,7 @@ const BlockchainServicesPage = () => {
 
   return (
     <>
+    <AictumBot />
       <Head>
         <title>Blockchain Development Services | YourCompany</title>
         <meta
@@ -375,7 +377,7 @@ const BlockchainServicesPage = () => {
                 "/images/collab/energyfi.svg",
                 "/images/collab/crypto.svg",
                 "/images/collab/wenbit-2.svg",
-                "/images/collab/neo.svg",
+                // "/images/collab/neo.svg",
                 "/images/collab/plex.svg",
                 "/images/collab/3coswape.svg",
                 "/images/collab/q.svg",

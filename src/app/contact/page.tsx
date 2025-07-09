@@ -1,3 +1,4 @@
+import AictumBot from "@/components/AictumBot";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Contact from "@/components/Contact";
 import { WorkTogether } from "@/components/About/WorkTogether";
@@ -14,6 +15,8 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
+    <>
+      <AictumBot />
     <div className="bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10]">
       <Breadcrumb
         pageName="Contact Us"
@@ -49,6 +52,7 @@ const ContactPage = () => {
       {/* Work Together Section */}
       <WorkTogether />
     </div>
+    </>
   );
 };
 
