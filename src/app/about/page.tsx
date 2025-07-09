@@ -1,3 +1,4 @@
+import AictumBot from "@/components/AictumBot";
 import AboutUs from "@/components/About/AboutPage";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <>
+      <AictumBot />
       <Breadcrumb
         pageName="About Us"
         description="We are a global technology powerhouse dedicated to transforming businesses through innovative digital solutions. 

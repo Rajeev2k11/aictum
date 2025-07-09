@@ -1,3 +1,4 @@
+import AictumBot from "@/components/AictumBot";
 import CompanyValue from "@/components/About/CompanyValue";
 import Processes from "@/components/About/Processes";
 import Blog from "@/components/Blog";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-   
+      <AictumBot />
       <ScrollUp />
       <Hero />
       {/* <Brands /> */}
