@@ -1,6 +1,5 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { servicesData } from "@/components/Service/data";
 import Image from "next/image";
 import {
@@ -14,10 +13,13 @@ import {
 } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import Head from "next/head";
+import { siteConfig } from "@/lib/seo";
 
 export default function ServiceDetailPage() {
   const searchParams = useSearchParams();
-  const serviceName = searchParams.get("service");
+  const serviceName = searchParams.get("service") || "";
 
   if (!serviceName || !servicesData[serviceName]) {
     return (
@@ -31,10 +33,90 @@ export default function ServiceDetailPage() {
 
   const service = servicesData[serviceName];
 
+  // Generate SEO data
+  const pageTitle = `${service.title} Services - Expert ${serviceName} Solutions | Aictum`;
+  const pageDescription = service.description.substring(0, 160);
+  const keywords = [
+    serviceName.toLowerCase(),
+    `${serviceName.toLowerCase()} services`,
+    `${serviceName.toLowerCase()} solutions`,
+    "AI services",
+    "machine learning"
+  ].join(", ");
+
+  // Generate schemas for SEO
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.company.name,
+      url: siteConfig.url
+    },
+    serviceType: service.title,
+    areaServed: "Worldwide"
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${siteConfig.url}/`
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${siteConfig.url}/all-service`
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: service.title,
+        item: `${siteConfig.url}/services/${serviceName.toLowerCase().replace(/\s+/g, '-')}`
+      }
+    ]
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-white">
-      {/* Hero Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 text-center md:py-28">
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={keywords} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={service.images?.[0] || "/images/services/default.jpg"} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={service.images?.[0] || "/images/services/default.jpg"} />
+      </Head>
+
+      <main className="min-h-screen bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10] text-white">
+        {/* JSON-LD Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+
+        {/* Hero Section with SEO-optimized headings */}
+        <section className="mx-auto max-w-7xl px-4 py-20 text-center md:py-28">
         <div className="mb-5 inline-block rounded-full bg-[#57207c] px-5 py-2">
           <span className="text-sm font-medium tracking-wider text-[#ffffff] uppercase">
             Our Services
@@ -58,10 +140,11 @@ export default function ServiceDetailPage() {
             <div className="relative h-80 overflow-hidden rounded-xl border border-[#a084ee]/30 md:h-[450px]">
               <Image
                 src={service.images[0]}
-                alt={service.title}
+                alt={`${service.title} - Professional ${serviceName} solutions by Aictum`}
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             </div>
@@ -247,6 +330,7 @@ export default function ServiceDetailPage() {
           </div>
         </section>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

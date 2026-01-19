@@ -391,6 +391,8 @@ const BlockchainServicesPage = () => {
                   className="transition hover:scale-105 hover:opacity-100"
                 >
                   <Image
+                    width={200}
+                    height={80}
                     src={client}
                     alt="Client logo"
                     className="h-16 w-auto max-w-[180px] object-contain md:h-20 md:max-w-[200px]"
@@ -418,6 +420,8 @@ const BlockchainServicesPage = () => {
                   <div className="relative overflow-hidden rounded-xl bg-[#141418] shadow-xl">
                     <Image
                       src="/images/extra-service/advance.jpg"
+                      width={600}
+                      height={400}
                       alt="Blockchain Development Team"
                       className="aspect-video h-auto w-full md:aspect-auto md:h-[500px]"
                     />
@@ -681,6 +685,8 @@ const BlockchainServicesPage = () => {
               >
                 <div className="relative h-full min-h-[300px] w-full">
                   <Image
+                  width={600}
+                  height={400}
                     src="/images/extra-service/need.jpg"
                     alt="Blockchain Project Discussion"
                     loading="lazy"
@@ -972,6 +978,8 @@ const BlockchainServicesPage = () => {
                 >
                   <div className="group relative overflow-hidden rounded-2xl shadow-2xl">
                     <Image
+                      width={600}
+                      height={400}
                       src="/images/extra-service/why.jpg"
                       alt="Blockchain Development Team"
                       className="h-[400px] w-full object-cover transition-all duration-500 group-hover:scale-105 md:h-[500px]"

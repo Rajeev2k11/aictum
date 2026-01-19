@@ -392,6 +392,8 @@ const TrainingConsultingPage = () => {
                   className="transition hover:scale-105 hover:opacity-100"
                 >
                   <Image
+                    width={200}
+                    height={80}
                     src={client}
                     alt="Client logo"
                     className="h-16 w-auto max-w-[180px] object-contain md:h-20 md:max-w-[200px]"
@@ -418,6 +420,8 @@ const TrainingConsultingPage = () => {
                   <div className="absolute -top-4 -left-4 h-full w-full rounded-xl md:-top-6 md:-left-6"></div>
                   <div className="relative overflow-hidden rounded-xl bg-[#141418] shadow-xl">
                     <Image
+                      width={600}
+                      height={400}
                       src="/images/extra-service/consulting.jpg"
                       alt="Training and Consulting Team"
                       className="aspect-video h-auto w-full md:aspect-auto md:h-[500px]"
@@ -688,6 +692,8 @@ const TrainingConsultingPage = () => {
                     src="/images/extra-service/discus.jpg"
                     alt="Consultation Meeting"
                     loading="lazy"
+                    width={600}
+                    height={400}
                     className="h-90 w-full rounded-xl object-cover"
                   />
                 </div>
@@ -973,6 +979,8 @@ const TrainingConsultingPage = () => {
                 >
                   <div className="group relative overflow-hidden rounded-2xl shadow-2xl">
                     <Image
+                      width={600}
+                      height={400}
                       src="/images/extra-service/why-choose.jpg"
                       alt="Training Session"
                       className="h-[400px] w-full object-cover transition-all duration-500 group-hover:scale-105 md:h-[500px]"

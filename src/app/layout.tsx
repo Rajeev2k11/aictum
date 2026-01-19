@@ -6,7 +6,11 @@ import { Inter } from "next/font/google";
 import "../styles/index.css";
 import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-inter'
+});
 
 export default function RootLayout({
   children,
@@ -16,9 +20,28 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        {/* Add viewport meta tag if not already present in head.js */}
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        {/* Essential Meta Tags */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        
+        {/* Favicon and App Icons */}
         <link rel="icon" href="/images/AictumFavicon.jpg" />
+        <link rel="apple-touch-icon" href="/images/AictumFavicon.jpg" />
+        
+        {/* Theme Color */}
+        <meta name="theme-color" content="#AE69DF" />
+        <meta name="msapplication-TileColor" content="#AE69DF" />
+        
+        {/* Preconnect to improve performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* DNS Prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        
+        {/* Security Headers */}
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
       </head>
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
