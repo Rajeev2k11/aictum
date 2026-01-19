@@ -4,19 +4,47 @@ import blogData from "@/components/Blog/blogData";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
 import { Metadata } from "next";
+import { generateMetadata as genMeta, siteConfig, generateBreadcrumbSchema, createJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Aictum",
-  // other metadata
-};
+export const metadata: Metadata = genMeta({
+  title: "Aictum Blog - AI, ML, Blockchain Insights & Technology Trends",
+  description: "Stay updated with latest insights on AI, Machine Learning, Blockchain, and technology trends. Expert articles, tutorials, case studies, and industry best practices from Aictum's technology team.",
+  keywords: [
+    "AI blog",
+    "machine learning articles",
+    "blockchain insights",
+    "technology trends",
+    "AI tutorials",
+    "ML best practices",
+    "tech industry news",
+    "software development blog",
+    "innovation insights",
+    "digital transformation articles",
+    "coding tutorials",
+    "tech case studies"
+  ],
+  canonical: `${siteConfig.url}/blog`,
+  ogImage: "/images/blog/blog-og.jpg"
+});
 
 const Blog = () => {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" }
+  ]);
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLd(breadcrumbSchema)}
+      />
+
       <AictumBot />
       <Breadcrumb
         pageName="Blog Grid"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        description="Explore the latest insights, tutorials, and trends in AI, Machine Learning, Blockchain, and software development from our expert team."
       />
 
       <section className="pt-[120px] pb-[120px]">

@@ -5,17 +5,64 @@ import { WorkTogether } from "@/components/About/WorkTogether";
 import FAQ from "@/components/FAQ/FAQ";
 import { Metadata } from "next";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
+import { generateMetadata as genMeta, siteConfig, generateBreadcrumbSchema, createJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Aictum",
-  description: "Get in touch with our team for AI, Blockchain, and Web3 solutions",
-};
+export const metadata: Metadata = genMeta({
+  title: "Contact Aictum - Get in Touch with AI & Technology Experts",
+  description: "Contact Aictum for AI, Machine Learning, Blockchain consulting and development services. Schedule a free consultation to discuss your project. We're here to help transform your business.",
+  keywords: [
+    "contact aictum",
+    "AI consultation",
+    "get quote",
+    "contact AI company",
+    "schedule consultation",
+    "business inquiry",
+    "technology consulting",
+    "AI services inquiry",
+    "blockchain consultation",
+    "software development quote",
+    "project discussion",
+    "free consultation"
+  ],
+  canonical: `${siteConfig.url}/contact`,
+  ogImage: "/images/contact/contact-og.jpg"
+});
 
 
 
 const ContactPage = () => {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Contact Us", url: "/contact" }
+  ]);
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": siteConfig.company.name,
+    "url": siteConfig.url,
+    "telephone": siteConfig.company.phone,
+    "email": siteConfig.company.email,
+    "address": {
+      "@type": "PostalAddress",
+      ...siteConfig.company.address
+    },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "$$"
+  };
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLd(breadcrumbSchema)}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={createJsonLd(localBusinessSchema)}
+      />
+
       <AictumBot />
     <div className="bg-gradient-to-br from-[#1A1325] via-[#251636] to-[#0A0A10]">
       <Breadcrumb

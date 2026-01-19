@@ -24,6 +24,42 @@ import {
 import Image from "next/image";
 
 const TrainingConsultingPage = () => {
+  // SEO Data
+  const pageTitle = "Technology Consulting & Training Services - Expert IT Consulting | Aictum";
+  const pageDescription = "Professional technology consulting and training services. Digital transformation consulting, IT strategy, cloud consulting, cybersecurity training, and corporate technology workshops.";
+  const keywords = "technology consulting, IT consulting, digital transformation, corporate training, technical training, cloud consulting, cybersecurity consulting, AI consulting, technology strategy, business consulting, IT training programs";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.aictum.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Consulting Services",
+        "item": "https://www.aictum.com/consulting"
+      }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Technology Consulting & Training",
+    "description": pageDescription,
+    "provider": {
+      "@type": "Organization",
+      "name": "Aictum Technologies"
+    },
+    "areaServed": "Worldwide"
+  };
+
   const services = [
     {
       icon: <FaChalkboardTeacher className="text-4xl" />,
@@ -282,6 +318,37 @@ const TrainingConsultingPage = () => {
   return (
     <>
     <AictumBot />
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={keywords} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aictum.com/consulting" />
+        <meta property="og:image" content="/images/services/consulting-og.jpg" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content="/images/services/consulting-og.jpg" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.aictum.com/consulting" />
+      </Head>
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Head>
         <title>Training & Consulting Services | YourCompany</title>
         <meta

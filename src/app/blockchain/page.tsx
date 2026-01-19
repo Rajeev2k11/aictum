@@ -23,6 +23,69 @@ import {
 import Image from "next/image";
 
 const BlockchainServicesPage = () => {
+  // SEO Data
+  const pageTitle = "Blockchain Development Services - DeFi, NFT & Smart Contracts | Aictum";
+  const pageDescription = "Expert blockchain development services including DeFi, NFT, Smart Contracts, dApps, and Web3 solutions. Transform your business with secure, decentralized blockchain technology.";
+  const keywords = "blockchain development, smart contracts, decentralized applications, DeFi solutions, NFT development, Web3, cryptocurrency, ethereum development, blockchain consulting, dApp development, tokenization, blockchain security";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.aictum.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blockchain Solutions",
+        "item": "https://www.aictum.com/blockchain"
+      }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Blockchain Development Services",
+    "description": pageDescription,
+    "provider": {
+      "@type": "Organization",
+      "name": "Aictum Technologies"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Blockchain Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Smart Contract Development"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "DeFi Solutions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "NFT Development"
+          }
+        }
+      ]
+    }
+  };
+
   const services = [
     {
       icon: <FaBitcoin className="text-4xl" />,
@@ -282,16 +345,36 @@ const BlockchainServicesPage = () => {
     <>
     <AictumBot />
       <Head>
-        <title>Blockchain Development Services | YourCompany</title>
-        <meta
-          name="description"
-          content="Comprehensive Blockchain development services to transform your business with decentralized technology solutions"
-        />
-        <meta
-          name="keywords"
-          content="blockchain development, smart contracts, decentralized applications, DeFi, NFT solutions, Web3 development"
-        />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={keywords} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aictum.com/blockchain" />
+        <meta property="og:image" content="/images/services/blockchain-og.jpg" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content="/images/services/blockchain-og.jpg" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.aictum.com/blockchain" />
       </Head>
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
 
       <main className="bg-white">
         {/* Hero Section */}
