@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { siteConfig } from '@/lib/seo';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -14,6 +15,7 @@ export default function robots(): MetadataRoute.Robots {
           '/*.json$',
           '/signin',
           '/signup',
+          '/error',
         ],
       },
       {
@@ -23,7 +25,10 @@ export default function robots(): MetadataRoute.Robots {
           '/api/',
           '/admin/',
           '/private/',
+          '/signin',
+          '/signup',
         ],
+        crawlDelay: 0,
       },
       {
         userAgent: 'Bingbot',
@@ -32,9 +37,58 @@ export default function robots(): MetadataRoute.Robots {
           '/api/',
           '/admin/',
           '/private/',
+          '/signin',
+          '/signup',
+        ],
+        crawlDelay: 0,
+      },
+      {
+        userAgent: 'Slurp', // Yahoo
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/private/',
+          '/signin',
+          '/signup',
+        ],
+      },
+      {
+        userAgent: 'DuckDuckBot',
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/private/',
+          '/signin',
+          '/signup',
+        ],
+      },
+      {
+        userAgent: 'Baiduspider', // Baidu (China)
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/private/',
+          '/signin',
+          '/signup',
+        ],
+      },
+      {
+        userAgent: 'YandexBot', // Yandex (Russia)
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/private/',
+          '/signin',
+          '/signup',
         ],
       },
     ],
-    sitemap: 'https://www.aictum.com/sitemap.xml', // Update with your actual domain
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
   };
 }
+

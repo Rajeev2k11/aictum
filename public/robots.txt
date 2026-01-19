@@ -1,0 +1,94 @@
+# Aictum Robots.txt
+# SEO Configuration for Search Engine Crawlers
+
+# Allow all search engines to crawl the website
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /signin
+Disallow: /signup
+Disallow: /error
+
+# Google Bot - Maximum crawl access
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /signin
+Disallow: /signup
+Crawl-delay: 0
+
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /public/
+
+# Bing Bot - Microsoft
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /signin
+Disallow: /signup
+Crawl-delay: 0
+
+# Yahoo Slurp
+User-agent: Slurp
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /signin
+Disallow: /signup
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /signin
+Disallow: /signup
+
+# Baidu (China)
+User-agent: Baiduspider
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /signin
+Disallow: /signup
+
+# Yandex (Russia)
+User-agent: YandexBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /signin
+Disallow: /signup
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.aictum.com/sitemap.xml
+
+# Host (preferred domain)
+Host: https://www.aictum.com
