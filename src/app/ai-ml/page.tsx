@@ -20,6 +20,69 @@ import {
 } from "react-icons/fa";
 
 const AIServicesPage = () => {
+  // SEO Data
+  const pageTitle = "AI & ML Solutions - Artificial Intelligence Services | Aictum";
+  const pageDescription = "Transform your business with cutting-edge AI and Machine Learning solutions. From Computer Vision to NLP, Deep Learning to Predictive Analytics - expert AI development services.";
+  const keywords = "AI solutions, machine learning services, artificial intelligence, computer vision, natural language processing, deep learning, predictive analytics, ML consulting, AI development, neural networks, data science, AI transformation";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.aictum.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI & ML Solutions",
+        "item": "https://www.aictum.com/ai-ml"
+      }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI & Machine Learning Solutions",
+    "description": pageDescription,
+    "provider": {
+      "@type": "Organization",
+      "name": "Aictum Technologies"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI & ML Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Computer Vision"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Natural Language Processing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Machine Learning Development"
+          }
+        }
+      ]
+    }
+  };
+
   const services = [
     {
       icon: <FaRobot className="text-4xl" />,
@@ -280,16 +343,36 @@ const AIServicesPage = () => {
   return (
     <>
       <Head>
-        <title>AI & ML Development Services | YourCompany</title>
-        <meta
-          name="description"
-          content="Comprehensive AI and Machine Learning services to transform your business with cutting-edge technology solutions"
-        />
-        <meta
-          name="keywords"
-          content="AI development, machine learning, artificial intelligence, predictive analytics, data science, deep learning"
-        />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={keywords} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aictum.com/ai-ml" />
+        <meta property="og:image" content="/images/services/ai-ml-og.jpg" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content="/images/services/ai-ml-og.jpg" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.aictum.com/ai-ml" />
       </Head>
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
 
       <main className="bg-white">
         {/* Hero Section - Final Updated Version */}

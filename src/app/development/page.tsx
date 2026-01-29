@@ -25,6 +25,42 @@ import {
 import Image from "next/image";
 
 const ProductDevelopmentPage = () => {
+  // SEO Data
+  const pageTitle = "Software Development Services - Web & Mobile App Development | Aictum";
+  const pageDescription = "Expert software development services including web applications, mobile apps, cloud solutions, and enterprise software. Build scalable, secure, and high-performance applications.";
+  const keywords = "software development, web application development, mobile app development, custom software, enterprise software, cloud solutions, API development, full-stack development, agile development, DevOps services";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.aictum.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Development Services",
+        "item": "https://www.aictum.com/development"
+      }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Software Development Services",
+    "description": pageDescription,
+    "provider": {
+      "@type": "Organization",
+      "name": "Aictum Technologies"
+    },
+    "areaServed": "Worldwide"
+  };
+
   const services = [
     {
       icon: <FaLaptopCode className="text-4xl" />,
@@ -280,6 +316,37 @@ const ProductDevelopmentPage = () => {
   return (
     <>
     <AictumBot />
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="keywords" content={keywords} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aictum.com/development" />
+        <meta property="og:image" content="/images/services/development-og.jpg" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content="/images/services/development-og.jpg" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.aictum.com/development" />
+      </Head>
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Head>
         <title>Product Development Services | YourCompany</title>
         <meta
