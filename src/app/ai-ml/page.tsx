@@ -658,12 +658,12 @@ const AIServicesPage = () => {
                 className="flex flex-col justify-center lg:w-1/2"
               >
                 <h1 className="mb-4 text-2xl leading-tight font-bold text-purple-900 md:text-3xl lg:text-4xl">
-                  Let's Talk About Your{" "}
+                  Let&apos;s Talk About Your{" "}
                   <span className="text-purple-900">AI Project</span>
                 </h1>
                 <p className="mb-6 text-base text-[#3b3a3c] md:text-lg">
                   Our team offers practical AI development services and
-                  consulting tailored to your goals. Let's figure out what makes
+                  consulting tailored to your goals. Let&apos;s figure out what makes
                   sense for your business—no pressure, just clarity.
                 </p>
                 <a
@@ -721,7 +721,7 @@ const AIServicesPage = () => {
                 variants={fadeInUp}
                 className="mx-auto max-w-3xl text-lg text-white"
               >
-                Discover how we've helped businesses across industries leverage
+                Discover how we&apos;ve helped businesses across industries leverage
                 AI to solve complex challenges and achieve remarkable results.
               </motion.p>
             </motion.div>
