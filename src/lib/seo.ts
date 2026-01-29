@@ -43,7 +43,7 @@ export const siteConfig = {
   },
   social: {
     twitter: "@aictum", // Update with actual handle
-    linkedin: "company/aictum", // Update with actual handle
+    linkedin: "aictum", // Update with actual handle
     github: "aictum" // Update with actual handle
   }
 };

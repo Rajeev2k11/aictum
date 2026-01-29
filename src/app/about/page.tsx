@@ -2,10 +2,9 @@ import AictumBot from "@/components/AictumBot";
 import AboutUs from "@/components/About/AboutPage";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
-import { Metadata } from "next";
 import { generateMetadata as genMeta, siteConfig, generateOrganizationSchema, generateBreadcrumbSchema, createJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = genMeta({
+export const metadata = genMeta({
   title: "About Aictum - Leading AI, ML & Blockchain Technology Company",
   description: "Learn about Aictum's mission to transform businesses through innovative AI, Machine Learning, and Blockchain solutions. Meet our expert team and discover our technology journey since inception.",
   keywords: [

@@ -17,7 +17,7 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 import { generateMetadata as genMeta, siteConfig, generateOrganizationSchema, generateWebsiteSchema, createJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = genMeta({
+export const metadata = genMeta({
   title: "Aictum - Leading AI, ML & Blockchain Development Company",
   description: "Transform your business with cutting-edge AI, Machine Learning, Blockchain, and Digital Transformation solutions. Trusted by enterprises worldwide for innovative technology services.",
   keywords: [

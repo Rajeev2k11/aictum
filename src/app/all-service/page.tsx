@@ -6,7 +6,7 @@ import {AllServiceCard} from "@/components/Service/AllServiceCard";
 import { Metadata } from "next";
 import { generateMetadata as genMeta, siteConfig, generateBreadcrumbSchema, createJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = genMeta({
+export const metadata = genMeta({
   title: "Our Services - AI, ML, Blockchain & Digital Solutions | Aictum",
   description: "Explore our comprehensive range of AI, Machine Learning, Blockchain, Computer Vision, NLP, Cloud Computing, and Digital Transformation services. Custom solutions for enterprise success.",
   keywords: [

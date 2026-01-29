@@ -6,7 +6,7 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 import { generateMetadata as genMeta, siteConfig, generateBreadcrumbSchema, createJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = genMeta({
+export const metadata = genMeta({
   title: "Aictum Blog - AI, ML, Blockchain Insights & Technology Trends",
   description: "Stay updated with latest insights on AI, Machine Learning, Blockchain, and technology trends. Expert articles, tutorials, case studies, and industry best practices from Aictum's technology team.",
   keywords: [

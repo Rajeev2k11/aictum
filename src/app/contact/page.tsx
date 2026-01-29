@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
 import { generateMetadata as genMeta, siteConfig, generateBreadcrumbSchema, createJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = genMeta({
+export const metadata = genMeta({
   title: "Contact Aictum - Get in Touch with AI & Technology Experts",
   description: "Contact Aictum for AI, Machine Learning, Blockchain consulting and development services. Schedule a free consultation to discuss your project. We're here to help transform your business.",
   keywords: [

@@ -81,7 +81,7 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="https://in.linkedin.com/company/aictum"
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
